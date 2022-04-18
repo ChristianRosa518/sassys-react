@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+li,
+a,
+button,
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 1000;
+  font-size: 16px;
+  /* color: #edf0f1; */
+  text-decoration: none;
+}
+header {
+  height: 10vh;
+  width: 100%;
+
+  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5);
+  background-color: #4f535c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 1vw;
+  z-index: 50;
+  position: sticky;
+  top: 0;
+}
+
+.logo-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  object-fit: cover;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+
+  /* background-color: black; */
+  border-radius: 50%;
+}
+
+.orderButton {
+  margin-left: 20px;
+}
+
+.navlinks {
+  list-style: none;
+}
+
+.navlinks li {
+  display: inline-block;
+  padding: 0px 2vw;
+  /* text-shadow: 1px 1px 3px black; */
+}
+
+.navlinks li:nth-child(3) {
+}
+
+.navlinks li a {
+  transition: all 0.3s ease 0s;
+  color: white;
+}
+.navlinks li a:hover {
+  border-bottom: 1px solid white;
+}
+
+.logo-flex button {
+  background-color: #cded5c;
+  color: #313131;
+  cursor: pointer;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 50px;
+  opacity: 1;
+  transition: 0.3s ease 0s;
+}
+.logo-flex button:hover {
+  transition: all 0.3s ease 0s;
+  color: black;
+  /* text-shadow: 2px 1px 8px black; */
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.title h1 {
+  cursor: pointer;
+  margin: -10px;
+  letter-spacing: 4px;
+  font-family: 'Pangolin';
+  font-size: 14em;
+  font-style: italic;
+  color: #a0eb31;
+}
+
+/* Dropdown menu test */
+
+.noMargin {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .navlinks li {
+    display: block;
+    padding: 5px 2vw;
+    /* text-shadow: 1px 1px 3px black; */
+  }
+
+  .orderButton {
+    /* display: none; */
+    margin-left: 20px;
+  }
+}
+
+.color {
+  height: 10vh;
+  width: 100%;
+  background-color: blue;
+}

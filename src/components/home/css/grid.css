@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+
+.grid_container {
+  /* Container */
+  position: relative;
+  background-color: rgb(251, 251, 253);
+
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3),
+    0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+
+  /*Padding/Margins */
+  /* padding-top: 100px; */
+}
+
+.grid {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 2vw;
+  row-gap: 3vh;
+  /* background-color: red; */
+}
+.item_1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.item_2 {
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+.item_3 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.item_4 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.signature_sandwiches {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* height: 20vh; */
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.signature_sandwiches h1 {
+  text-align: center;
+  font-size: 4vw;
+  color: #000000;
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .signature_sandwiches h1 {
+    font-size: 7vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .grid {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+
+  .item_1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .item_2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .item_3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .item_4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .item_7 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .signature_sandwiches h1 {
+    font-size: 5vw;
+  }
+}

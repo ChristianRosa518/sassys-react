@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(251, 251, 253);
+}
+.container {
+  height: 100%;
+  margin-top: 1.5%;
+  text-align: center;
+}
+
+.container h1 {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-weight: 600;
+  font-size: 2vw;
+  letter-spacing: 3px;
+}
+
+.map {
+  object-fit: cover;
+  margin-top: 1.5%;
+  margin-bottom: 6%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapContainer {
+  box-shadow: 2px 2px 8px 0px rgb(78, 78, 78);
+}
