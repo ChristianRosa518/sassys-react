@@ -7,7 +7,7 @@ export default function Footer() {
     <div>
       <footer class="endNav">
         <div class="footer">
-          <p>&copy; 2021</p>
+          <p>&copy; 2022</p>
         </div>
         <div class="footer">
           <ul>
