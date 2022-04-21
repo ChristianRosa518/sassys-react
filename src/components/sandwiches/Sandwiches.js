@@ -7,14 +7,13 @@ import './modal.css';
 // Sandwich Images
 import BrooklynChop from '../images/BrooklynChop.jpg';
 import Sassinator from '../images/Sassinator.jpg';
+import BaconStack from '../images/baconStack.jpg';
 
 //
 
 export default function Sandwiches(ModalInformation) {
   const [open, setOpen] = useState(false);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
+  const [modalData, setModalData] = useState('');
 
   return (
     <div class="sandContainer">
@@ -23,14 +22,13 @@ export default function Sandwiches(ModalInformation) {
         <p class="center">Click to view</p>
       </section>
       <SandCardContainer
+        State={true}
         ContainerTitle={'Specialty Sandwiches'}
         ContainerDescription={"The customer's favorites!"}
       >
         <SandwichCard
+          setModalData={setModalData}
           setOpen={setOpen}
-          setTitle={setTitle}
-          setImage={setImage}
-          setDescription={setDescription}
           SandwichPicture={BrooklynChop}
           SandwichName="Brooklyn Chop"
           Description="Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
@@ -38,23 +36,24 @@ export default function Sandwiches(ModalInformation) {
           Tomato, honey BBQ, served on toasted Italian Hero."
         />
         <SandwichCard
+          setModalData={setModalData}
           setOpen={setOpen}
-          setTitle={setTitle}
-          setImage={setImage}
-          setDescription={setDescription}
           SandwichPicture={Sassinator}
           SandwichName={`The "Sassinator"`}
           Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
           Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
         />
+        <SandwichCard
+          setModalData={setModalData}
+          setOpen={setOpen}
+          SandwichPicture={BaconStack}
+          SandwichName={`Bacon Stack`}
+          Description={`Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
+          with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
+          Mayo Aioli`}
+        />
       </SandCardContainer>
-      <SandwichModal
-        open={open}
-        title={title}
-        description={description}
-        image={image}
-        setOpen={setOpen}
-      />
+      <SandwichModal modalData={modalData} open={open} setOpen={setOpen} />
     </div>
   );
 }
@@ -116,9 +115,12 @@ class SandwichCard extends React.Component {
   }
 
   sendModalData() {
-    this.props.setTitle(this.props.SandwichName);
-    this.props.setDescription(this.props.Description);
-    this.props.setImage(this.props.SandwichPicture);
+    const modal = {
+      title: this.props.SandwichName,
+      description: this.props.Description,
+      picture: this.props.SandwichPicture,
+    };
+    this.props.setModalData(modal);
     this.props.setOpen(true);
   }
 
@@ -148,24 +150,28 @@ class SandwichModal extends React.Component {
   constructor(props) {
     super(props);
     this.closeModal = this.closeModal.bind(this);
+    this.dummyfunction = this.dummyfunction.bind(this);
   }
   closeModal() {
     this.props.setOpen(false);
+  }
+  dummyfunction(e) {
+    e.stopPropagation();
   }
   render() {
     if (!this.props.open) return null;
     return (
       <motion.div class="modal" onClick={this.closeModal}>
-        <div class="modalContent">
+        <div class="modalContent" onClick={this.dummyfunction}>
           <span class="closeButton" onClick={this.closeModal}>
             &times;
           </span>
-          <h1 id="title">{this.props.title}</h1>
+          <h1 id="title">{this.props.modalData.title}</h1>
           <br />
-          <p class="section">{this.props.description}</p>
+          <p class="section">{this.props.modalData.description}</p>
           <br />
           <div class="modalImageContainer">
-            <img src={this.props.image} alt="" class="modalImage" />
+            <img src={this.props.modalData.picture} alt="" class="modalImage" />
           </div>
           <div class="orderFlex">
             <a href="https://www.ordersassyssandwiches.com/">
