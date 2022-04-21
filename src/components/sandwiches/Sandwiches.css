@@ -5,7 +5,6 @@ body {
 }
 
 .sandContainer {
-  position: relative;
   width: 85%;
   height: auto;
 
@@ -107,7 +106,6 @@ h2:hover {
 }
 
 .cardDes {
-  position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   /* background-color: red; */
@@ -183,8 +181,8 @@ h2:hover {
   display: flex;
   flex-flow: row wrap;
   transform-origin: top center;
-  animation: dropdown;
-  animation-duration: 0.4s;
+  /* animation: dropdown; */
+  /* animation-duration: 0.4s; */
 }
 
 .section {

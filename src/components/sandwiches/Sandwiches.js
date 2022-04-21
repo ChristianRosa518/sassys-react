@@ -1,37 +1,182 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import './Sandwiches.css';
 import './modal.css';
 
-export default function Sandwiches() {
+// Sandwich Images
+import BrooklynChop from '../images/BrooklynChop.jpg';
+import Sassinator from '../images/Sassinator.jpg';
+
+//
+
+export default function Sandwiches(ModalInformation) {
+  const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
+
   return (
     <div class="sandContainer">
       <section>
         <h1>Sassy's Specialty Sandwiches</h1>
         <p class="center">Click to view</p>
       </section>
-
-      <section class="specialtyNav section">
-        <h2 onclick="specialtyDrop()">- Specialty Sandwiches -</h2>
-        <p>The customer's favorites!</p>
-        <div id="specialNav" class="show hiddenAnimation">
-          <div class="itemCard" id="brooklynChop">
-            <div class="cardDes">
-              <div class="cardHeader">
-                <h3>- Brooklyn Chop -</h3>
-              </div>
-              <p>
-                Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar
-                Cheese, American Cheese, Sauteed Onions, Shredded Lettuce,
-                Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.
-              </p>
-            </div>
-            <div class="cardImgCon">
-              <img src="../images/BrooklynChop2.jpg" alt="" class="cardImg" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <SandCardContainer
+        ContainerTitle={'Specialty Sandwiches'}
+        ContainerDescription={"The customer's favorites!"}
+      >
+        <SandwichCard
+          setOpen={setOpen}
+          setTitle={setTitle}
+          setImage={setImage}
+          setDescription={setDescription}
+          SandwichPicture={BrooklynChop}
+          SandwichName="Brooklyn Chop"
+          Description="Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
+          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
+          Tomato, honey BBQ, served on toasted Italian Hero."
+        />
+        <SandwichCard
+          setOpen={setOpen}
+          setTitle={setTitle}
+          setImage={setImage}
+          setDescription={setDescription}
+          SandwichPicture={Sassinator}
+          SandwichName={`The "Sassinator"`}
+          Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
+          Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
+        />
+      </SandCardContainer>
+      <SandwichModal
+        open={open}
+        title={title}
+        description={description}
+        image={image}
+        setOpen={setOpen}
+      />
     </div>
   );
+}
+
+class SandCardContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: this.props.State,
+    };
+    this.Animations = {
+      initial: { transform: 'ScaleY(0)' },
+      animate: {
+        transform: 'ScaleY(1)',
+        transition: { duration: 0.25 },
+      },
+      exit: {
+        transform: 'ScaleY(0)',
+        height: 0,
+        transition: { duration: 0.25 },
+      },
+    };
+    this.ShowSandwiches = this.ShowSandwiches.bind(this);
+  }
+
+  ShowSandwiches() {
+    const current = this.state.active;
+    this.setState({ active: !current });
+  }
+
+  render() {
+    return (
+      <section className="section">
+        <h2 onClick={this.ShowSandwiches}>- {this.props.ContainerTitle} -</h2>
+        <p>{this.props.ContainerDescription}</p>
+        <AnimatePresence>
+          {this.state.active && (
+            <motion.div
+              id={'Item'}
+              exit={'exit'}
+              className={'show'}
+              initial={'initial'}
+              animate={'animate'}
+              variants={this.Animations}
+            >
+              {this.props.children}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </section>
+    );
+  }
+}
+
+class SandwichCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.sendModalData = this.sendModalData.bind(this);
+  }
+
+  sendModalData() {
+    this.props.setTitle(this.props.SandwichName);
+    this.props.setDescription(this.props.Description);
+    this.props.setImage(this.props.SandwichPicture);
+    this.props.setOpen(true);
+  }
+
+  render() {
+    return (
+      <div>
+        <div className={'itemCard'} onClick={this.sendModalData}>
+          <div className="cardDes">
+            <div className="cardHeader">
+              <h3>- {this.props.SandwichName} -</h3>
+            </div>
+            <p>{this.props.Description}</p>
+          </div>
+          <div class="cardImgCon">
+            <img
+              src={this.props.SandwichPicture}
+              alt="Sandwich Card Img"
+              class="cardImg"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+class SandwichModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+  }
+  closeModal() {
+    this.props.setOpen(false);
+  }
+  render() {
+    if (!this.props.open) return null;
+    return (
+      <motion.div class="modal" onClick={this.closeModal}>
+        <div class="modalContent">
+          <span class="closeButton" onClick={this.closeModal}>
+            &times;
+          </span>
+          <h1 id="title">{this.props.title}</h1>
+          <br />
+          <p class="section">{this.props.description}</p>
+          <br />
+          <div class="modalImageContainer">
+            <img src={this.props.image} alt="" class="modalImage" />
+          </div>
+          <div class="orderFlex">
+            <a href="https://www.ordersassyssandwiches.com/">
+              <button class="orderNow">Order</button>
+            </a>
+          </div>
+          <br />
+
+          <p class="modalBottom">*In app orders will be added soon</p>
+        </div>
+      </motion.div>
+    );
+  }
 }
