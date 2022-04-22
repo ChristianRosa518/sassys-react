@@ -16,10 +16,10 @@ export default function Sandwiches(ModalInformation) {
   const [modalData, setModalData] = useState('');
 
   return (
-    <div class="sandContainer">
+    <div className="sandContainer">
       <section>
         <h1>Sassy's Specialty Sandwiches</h1>
-        <p class="center">Click to view</p>
+        <p className="center">Click to view</p>
       </section>
       <SandCardContainer
         State={true}
@@ -134,11 +134,11 @@ class SandwichCard extends React.Component {
             </div>
             <p>{this.props.Description}</p>
           </div>
-          <div class="cardImgCon">
+          <div className="cardImgCon">
             <img
               src={this.props.SandwichPicture}
               alt="Sandwich Card Img"
-              class="cardImg"
+              className="cardImg"
             />
           </div>
         </div>
@@ -161,26 +161,26 @@ class SandwichModal extends React.Component {
   render() {
     if (!this.props.open) return null;
     return (
-      <motion.div class="modal" onClick={this.closeModal}>
-        <div class="modalContent" onClick={this.dummyfunction}>
-          <span class="closeButton" onClick={this.closeModal}>
+      <motion.div className="modal" onClick={this.closeModal}>
+        <div className="modalContent" onClick={this.dummyfunction}>
+          <span className="closeButton" onClick={this.closeModal}>
             &times;
           </span>
-          <h1 id="title">{this.props.modalData.title}</h1>
+          <h1>{this.props.modalData.title}</h1>
           <br />
-          <p class="section">{this.props.modalData.description}</p>
+          <p className="section">{this.props.modalData.description}</p>
           <br />
-          <div class="modalImageContainer">
+          <div className="modalImageContainer">
             <img src={this.props.modalData.picture} alt="" class="modalImage" />
           </div>
-          <div class="orderFlex">
+          <div className="orderFlex">
             <a href="https://www.ordersassyssandwiches.com/">
-              <button class="orderNow">Order</button>
+              <button className="orderNow">Order</button>
             </a>
           </div>
           <br />
 
-          <p class="modalBottom">*In app orders will be added soon</p>
+          <p className="modalBottom">*In app orders will be added soon</p>
         </div>
       </motion.div>
     );

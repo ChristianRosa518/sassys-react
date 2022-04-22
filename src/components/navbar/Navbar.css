@@ -71,7 +71,7 @@ header {
   border-bottom: 1px solid white;
 }
 
-.logo-flex button {
+.orderButton {
   background-color: #cded5c;
   color: #313131;
   cursor: pointer;
@@ -81,7 +81,7 @@ header {
   opacity: 1;
   transition: 0.3s ease 0s;
 }
-.logo-flex button:hover {
+.orderButton:hover {
   transition: all 0.3s ease 0s;
   color: black;
   /* text-shadow: 2px 1px 8px black; */
@@ -109,6 +109,42 @@ header {
 .noMargin {
   margin: 0;
   padding: 0;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.mobileNavlinks {
+  width: 100%;
+  left: 0;
+  background-color: #4f535c;
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  list-style: none;
+}
+.listItem {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-weight: 1000;
+  font-size: calc(0.75em + 9vmin);
+  color: white;
+}
+@media only screen and (max-width: 800px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
+  }
+  .orderButton {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 500px) {

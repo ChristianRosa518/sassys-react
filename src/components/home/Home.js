@@ -21,37 +21,37 @@ export default function Home() {
 
   return (
     <div>
-      <div class="homeContainer">
-        <div class="img_container" id="container_1">
+      <div className="homeContainer">
+        <div className="img_container" id="container_1">
           <img
             src={Container1}
             alt="Sandwich"
             className={`main_img_block ${HeroOne ? 'active' : ''}`}
           />
         </div>
-        <div class="img_container">
+        <div className="img_container">
           <img
             src={Container2}
             alt="Sandwich"
             className={`img_block ${HeroTwo ? 'active' : ''}`}
           />
         </div>
-        <div class="img_container">
+        <div className="img_container">
           <img
             src={Container3}
             alt="Sandwich"
             className={`img_block ${HeroThree ? 'active' : ''}`}
           />
         </div>
-        <div class="img_container">
+        <div className="img_container">
           <img
             src={Container4}
             alt="Sandwich"
             className={`img_block ${HeroFour ? 'active' : ''}`}
           />
         </div>
-        <div class="nav">
-          <div class="nav_container">
+        <div className="nav">
+          <div className="nav_container">
             <div
               onMouseEnter={() => {
                 setHeroOne(!HeroOne);

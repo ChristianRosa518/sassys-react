@@ -18,7 +18,7 @@ body {
 
 h1 {
   font-style: italic;
-  font-size: 3vw;
+  font-size: calc(0.75em + 3vmin);
   text-align: center;
   padding: 10px;
 }
@@ -30,18 +30,21 @@ h1 {
 
 .sandContainer h2 {
   /* text-align: center; */
-  font-size: 2em;
+  font-size: calc(0.75em + 2vmin);
   padding-top: 10px;
+}
+
+.section p {
+  font-size: calc(0.35em + 1.5vmin);
 }
 
 .itemCard {
   /* margin: 0 auto; */
-  margin-top: 10px;
-  margin-right: 10px;
   cursor: pointer;
+  margin-top: 12px;
 
   /*  */
-  width: 40vw;
+  width: 42vw;
   height: 12vh;
 
   /*  */
@@ -123,7 +126,7 @@ h2:hover {
   padding-top: 1%;
   padding-bottom: 0;
   margin-bottom: 0;
-  font-size: 1.3em;
+  font-size: calc(0.75em + 1.5vmin);
 }
 
 .cardDes p {
@@ -179,6 +182,7 @@ h2:hover {
 .show {
   height: auto;
   display: flex;
+  justify-content: space-between;
   flex-flow: row wrap;
   transform-origin: top center;
   /* animation: dropdown; */
@@ -191,15 +195,29 @@ h2:hover {
 }
 
 @media only screen and (max-width: 768px) {
+  .cardDes p {
+    font-size: calc(0.55em + 1.5vmin);
+  }
   .itemCard {
     width: 85vw;
+    height: 20vh;
+  }
+  .cardImgCon {
+    width: 25%;
   }
   .container h1,
   p {
-    text-align: center;
   }
   .container h2 {
     font-size: 7.5vw;
-    text-align: center;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .itemCard {
+    width: 85vw;
+    height: 20vh;
+  }
+  .cardImgCon {
+    width: 40%;
   }
 }
