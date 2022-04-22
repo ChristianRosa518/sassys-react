@@ -53,6 +53,7 @@ export default function Sandwiches(ModalInformation) {
           Mayo Aioli`}
         />
       </SandCardContainer>
+
       <SandwichModal modalData={modalData} open={open} setOpen={setOpen} />
     </div>
   );

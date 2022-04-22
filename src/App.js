@@ -9,19 +9,13 @@ import Sandwiches from './components/sandwiches/Sandwiches';
 function App() {
   return (
     <Router>
-      <div>
-        <div>
-          <Navbar />
-        </div>
-        <Routes>
-          <Route path="/" exact element={<Home />}></Route>
-          <Route path="/location" element={<Location />}></Route>
-          <Route path="/sandwiches" element={<Sandwiches />}></Route>
-        </Routes>
-        <div>
-          <Footer />
-        </div>
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/sassys-react" exact element={<Home />}></Route>
+        <Route path="/location" element={<Location />}></Route>
+        <Route path="/sandwiches" element={<Sandwiches />}></Route>
+      </Routes>
+      <Footer />
     </Router>
   );
 }

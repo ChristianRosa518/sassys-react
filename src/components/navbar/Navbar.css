@@ -117,10 +117,11 @@ header {
 
 .mobileNavlinks {
   width: 100%;
+  position: fixed;
+  overflow-y: hidden;
   left: 0;
-  background-color: #4f535c;
-  position: absolute;
   top: 0;
+  background-color: #4f535c;
 
   display: flex;
   justify-content: space-around;

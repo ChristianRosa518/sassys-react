@@ -20,7 +20,7 @@ export default function Navbar() {
     <header>
       <div className="logo-flex">
         <div className="logoBackground">
-          <Link to="/">
+          <Link to="/sassys-react">
             <img src={StoreLogo} className="logo" alt="#" />
           </Link>
         </div>
