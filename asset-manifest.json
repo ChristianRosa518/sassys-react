@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-personal-web/static/css/main.3265456a.css",
+    "main.js": "/react-personal-web/static/js/main.a56c669e.js",
+    "static/js/787.37e76956.chunk.js": "/react-personal-web/static/js/787.37e76956.chunk.js",
+    "static/media/3.jpg": "/react-personal-web/static/media/3.3233b40530b98a2b3cc8.jpg",
+    "static/media/2.jpg": "/react-personal-web/static/media/2.6754acbb541555d2421e.jpg",
+    "static/media/logo.png": "/react-personal-web/static/media/logo.0aa818d8afdc4ae6848d.png",
+    "static/media/4.jpg": "/react-personal-web/static/media/4.24d0badfc434f280f1e5.jpg",
+    "static/media/Sassinator.jpg": "/react-personal-web/static/media/Sassinator.58b80e0a96338d602047.jpg",
+    "static/media/BrooklynChop.jpg": "/react-personal-web/static/media/BrooklynChop.f77717f4b24b1c5f18f1.jpg",
+    "static/media/baconStack.jpg": "/react-personal-web/static/media/baconStack.e504cddf1b202c766c8b.jpg",
+    "index.html": "/react-personal-web/index.html",
+    "main.3265456a.css.map": "/react-personal-web/static/css/main.3265456a.css.map",
+    "main.a56c669e.js.map": "/react-personal-web/static/js/main.a56c669e.js.map",
+    "787.37e76956.chunk.js.map": "/react-personal-web/static/js/787.37e76956.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3265456a.css",
+    "static/js/main.a56c669e.js"
+  ]
+}
