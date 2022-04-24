@@ -20,7 +20,7 @@ export default function Navbar() {
     <header>
       <div className="logo-flex">
         <div className="logoBackground">
-          <Link to="/sassys-react">
+          <Link to="/">
             <img src={StoreLogo} className="logo" alt="#" />
           </Link>
         </div>
@@ -37,14 +37,14 @@ export default function Navbar() {
       <nav className="desktopNav">
         <ul className="navlinks">
           <li>
-            <Link to="">Contact</Link>
+            <Link to="/">Contact</Link>
           </li>
 
           <li>
             <Link to="/location">Location</Link>
           </li>
           <li>
-            <Link to="sandwiches">Sandwiches</Link>
+            <Link to="/sandwiches">Sandwiches</Link>
           </li>
         </ul>
       </nav>
@@ -72,7 +72,7 @@ export default function Navbar() {
                 transition={{ delay: 0.15 }}
                 exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
               >
-                <Link to="" onClick={changeOpen} className="listItem">
+                <Link to="/" onClick={changeOpen} className="listItem">
                   Contact
                 </Link>
               </motion.li>
@@ -95,7 +95,11 @@ export default function Navbar() {
                 transition={{ delay: 0.15 }}
                 exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
               >
-                <Link to="sandwiches" className="listItem" onClick={changeOpen}>
+                <Link
+                  to="/sandwiches"
+                  className="listItem"
+                  onClick={changeOpen}
+                >
                   Sandwiches
                 </Link>
               </motion.li>

@@ -8,10 +8,10 @@ import Sandwiches from './components/sandwiches/Sandwiches';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/sassys-react">
       <Navbar />
       <Routes>
-        <Route path="/sassys-react" exact element={<Home />}></Route>
+        <Route path="/" exact element={<Home />}></Route>
         <Route path="/location" element={<Location />}></Route>
         <Route path="/sandwiches" element={<Sandwiches />}></Route>
       </Routes>

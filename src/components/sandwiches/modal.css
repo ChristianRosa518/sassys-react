@@ -104,6 +104,9 @@
 }
 
 .orderFlex {
+  bottom: 8%;
+  left: 0;
+  position: absolute;
   height: 100px;
   width: 100%;
   display: flex;
