@@ -1,29 +1,36 @@
 {
   "files": {
     "main.css": "/sassys-react/static/css/main.49f43f86.css",
-    "main.js": "/sassys-react/static/js/main.2481ea38.js",
+    "main.js": "/sassys-react/static/js/main.c1d5d726.js",
     "static/js/787.37e76956.chunk.js": "/sassys-react/static/js/787.37e76956.chunk.js",
     "static/media/3.jpg": "/sassys-react/static/media/3.3233b40530b98a2b3cc8.jpg",
     "static/media/2.jpg": "/sassys-react/static/media/2.6754acbb541555d2421e.jpg",
     "static/media/logo.png": "/sassys-react/static/media/logo.0aa818d8afdc4ae6848d.png",
     "static/media/4.jpg": "/sassys-react/static/media/4.24d0badfc434f280f1e5.jpg",
     "static/media/Sassinator.jpg": "/sassys-react/static/media/Sassinator.58b80e0a96338d602047.jpg",
+    "static/media/angusCheese.png": "/sassys-react/static/media/angusCheese.8182b29b3573f544d359.png",
     "static/media/BrooklynChop.jpg": "/sassys-react/static/media/BrooklynChop.f77717f4b24b1c5f18f1.jpg",
     "static/media/spicymama.png": "/sassys-react/static/media/spicymama.18c5bbf46f55cfa908c2.png",
+    "static/media/macburger.png": "/sassys-react/static/media/macburger.dab8117ef9ba6e60c4b8.png",
+    "static/media/brklynbreak.png": "/sassys-react/static/media/brklynbreak.4fcbd4d5954fb0047c88.png",
     "static/media/philly.png": "/sassys-react/static/media/philly.22ed6559357bd32dd404.png",
     "static/media/regula.png": "/sassys-react/static/media/regula.2c88c52fdf050c69b243.png",
     "static/media/gouda.png": "/sassys-react/static/media/gouda.6214ebf1509a0ae11928.png",
     "static/media/mad.png": "/sassys-react/static/media/mad.a6499e281df110819e80.png",
+    "static/media/baconcheese.png": "/sassys-react/static/media/baconcheese.607758ee9d4d4b62aa31.png",
     "static/media/blt.png": "/sassys-react/static/media/blt.1f437002a404eb85cc4c.png",
     "static/media/parm.png": "/sassys-react/static/media/parm.647601647333f07713ae.png",
     "static/media/baconStack.jpg": "/sassys-react/static/media/baconStack.e504cddf1b202c766c8b.jpg",
+    "static/media/smokey.png": "/sassys-react/static/media/smokey.13b39b5a925271aa0412.png",
+    "static/media/quik.png": "/sassys-react/static/media/quik.df27993f70c073b85348.png",
     "index.html": "/sassys-react/index.html",
+    "static/media/Blank.PNG": "/sassys-react/static/media/Blank.62f4b5855e216b68f1e7.PNG",
     "main.49f43f86.css.map": "/sassys-react/static/css/main.49f43f86.css.map",
-    "main.2481ea38.js.map": "/sassys-react/static/js/main.2481ea38.js.map",
+    "main.c1d5d726.js.map": "/sassys-react/static/js/main.c1d5d726.js.map",
     "787.37e76956.chunk.js.map": "/sassys-react/static/js/787.37e76956.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49f43f86.css",
-    "static/js/main.2481ea38.js"
+    "static/js/main.c1d5d726.js"
   ]
 }
