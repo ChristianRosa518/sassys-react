@@ -2,6 +2,11 @@ import React from 'react';
 
 import Sassinator from '../images/Sassinator.jpg';
 import Container3 from '../images/BrooklynChop.jpg';
+import baconStack from '../images/baconStack.jpg';
+import sandwich5 from '../images/5.jpg';
+import goudaMeal from '../images/gouda.png';
+import macNChicken from '../images/macnChicken.png';
+import macNBurger from '../images/macburger.png';
 
 export default function Grid() {
   return (
@@ -39,7 +44,7 @@ export default function Grid() {
             </div>
           </div>
           <div>
-            <img src="./images/baconStack.jpg" alt="" className="item_img" />
+            <img src={baconStack} alt="" className="item_img" />
           </div>
           <div className="end_flexbox"></div>
         </div>
@@ -50,7 +55,7 @@ export default function Grid() {
             </div>
           </div>
           <div>
-            <img src="./images/5.jpg" alt="" className="large_item_img" />
+            <img src={sandwich5} alt="" className="large_item_img" />
           </div>
           <div className="largeBottomFlexbox"></div>
         </div>
@@ -61,7 +66,7 @@ export default function Grid() {
             </div>
           </div>
           <div>
-            <img src="./images/gouda.png" alt="" className="item_img" />
+            <img src={goudaMeal} alt="" className="item_img" />
           </div>
           <div className="end_flexbox"></div>
         </div>
@@ -72,7 +77,7 @@ export default function Grid() {
             </div>
           </div>
           <div>
-            <img src="./images/macnChicken.png" alt="" className="item_img" />
+            <img src={macNChicken} alt="" className="item_img" />
           </div>
           <div className="end_flexbox"></div>
         </div>
@@ -83,7 +88,7 @@ export default function Grid() {
             </div>
           </div>
           <div>
-            <img src="./images/macburger.png" alt="" className="item_img" />
+            <img src={macNBurger} alt="" className="item_img" />
           </div>
           <div className="end_flexbox"></div>
         </div>

@@ -74,3 +74,22 @@
 .burger_container.color .burger_icon::before {
   background: rgba(255, 130, 88, 1);
 }
+
+@media only screen and (max-height: 400px) {
+  .burger_icon {
+    width: 20px;
+    height: 3px;
+  }
+
+  .burger_icon::before,
+  .burger_icon::after {
+    width: 20px;
+    height: 3px;
+  }
+  .burger_icon::before {
+    transform: translate(0px, -7px);
+  }
+  .burger_icon::after {
+    transform: translate(0px, 7px);
+  }
+}

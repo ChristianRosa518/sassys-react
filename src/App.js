@@ -7,6 +7,14 @@ import Footer from './components/footer/Footer';
 import Sandwiches from './components/sandwiches/Sandwiches';
 
 function App() {
+  function appHeight() {
+    const doc = document.documentElement;
+    doc.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+  }
+
+  window.addEventListener('resize', appHeight);
+  appHeight();
+
   return (
     <Router basename="/sassys-react">
       <Navbar />

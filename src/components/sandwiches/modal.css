@@ -15,8 +15,6 @@
 
 .modalContent {
   /* Animation */
-  animation: float-up;
-  animation-duration: 0.5s;
   transform-origin: bottom;
 
   /* position */
@@ -24,8 +22,8 @@
   margin-top: 5vh;
 
   /* size */
-  width: 500px;
-  height: 750px;
+  width: 600px;
+  height: calc(var(--vh, 1vh) * 90);
 
   /* style */
   background-color: white;
@@ -35,25 +33,18 @@
   padding: 25px;
 }
 
-@keyframes float-up {
-  0% {
-    top: 1000px;
-  }
-  100% {
-    top: 0px;
-  }
-}
-
 .closeButton {
   color: black;
   position: absolute;
   right: 0;
   top: 0;
   font-size: 50px;
-  padding: 10px;
+  line-height: 20px;
+  padding: 7px;
   cursor: pointer;
 
   transition: 0.3s;
+  z-index: 20;
 }
 
 .closeButton:hover {
@@ -63,7 +54,7 @@
 
 .modalImageContainer {
   width: 100%;
-  height: 40%;
+  height: 50%;
   border-radius: 3px;
 }
 
@@ -76,12 +67,16 @@
 
 .modalContent h1 {
   font-style: italic;
-  font-size: 2em;
+  font-size: calc(0.75em + 2.3vmin);
+  text-overflow: clip;
   text-align: center;
+  height: auto;
 }
 
 .modalContent p {
+  height: auto;
   text-align: center;
+  font-size: calc(0.35em + 1.5vmin);
 }
 
 .orderNow {
@@ -89,8 +84,8 @@
   background-color: #a0eb31;
   color: #313131;
 
-  font-size: 2em;
-  padding: 10px 100px;
+  font-size: calc(1em + 1vmin);
+  padding: 10px 40px;
   border: none;
   border-radius: 50px;
 
@@ -117,49 +112,267 @@
 .modalBottom {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 10px;
   padding: 10px;
   font-style: italic;
+  font-size: calc(0.35em + 0.5vmin);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1440px) and (max-height: 600px) {
   .modalImageContainer {
-    width: 100%;
-    height: 30%;
+    height: 50%;
     border-radius: 3px;
   }
-  .modalContent {
-    /* size */
-    margin-top: 0vh;
-    width: 100%;
-    height: 100%;
 
-    /* style */
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    /* padding: 25px; */
+  .modalContent h1 {
+    font-size: calc(0.75em + 2.3vmin);
+    width: 90%;
+    margin: 0 auto;
   }
   .modalContent p {
-    font-size: 0.9em;
     text-align: center;
   }
+  .orderFlex {
+    height: 20px;
+    bottom: 10%;
+  }
+  .orderNow {
+    padding: 10px 30px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-height: 400px) {
+  .modalContent {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .modalInformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    position: relative;
+  }
+  .orderFlex {
+    height: 40px;
+    bottom: 0%;
+  }
+  .modalImageContainer {
+    margin: 0 auto;
+    width: 60%;
+    height: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.75em + 2.3vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .orderFlex {
+    height: 20px;
+    bottom: 4%;
+  }
+  .orderNow {
+    padding: 3px 15px;
+    font-size: calc(0.6em + 2vmin);
+  }
+  .modalBottom {
+    display: none;
+  }
+  .section {
+    border-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .modalContent {
+    margin: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.75em + 2.3vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    text-align: center;
+    padding: 0;
+  }
+  .orderFlex {
+    height: 20px;
+    bottom: 10%;
+  }
+}
+@media only screen and (max-width: 600px) and (max-height: 600px) {
+  .modalContent {
+    margin: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.75em + 2.3vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    text-align: center;
+  }
+
+  .orderFlex {
+    height: 20px;
+    bottom: 5%;
+  }
+}
+@media only screen and (max-width: 600px) and (max-height: 200px) {
   .modalContent h1 {
     padding: 0;
     margin: 0;
+    font-size: calc(0.75em + 2.3vmin);
+    width: 90%;
+    margin: 0 auto;
   }
-}
-
-@media only screen and (max-width: 400px) {
   .modalContent p {
-    font-size: 0.7em;
     text-align: center;
   }
+  .orderFlex {
+    height: auto;
+    position: relative;
+  }
   .orderNow {
-    font-size: 1.5em;
-    padding: 8px 40px;
-    border: none;
-    border-radius: 50px;
+    padding: 3px 8px;
+    font-size: calc(0.4em + 1.3vmin);
+  }
+}
+@media only screen and (max-width: 450px) {
+  .modalContent {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.75em + 2.3vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    text-align: center;
+    padding: 0;
+  }
+  .orderFlex {
+    height: 20px;
+    bottom: 10%;
+  }
+}
+@media only screen and (max-width: 450px) and (max-height: 400px) {
+  .modalContent {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.75em + 1vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    font-size: calc(0.45em + 0.5vmin);
+    text-align: center;
+    padding: 0;
+  }
+  .orderFlex {
+    height: 10px;
+    bottom: 5%;
+  }
+}
+@media only screen and (max-width: 450px) and (max-height: 200px) {
+  .modalContent {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.65em + 1vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    font-size: calc(0.35em + 0.5vmin);
+    text-align: center;
+    padding: 0;
+  }
+  .orderFlex {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .modalContent {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.65em + 1vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    font-size: calc(0.35em + 0.5vmin);
+    text-align: center;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 250px) and (max-height: 350px) {
+  .modalContent {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+  }
+  .modalImageContainer {
+    width: 50%;
+  }
+  .modalInformation {
+    width: 50%;
+  }
+
+  .modalContent h1 {
+    font-size: calc(0.65em + 1vmin);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modalContent p {
+    font-size: calc(0.35em + 0.5vmin);
+    text-align: center;
+    padding: 0;
   }
 }

@@ -15,7 +15,33 @@ import Gouda from '../images/gouda.png';
 import Parm from '../images/parm.png';
 import SpicyMama from '../images/spicymama.png';
 import Regula from '../images/regula.png';
-
+import QuickBite from '../images/quik.png';
+import SmokeyMeunster from '../images/smokey.png';
+import BrooklynBreak from '../images/brklynbreak.png';
+import Blank from '../images/Blank.PNG';
+//
+import macBurger from '../images/macburger.png';
+import angusCheese from '../images/angusCheese.png';
+import baconCheese from '../images/baconcheese.png';
+//
+import chicken6 from '../images/Chicken6.jpg';
+import macnchicken from '../images/macnChicken.png';
+import chicken5 from '../images/chickenSwiss5.png';
+import chicken8 from '../images/chickennumba6.png';
+import chicken9 from '../images/5.jpg';
+import chicken11 from '../images/chicken11.png';
+//
+import chipotlewings from '../images/chipotlewings.png';
+import buffalowings from '../images/buffaloWings.png';
+import turkey37 from '../images/37.png';
+import turkey41 from '../images/41.png';
+import beef25 from '../images/25.png';
+import beef26 from '../images/26.png';
+import beef27 from '../images/27.png';
+import beef28 from '../images/28.png';
+import beef29 from '../images/29.jpg';
+import beef30 from '../images/30.jpg';
+import beef33 from '../images/33.jpg';
 //
 
 export default function Sandwiches(ModalInformation) {
@@ -117,7 +143,477 @@ export default function Sandwiches(ModalInformation) {
             Description={`Ovengold Roasted Turkey, American Cheese, Smoked Bacon, Avocado,
             Leafy Lettuce, Tomato, Mayonnaise`}
           />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={QuickBite}
+            SandwichName={`38. "Quik-Bite"`}
+            Description={`Maple Honey Turkey, Cheddar Cheese, Leafy Lettuce, Hot Cherry
+              Peppers, Tomato, Mayonnaise`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={SmokeyMeunster}
+            SandwichName={`Smokey Muenster`}
+            Description={`Smoked Mesquite Turkey Breast, Muenster cheese, Arugula, Creamy
+            Russian, ripe tomato, red onion`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`The Bourbon`}
+            Description={`Bourbon Smoked Boars Head Ham, Smoked Gouda Cheese, Caramalized
+            Mushrooms, Onions, & Bell Peppers, BBQ & Mayo. Served on Toasted
+            Garlic Bread`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={BrooklynBreak}
+            SandwichName={`"The BKLYN" Breakfast`}
+            Description={`2 Eggs Scrambled, Grilled Pastrami, Vermont Sharp Cheddar
+            Cheese, Fresh Baby Arugula, Sliced Tomato, White Onion, &
+            Chipotle Mayo Aioli`}
+          />
         </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Burgers'}
+        ContainerDescription={'Premium angus Beef!'}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={macBurger}
+            SandwichName={`Mac-n-Cheese Bacon Beef Burger`}
+            Description={`Cheddar burger topped with our creamy mac n cheese, bacon,
+            sauteed onions, and BBQ sauce`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Impossible Burger`}
+            Description={`Quarter Pound Impossible burger Patty topped plant based
+            cheddar, lettuce, tomato, onion, pickles, and vegan roasted
+            pepper aioli`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`100% Angus Beef Burger`}
+            Description={`100% Juicy Angus Beef Burger Topped With Leafy Lettuce, Sliced
+            Tomato, Red Onion, and Pickles. Served on a Toasted Brioche Bun
+            (Default is well done)`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={angusCheese}
+            SandwichName={`100% Angus Cheeseburger`}
+            Description={`100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Leafy
+            Lettuce, Sliced Tomato, Red Onion, and Pickles. Served on a
+            Toasted Brioche Bun (Default is well done)`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={baconCheese}
+            SandwichName={`Bacon Cheese Burger`}
+            Description={`100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Smoked
+            Bacon Leafy Lettuce, Sliced Tomato, Red Onion, and Pickles.
+            Served on a Toasted Brioche Bun (Default is well done)`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={`Breakfast Sandwiches`}
+        ContainerDescription={`Morning Starters, even an afternoon starter!`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Bacon Egg n' Cheese`}
+            Description={`2 Eggs Scrambled, Your choice of Cheese, & Crispy Bacon`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Sausage Egg n' Cheese`}
+            Description={`2 Eggs Scrambled, Your choice of Cheese, & Savory Sausage`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`2 Eggs Breakfast`}
+            Description={`Two Eggs Served Any Way With Your Choice Of Cheese`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Vegetarian Omelette`}
+            Description={`3 Eggs, Diced Bell peppers, mushrooms, tomato, onion and
+            spinach. Served on choice of bread or platter.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Grilled Cheese Sandwich`}
+            Description={`Melted American Cheese Served on Toasted Sliced White or Wheat`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`French Toast`}
+            Description={`3 Slices of French Toast from scratch Served with Two Eggs And A
+            Side of Syrup`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Pancake Platter`}
+            Description={`3 pieces of hot pancakes Served with Two Eggs, Choice of Fruit
+            And A Side of Syrup`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Chicken Sandwiches'}
+        ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={chicken6}
+            SandwichName={`6. Crispy Chicken W/ American Cheese & Avocado`}
+            Description={`Crispy Chicken Cutlet with American Cheese, Ripe avocado, hot
+            cherry peppers, tomato, leafy lettuce, and honey Dijon mustard.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={macnchicken}
+            SandwichName={`Mac N' Chicken`}
+            Description={`Crispy Chicken Cutlet topped with Melted Cheddar, Cheddar Mac
+            and Cheese, Crispy Bacon, and Sassy's Chipotle Mayo Aioli.
+            Served on a Toasted Broiche Bun.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={chicken5}
+            SandwichName={`5. Crispy Chicken W/ Imported Swiss & Bacon`}
+            Description={`Crispy Chicken Cutlet Topped With Smoked Bacon, Melted Swiss
+            Cheese, Leafy Lettuce, Sliced Tomato, Mayonnaise`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={chicken8}
+            SandwichName={`8. Grilled Chicken W/ Pepperjack & Avocado`}
+            Description={`Grilled Chicken Breast Topped With Melted Pepper Jack Cheese,
+            Baby Spinach, Sliced Tomato, Creamy Ranch Dressing`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={chicken9}
+            SandwichName={`9. Grilled Balsamic Chicken W/ Mozzarella & Bacon`}
+            Description={`Grilled Chicken Breast Topped With Melted Mozzarella Cheese,
+            Avocado, Smoked Bacon, Caramelized Onions, Leafy Lettuce,
+            Sassy’s Chipotle Mayo Aioli`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`10. Grilled Chicken W/ Cheddar & Bacon`}
+            Description={`Grilled Chicken Breast Topped With Melted Cheddar Cheese, Smoked
+            Bacon, Caramelized Red Onions Leafy Lettuce, Sliced Tomato,
+            Honey Dijon Mustard`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={chicken11}
+            SandwichName={`11. Hot Chipotle Chicken`}
+            Description={`Chipotle Chicken Breast, Pepper-jack Cheese, Smoked Bacon, Baby
+            Spinach, Hot cherry peppers, Tomato, & Sassy’s Chipotle Mayo
+            Aioli`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`#12. The Buffalo`}
+            Description={`Grilled Buffalo Chicken Cutlet, Melted Muenster Cheese,
+            Caramelized Mushrooms, Leafy Lettuce, Blue Cheese Dressing`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Chicken Wings'}
+        ContainerDescription={`We left the bone in these options`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={chipotlewings}
+            SandwichName={`Chipotle Tossed Chicken Wings`}
+            Description={`Crispy Chicken Wings Tossed in Sassy’s Chipotle Mayo Aioli (Half
+              Dozen or Dozen)`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={buffalowings}
+            SandwichName={`Buffalo Tossed Chicken Wings`}
+            Description={`Crispy Chicken Wings Tossed in Buffalo Sauce (Half Dozen or
+              Dozen)`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Lemon Pepper Chicken Wings`}
+            Description={``}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Honey BBQ Tossed Chicken Wings`}
+            Description={`Crispy Chicken Wings Tossed in Our Homemade Honey BBQ Mix (Half
+              Dozen or Dozen)`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Chicken Wings`}
+            Description={`Plain Chicken Wings (Half Dozen or Dozen)`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Mango Habanero Chicken Wings`}
+            Description={``}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Signature Turkey Sandwiches'}
+        ContainerDescription={`gobble gobble gobble`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={turkey37}
+            SandwichName={`37. Peppermill Smoked Turkey Breast Sandwich`}
+            Description={`Imported Swiss, shredded iceberg, sliced tomato and Russian
+            dressing.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={turkey41}
+            SandwichName={`41. Honey Bbq Turkey Sandwich`}
+            Description={`Maple Honey Turkey, Bacon, Lettuce, Tomato, & BBQ Sauce. This
+            Sandwich is Christian's Personal Favorite`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Signature Beef and Toasted Sandwiches'}
+        ContainerDescription={`Nothing but beef, except for #28, there's some turkey in there too.`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef25}
+            SandwichName={`#25`}
+            Description={`Roast Beef Served With Melted Provolone Cheese, Caramelized
+            Onions, Baby Arugula, Creamy Russian Dressing`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef26}
+            SandwichName={`#26`}
+            Description={`Roast Beef Topped With Melted Swiss Cheese, Pickles, Leafy
+            Lettuce, Sliced Tomato, Sassy’s Chipotle Mayo Aioli`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef27}
+            SandwichName={`#27`}
+            Description={`Roast Beef Topped With Melted Swiss And Cheddar Cheese,
+            Caramelized Onions, Homemade Honey BBQ Sauce. Served on Toasted
+            Garlic Bread`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef28}
+            SandwichName={`28. B.H. Roast Beef and Roasted Turkey Combo`}
+            Description={`Roast Beef And Ovengold Turkey Topped With Melted Mozzarella
+            Cheese, Leafy Lettuce, Sliced Tomato, Pickles, Creamy Russian
+            Dressing`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef29}
+            SandwichName={`29`}
+            Description={`Roast Beef Topped With Melted Cheddar Cheese, Smoked Bacon,
+            Leafy Lettuce, Caramelized Red Onions, Sliced Tomato, A1 Steak
+            Sauce`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef30}
+            SandwichName={`Toasted Beef Meatball Parmigiana`}
+            Description={`Homemade Marinara Sauce, Melted Mozzarella Cheese, Basil, Grated
+            Parmigiana, and Sassy's Homemade Meatballs`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`32.Toasted Reuben Sandwich`}
+            Description={`First Cut Corned Beef, Melted Swiss Cheese, Sauerkraut, Pickles,
+            Creamy Russian Dressing`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={beef33}
+            SandwichName={`Big Brooklyn`}
+            Description={`Pastrami Topped With Melted Swiss Cheese, Leafy Lettuce, Sliced
+            Tomato, Pickles, Spicy Deli Mustard`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Signature Salad Sandwiches'}
+        ContainerDescription={`Albacore tuna sandwich, we need more salad options`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={BrooklynChop}
+            SandwichName={`Brooklyn Chop`}
+            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
+          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
+          Tomato, honey BBQ, served on toasted Italian Hero.`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Signature Ham Sandwiches'}
+        ContainerDescription={`Black forest, Honey maple, Bourbon ham, you name it`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={BrooklynChop}
+            SandwichName={`Brooklyn Chop`}
+            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
+          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
+          Tomato, honey BBQ, served on toasted Italian Hero.`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Signature Cured Meats and Salami Sandwiches'}
+        ContainerDescription={`Sassy's Cured Meats and Salami Sandwiches`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={BrooklynChop}
+            SandwichName={`Brooklyn Chop`}
+            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
+          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
+          Tomato, honey BBQ, served on toasted Italian Hero.`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Vegetarian Sandwiches'}
+        ContainerDescription={`Vegetarian options`}
+      >
+        <>
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={BrooklynChop}
+            SandwichName={`Brooklyn Chop`}
+            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
+          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
+          Tomato, honey BBQ, served on toasted Italian Hero.`}
+          />
+        </>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Sides'}
+        ContainerDescription={`Add fries, Mac-N-Cheese or a variety of options. To your order`}
+      >
+        <></>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Milkshakes'}
+        ContainerDescription={`Cool off your day`}
+      >
+        <></>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Side Sauces'}
+        ContainerDescription={`All available Sauces`}
+      >
+        <></>
+      </SandCardContainer>
+      <SandCardContainer
+        State={false}
+        ContainerTitle={'Drinks'}
+        ContainerDescription={`Add a drink! we absolutely have a soda for you, unless we don't!`}
+      >
+        <></>
       </SandCardContainer>
 
       <SandwichModal modalData={modalData} open={open} setOpen={setOpen} />
@@ -230,24 +726,23 @@ class SandwichModal extends React.Component {
     return (
       <motion.div className="modal" onClick={this.closeModal}>
         <div className="modalContent" onClick={this.dummyfunction}>
-          <span className="closeButton" onClick={this.closeModal}>
-            &times;
-          </span>
-          <h1>{this.props.modalData.title}</h1>
-          <br />
-          <p className="section">{this.props.modalData.description}</p>
-          <br />
+          <div className="modalInformation">
+            <h1>{this.props.modalData.title}</h1>
+            <p className="section">{this.props.modalData.description}</p>
+            <br />
+            <div className="orderFlex">
+              <a href="https://www.ordersassyssandwiches.com/">
+                <button className="orderNow">Order</button>
+              </a>
+            </div>
+          </div>
           <div className="modalImageContainer">
             <img src={this.props.modalData.picture} alt="" class="modalImage" />
+            <p className="modalBottom">*In app orders will be added soon</p>
+            <span className="closeButton" onClick={this.closeModal}>
+              &times;
+            </span>
           </div>
-          <div className="orderFlex">
-            <a href="https://www.ordersassyssandwiches.com/">
-              <button className="orderNow">Order</button>
-            </a>
-          </div>
-          <br />
-
-          <p className="modalBottom">*In app orders will be added soon</p>
         </div>
       </motion.div>
     );

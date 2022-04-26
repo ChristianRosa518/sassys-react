@@ -19,7 +19,7 @@ header {
   height: 10vh;
   width: 100%;
 
-  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5); */
   background-color: #4f535c;
   display: flex;
   justify-content: space-between;
@@ -154,6 +154,30 @@ header {
   .orderButton {
     /* display: none; */
     margin-left: 20px;
+  }
+}
+@media only screen and (max-height: 550px) {
+  header {
+    height: 15vh;
+  }
+}
+@media only screen and (max-height: 400px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+  }
+}
+@media only screen and (max-height: 250px) {
+  header {
+    height: 22vh;
+  }
+  .logo {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
   }
 }
 
