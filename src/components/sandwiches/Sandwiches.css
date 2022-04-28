@@ -40,7 +40,7 @@ h1 {
 .show {
   height: auto;
   display: flex;
-  gap: 0.9vh 0.9vh;
+  gap: 0.9vh 0.9vw;
   flex-flow: row wrap;
   transform-origin: top center;
 }
@@ -73,14 +73,11 @@ h1 {
 
 .itemCardSmall {
   /* margin: 0 auto; */
-  text-align: center;
-  margin-top: 10px;
-  margin-right: 10px;
   cursor: pointer;
 
   /*  */
-  width: 20vw;
-  height: 6vh;
+  width: 20.4vw;
+  height: 9vh;
 
   /*  */
   border: 1px solid rgba(0, 0, 0, 0.253);
@@ -181,6 +178,10 @@ h2:hover {
   .itemCard {
     width: 85vw;
     height: 20vh;
+  }
+  .itemCardSmall {
+    width: 85vw;
+    height: 15vh;
   }
   .cardImgCon {
     width: 30%;

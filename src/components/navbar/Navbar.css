@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
 }
-li,
+header li,
 a,
 button,
 p {
@@ -127,8 +127,8 @@ header {
   list-style: none;
 }
 .listItem {
-  font-family: 'Shadows Into Light Two', cursive;
-  font-weight: 1000;
+  font-family: 'Shadows Into Light Two';
+  font-weight: bold;
   font-size: calc(0.75em + 9vmin);
   color: white;
 }

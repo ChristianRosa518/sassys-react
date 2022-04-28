@@ -1,13 +1,11 @@
 Home (
 
-Fix home text (media Queries, general flexbox fixes.)
 do something interactive with the grid.
 
 )
 
 Sandwich Page (
-
-do smaller sandwich icons for small things. (sides, Milkshakes, side Sauces, drinks)
+Finish the catalogue
 )
 
 Contact Page (

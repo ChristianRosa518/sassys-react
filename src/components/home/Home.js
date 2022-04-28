@@ -58,11 +58,11 @@ export default function Home() {
                 setHeroTwo(!HeroTwo);
               }}
               onMouseLeave={() => {
-                setHeroOne(!HeroOne);
+                setHeroOne(true);
                 setHeroTwo(!HeroTwo);
               }}
             >
-              <p>Sassy's</p>
+              <p className="homeTitle">Sassy's</p>
             </div>
             <div
               onMouseEnter={() => {
@@ -70,11 +70,11 @@ export default function Home() {
                 setHeroThree(!HeroThree);
               }}
               onMouseLeave={() => {
-                setHeroOne(!HeroOne);
+                setHeroOne(true);
                 setHeroThree(!HeroThree);
               }}
             >
-              <p>Specialty</p>
+              <p className="homeTitle">Specialty</p>
             </div>
             <div
               onMouseEnter={() => {
@@ -82,11 +82,11 @@ export default function Home() {
                 setHeroFour(!HeroFour);
               }}
               onMouseLeave={() => {
-                setHeroOne(!HeroOne);
+                setHeroOne(true);
                 setHeroFour(!HeroFour);
               }}
             >
-              <p>Sandwiches</p>
+              <p className="homeTitle">Sandwiches</p>
             </div>
           </div>
         </div>
