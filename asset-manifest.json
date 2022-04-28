@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sassys-react/static/css/main.78197349.css",
-    "main.js": "/sassys-react/static/js/main.10f997d4.js",
+    "main.css": "/sassys-react/static/css/main.7cad8c8d.css",
+    "main.js": "/sassys-react/static/js/main.aab0c783.js",
     "static/js/787.37e76956.chunk.js": "/sassys-react/static/js/787.37e76956.chunk.js",
     "static/media/3.jpg": "/sassys-react/static/media/3.3233b40530b98a2b3cc8.jpg",
     "static/media/2.jpg": "/sassys-react/static/media/2.6754acbb541555d2421e.jpg",
@@ -15,6 +15,7 @@
     "static/media/buffaloWings.png": "/sassys-react/static/media/buffaloWings.719121f226329aa0326e.png",
     "static/media/spicymama.png": "/sassys-react/static/media/spicymama.18c5bbf46f55cfa908c2.png",
     "static/media/chickennumba6.png": "/sassys-react/static/media/chickennumba6.76875c6424e593a48d07.png",
+    "static/media/shoeFries.jpg": "/sassys-react/static/media/shoeFries.0365091b8de0b9fd99d3.jpg",
     "static/media/macburger.png": "/sassys-react/static/media/macburger.dab8117ef9ba6e60c4b8.png",
     "static/media/chipotlewings.png": "/sassys-react/static/media/chipotlewings.13599ba5f1a7b158d3e4.png",
     "static/media/brklynbreak.png": "/sassys-react/static/media/brklynbreak.4fcbd4d5954fb0047c88.png",
@@ -47,14 +48,15 @@
     "static/media/24.jpg": "/sassys-react/static/media/24.1af584a6975cc808b938.jpg",
     "static/media/quik.png": "/sassys-react/static/media/quik.df27993f70c073b85348.png",
     "static/media/20.jpg": "/sassys-react/static/media/20.59eb3912bb03799407ea.jpg",
+    "static/media/mac.jpg": "/sassys-react/static/media/mac.0b2138e366c376503507.jpg",
     "index.html": "/sassys-react/index.html",
     "static/media/Blank.PNG": "/sassys-react/static/media/Blank.62f4b5855e216b68f1e7.PNG",
-    "main.78197349.css.map": "/sassys-react/static/css/main.78197349.css.map",
-    "main.10f997d4.js.map": "/sassys-react/static/js/main.10f997d4.js.map",
+    "main.7cad8c8d.css.map": "/sassys-react/static/css/main.7cad8c8d.css.map",
+    "main.aab0c783.js.map": "/sassys-react/static/js/main.aab0c783.js.map",
     "787.37e76956.chunk.js.map": "/sassys-react/static/js/787.37e76956.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78197349.css",
-    "static/js/main.10f997d4.js"
+    "static/css/main.7cad8c8d.css",
+    "static/js/main.aab0c783.js"
   ]
 }
