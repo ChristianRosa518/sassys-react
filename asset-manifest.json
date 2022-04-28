@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sassys-react/static/css/main.c3501b07.css",
-    "main.js": "/sassys-react/static/js/main.0ee01e06.js",
+    "main.css": "/sassys-react/static/css/main.958c0919.css",
+    "main.js": "/sassys-react/static/js/main.10f997d4.js",
     "static/js/787.37e76956.chunk.js": "/sassys-react/static/js/787.37e76956.chunk.js",
     "static/media/3.jpg": "/sassys-react/static/media/3.3233b40530b98a2b3cc8.jpg",
     "static/media/2.jpg": "/sassys-react/static/media/2.6754acbb541555d2421e.jpg",
@@ -20,12 +20,15 @@
     "static/media/brklynbreak.png": "/sassys-react/static/media/brklynbreak.4fcbd4d5954fb0047c88.png",
     "static/media/philly.png": "/sassys-react/static/media/philly.22ed6559357bd32dd404.png",
     "static/media/chicken11.png": "/sassys-react/static/media/chicken11.33394fcd4a577c2c2413.png",
+    "static/media/16.jpg": "/sassys-react/static/media/16.22ab7b1a8234e8d56b33.jpg",
     "static/media/25.png": "/sassys-react/static/media/25.bb19b686eb25c1fa4722.png",
     "static/media/regula.png": "/sassys-react/static/media/regula.2c88c52fdf050c69b243.png",
     "static/media/28.png": "/sassys-react/static/media/28.7985cc04970d2038dc5c.png",
+    "static/media/23.jpg": "/sassys-react/static/media/23.25946c9a65d1fcb4a9ad.jpg",
     "static/media/macnChicken.png": "/sassys-react/static/media/macnChicken.952ac38479fddae94e95.png",
     "static/media/gouda.png": "/sassys-react/static/media/gouda.6214ebf1509a0ae11928.png",
     "static/media/mad.png": "/sassys-react/static/media/mad.a6499e281df110819e80.png",
+    "static/media/21.jpg": "/sassys-react/static/media/21.af083ff82e4218a720f4.jpg",
     "static/media/33.jpg": "/sassys-react/static/media/33.25686a46273f38e5c218.jpg",
     "static/media/29.jpg": "/sassys-react/static/media/29.3d6c43288a320b3be7d0.jpg",
     "static/media/chickenSwiss5.png": "/sassys-react/static/media/chickenSwiss5.e890b5d7e2ada73d389d.png",
@@ -36,18 +39,22 @@
     "static/media/parm.png": "/sassys-react/static/media/parm.647601647333f07713ae.png",
     "static/media/baconStack.jpg": "/sassys-react/static/media/baconStack.e504cddf1b202c766c8b.jpg",
     "static/media/37.png": "/sassys-react/static/media/37.5c2108605a082aa6a174.png",
+    "static/media/19.jpg": "/sassys-react/static/media/19.ece022c1c6f7f7050dc2.jpg",
     "static/media/26.png": "/sassys-react/static/media/26.b77a6eda11d0822e4690.png",
     "static/media/27.png": "/sassys-react/static/media/27.45332f6117263b33656b.png",
+    "static/media/23.2.jpg": "/sassys-react/static/media/23.2.cc067fe3abbd68b958ff.jpg",
     "static/media/smokey.png": "/sassys-react/static/media/smokey.13b39b5a925271aa0412.png",
+    "static/media/24.jpg": "/sassys-react/static/media/24.1af584a6975cc808b938.jpg",
     "static/media/quik.png": "/sassys-react/static/media/quik.df27993f70c073b85348.png",
+    "static/media/20.jpg": "/sassys-react/static/media/20.59eb3912bb03799407ea.jpg",
     "index.html": "/sassys-react/index.html",
     "static/media/Blank.PNG": "/sassys-react/static/media/Blank.62f4b5855e216b68f1e7.PNG",
-    "main.c3501b07.css.map": "/sassys-react/static/css/main.c3501b07.css.map",
-    "main.0ee01e06.js.map": "/sassys-react/static/js/main.0ee01e06.js.map",
+    "main.958c0919.css.map": "/sassys-react/static/css/main.958c0919.css.map",
+    "main.10f997d4.js.map": "/sassys-react/static/js/main.10f997d4.js.map",
     "787.37e76956.chunk.js.map": "/sassys-react/static/js/787.37e76956.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3501b07.css",
-    "static/js/main.0ee01e06.js"
+    "static/css/main.958c0919.css",
+    "static/js/main.10f997d4.js"
   ]
 }
