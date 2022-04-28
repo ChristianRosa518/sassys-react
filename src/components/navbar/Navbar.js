@@ -37,7 +37,7 @@ export default function Navbar() {
       <nav className="desktopNav">
         <ul className="navlinks">
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
 
           <li>

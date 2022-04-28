@@ -37,11 +37,21 @@ h1 {
 .section p {
   font-size: calc(0.35em + 1.5vmin);
 }
+.show {
+  height: auto;
+  display: flex;
+  gap: 0.9vh 0.9vh;
+  flex-flow: row wrap;
+  transform-origin: top center;
+}
+
+.section {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.514);
+}
 
 .itemCard {
-  /* margin: 0 auto; */
   cursor: pointer;
-  margin-top: 12px;
 
   /*  */
   width: 42vw;
@@ -164,36 +174,6 @@ h2:hover {
   align-items: center;
 }
 
-.hiddenDrop {
-  display: none;
-  /* display: flex;
-  flex-flow: row wrap; */
-}
-
-@keyframes dropdown {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-
-.show {
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-  transform-origin: top center;
-  /* animation: dropdown; */
-  /* animation-duration: 0.4s; */
-}
-
-.section {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(150, 150, 150, 0.514);
-}
-
 @media only screen and (max-width: 768px) {
   .cardDes p {
     font-size: calc(0.55em + 1.5vmin);
@@ -203,18 +183,14 @@ h2:hover {
     height: 20vh;
   }
   .cardImgCon {
-    width: 25%;
+    width: 30%;
   }
 
   .container h2 {
     font-size: 7.5vw;
   }
 }
-@media only screen and (max-width: 350px) {
-  .itemCard {
-    width: 85vw;
-    height: 20vh;
-  }
+@media only screen and (max-width: 450px) {
   .cardImgCon {
     width: 40%;
   }

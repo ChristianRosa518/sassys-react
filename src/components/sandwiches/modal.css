@@ -117,6 +117,9 @@
   font-style: italic;
   font-size: calc(0.35em + 0.5vmin);
 }
+.sectionModal {
+  border-bottom: 1px solid rgba(150, 150, 150, 0.514);
+}
 
 @media only screen and (max-width: 1440px) and (max-height: 600px) {
   .modalImageContainer {
@@ -157,6 +160,10 @@
     width: 40%;
     position: relative;
   }
+  .closeButton {
+    left: 0;
+    font-size: 30px;
+  }
   .orderFlex {
     height: 40px;
     bottom: 0%;
@@ -188,7 +195,7 @@
   .modalBottom {
     display: none;
   }
-  .section {
+  .sectionModal {
     border-bottom: 0px;
   }
 }

@@ -4,6 +4,7 @@ import Home from './components/home/Home';
 import Navbar from './components/navbar/Navbar';
 import Location from './components/location/Location';
 import Footer from './components/footer/Footer';
+import Contact from './components/contact/Contact';
 import Sandwiches from './components/sandwiches/Sandwiches';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="/location" element={<Location />}></Route>
         <Route path="/sandwiches" element={<Sandwiches />}></Route>
       </Routes>

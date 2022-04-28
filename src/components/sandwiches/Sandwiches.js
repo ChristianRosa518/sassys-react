@@ -42,6 +42,13 @@ import beef28 from '../images/28.png';
 import beef29 from '../images/29.jpg';
 import beef30 from '../images/30.jpg';
 import beef33 from '../images/33.jpg';
+import ham16 from '../images/16.jpg';
+import meat19 from '../images/19.jpg';
+import meat20 from '../images/20.jpg';
+import meat21 from '../images/21.jpg';
+import meat23 from '../images/23.jpg';
+import meat23_2 from '../images/23.2.jpg';
+import meat24 from '../images/24.jpg';
 //
 
 export default function Sandwiches(ModalInformation) {
@@ -528,11 +535,9 @@ export default function Sandwiches(ModalInformation) {
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={BrooklynChop}
-            SandwichName={`Brooklyn Chop`}
-            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
-          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
-          Tomato, honey BBQ, served on toasted Italian Hero.`}
+            SandwichPicture={Blank}
+            SandwichName={`3. Albacore Tuna Salad Sandwich`}
+            Description={`Lettuce, tomato, red onion, olive oil and red wine vinegar.`}
           />
         </>
       </SandCardContainer>
@@ -545,11 +550,34 @@ export default function Sandwiches(ModalInformation) {
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={BrooklynChop}
-            SandwichName={`Brooklyn Chop`}
-            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
-          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
-          Tomato, honey BBQ, served on toasted Italian Hero.`}
+            SandwichPicture={Blank}
+            SandwichName={`13. Deluxe Boiled Ham Sandwich `}
+            Description={`American cheese, shredded lettuce, tomato, mayo, oil and
+            vinegar.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`14. Black Forest Ham Sandwich `}
+            Description={`Swiss American cheese, leafy green lettuce, red onion, tomato
+            and honey Dijon mustard.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={ham16}
+            SandwichName={`16. Honey Maple Ham Sandwich `}
+            Description={`Provolone, hot cherry peppers, shredded lettuce, tomato and
+            honey Dijon mustard.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`18. The Bourbon `}
+            Description={`Bourbon Smoked Ham, Smoked Guoda Cheese, Caramalized Mushrooms,
+            Onions & Peppers, BBQ & Mayo served on Toasted garlic bread.`}
           />
         </>
       </SandCardContainer>
@@ -562,11 +590,59 @@ export default function Sandwiches(ModalInformation) {
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={BrooklynChop}
-            SandwichName={`Brooklyn Chop`}
-            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
-          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
-          Tomato, honey BBQ, served on toasted Italian Hero.`}
+            SandwichPicture={meat19}
+            SandwichName={`19. Imported Prosciutto D’ Parma Sandwich`}
+            Description={` Provolone, ripe tomato, red onion, romaine, olive oil, red
+            peppers and balsamic vinegar.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={meat20}
+            SandwichName={`20. Imported Prosciutto D’ Parma With Fresh Mozzarella
+            Sandwich`}
+            Description={`Roasted red peppers, baby arugula, tomatoes and red wine
+            vinaigrette.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={meat21}
+            SandwichName={`21. Imported Mortadella With Pistachio Sandwich `}
+            Description={`Provolone, sliced hot cherry peppers, leafy lettuce, tomatoes
+            and balsamic vinaigrette.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`22. Hard Salami Sandwich`}
+            Description={`Muenster cheese, alfalfa sprouts, sliced cucumber, red roasted
+            peppers and herb mayo.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={meat23}
+            SandwichName={`23. Hot Sopressata Salami Sandwich`}
+            Description={`Provolone cheese, shredded lettuce, hot cherry peppers, ripe
+              tomato, mayo and red wine vinaigrette.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={meat23_2}
+            SandwichName={`23.2. Sweet Sopressata Salami Sandwich`}
+            Description={`Provolone cheese, shredded lettuce, hot cherry peppers, ripe
+            tomato, mayo and red wine vinaigrette.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={meat24}
+            SandwichName={`24. Genoa Salami Sandwich`}
+            Description={`Provolone, leafy lettuce, ripe tomato, mayo and balsamic
+            vinaigrette.`}
           />
         </>
       </SandCardContainer>
@@ -579,11 +655,19 @@ export default function Sandwiches(ModalInformation) {
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={BrooklynChop}
-            SandwichName={`Brooklyn Chop`}
-            Description={`Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
-          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
-          Tomato, honey BBQ, served on toasted Italian Hero.`}
+            SandwichPicture={Blank}
+            SandwichName={`Eggplant Parmigiana`}
+            Description={`Breaded Eggplant Topped with Homemade Marinara Sauce, Mozzarella
+            Cheese, Parmigiana Cheese, and Basil. Served on Toasted Buttered
+            Garlic Bread.`}
+          />
+          <SandwichCard
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={Blank}
+            SandwichName={`Avocado Delight`}
+            Description={`Roasted Peppers, Mushrooms, Spinach, Onions, Tomato, Avocado,
+              and pesto spread.`}
           />
         </>
       </SandCardContainer>
@@ -714,6 +798,16 @@ class SandwichModal extends React.Component {
     super(props);
     this.closeModal = this.closeModal.bind(this);
     this.dummyfunction = this.dummyfunction.bind(this);
+    this.ModalBgAnimate = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1, transition: { duration: 0.3 } },
+      exit: { opacity: 0, transition: { delay: 0.1 } },
+    };
+    this.ModalContentAnimate = {
+      initial: { y: '150%' },
+      animate: { y: 0, transition: { duration: 0.4 } },
+      exit: { y: '150%', transition: { duration: 0.4 } },
+    };
   }
   closeModal() {
     this.props.setOpen(false);
@@ -722,29 +816,58 @@ class SandwichModal extends React.Component {
     e.stopPropagation();
   }
   render() {
-    if (!this.props.open) return null;
+    // if (!this.props.open) return null;
     return (
-      <motion.div className="modal" onClick={this.closeModal}>
-        <div className="modalContent" onClick={this.dummyfunction}>
-          <div className="modalInformation">
-            <h1>{this.props.modalData.title}</h1>
-            <p className="section">{this.props.modalData.description}</p>
-            <br />
-            <div className="orderFlex">
-              <a href="https://www.ordersassyssandwiches.com/">
-                <button className="orderNow">Order</button>
-              </a>
-            </div>
-          </div>
-          <div className="modalImageContainer">
-            <img src={this.props.modalData.picture} alt="" class="modalImage" />
-            <p className="modalBottom">*In app orders will be added soon</p>
-            <span className="closeButton" onClick={this.closeModal}>
-              &times;
-            </span>
-          </div>
-        </div>
-      </motion.div>
+      <>
+        <AnimatePresence>
+          {this.props.open && (
+            <motion.div
+              key={'modalBG'}
+              className="modal"
+              onClick={this.closeModal}
+              variants={this.ModalBgAnimate}
+              initial={'initial'}
+              animate={'animate'}
+              exit={'exit'}
+            >
+              <motion.div
+                className="modalContent"
+                onClick={this.dummyfunction}
+                key={'modalContent'}
+                variants={this.ModalContentAnimate}
+                initial={'initial'}
+                animate={'animate'}
+                exit={'exit'}
+              >
+                <div className="modalInformation">
+                  <h1>{this.props.modalData.title}</h1>
+                  <p>{this.props.modalData.description}</p>
+                  <h1 className="sectionModal">Price</h1>
+                  <br />
+                  <div className="orderFlex">
+                    <a href="https://www.ordersassyssandwiches.com/">
+                      <button className="orderNow">Order</button>
+                    </a>
+                  </div>
+                </div>
+                <div className="modalImageContainer">
+                  <img
+                    src={this.props.modalData.picture}
+                    alt=""
+                    class="modalImage"
+                  />
+                  <p className="modalBottom">
+                    *In app orders will be added soon
+                  </p>
+                  <span className="closeButton" onClick={this.closeModal}>
+                    &times;
+                  </span>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
     );
   }
 }
