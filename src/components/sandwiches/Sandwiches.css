@@ -150,7 +150,7 @@ h2:hover {
   /* background-color: teal; */
   width: 20%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
 
   overflow: hidden;
 

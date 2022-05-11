@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 import './Burger.css';
 import './Navbar.css';
 
 import StoreLogo from '../images/logo.png';
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [open, setOpen] = useState('');
+
+  function changeCartState() {
+    const current = props.showCart;
+    props.SetShowCart(!current);
+  }
 
   function changeOpen(e) {
     e.stopPropagation();
@@ -37,6 +43,9 @@ export default function Navbar() {
       <nav className="desktopNav">
         <ul className="navlinks">
           <li>
+            <FaShoppingCart className="cartDesktop" onClick={changeCartState} />
+          </li>
+          <li>
             <Link to="/contact">Contact</Link>
           </li>
 
@@ -49,6 +58,7 @@ export default function Navbar() {
         </ul>
       </nav>
       <div className={`mobileNav`}>
+        <FaShoppingCart className="mobileCart" />
         <div
           className={`burger_container ${open ? 'open' : ''}`}
           onClick={changeOpen}
@@ -72,7 +82,7 @@ export default function Navbar() {
                 transition={{ delay: 0.15 }}
                 exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
               >
-                <Link to="/" onClick={changeOpen} className="listItem">
+                <Link to="/contact" onClick={changeOpen} className="listItem">
                   Contact
                 </Link>
               </motion.li>

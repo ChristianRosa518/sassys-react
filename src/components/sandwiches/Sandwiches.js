@@ -54,7 +54,7 @@ import mac from '../images/mac.jpg';
 import shoefries from '../images/shoeFries.jpg';
 //
 
-export default function Sandwiches(ModalInformation) {
+export default function Sandwiches(props) {
   const [open, setOpen] = useState(false);
   const [modalData, setModalData] = useState('');
 
@@ -75,15 +75,17 @@ export default function Sandwiches(ModalInformation) {
             setOpen={setOpen}
             SandwichPicture={BrooklynChop}
             SandwichName="Brooklyn Chop"
+            Price={9.99}
             Description="Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
-          American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
-          Tomato, honey BBQ, served on toasted Italian Hero."
+            American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
+            Tomato, honey BBQ, served on toasted Italian Hero."
           />
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
             SandwichPicture={Sassinator}
             SandwichName={`The "Sassinator"`}
+            Price={9.99}
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
           Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
           />
@@ -975,7 +977,16 @@ export default function Sandwiches(ModalInformation) {
         </>
       </SandCardContainer>
 
-      <SandwichModal modalData={modalData} open={open} setOpen={setOpen} />
+      <SandwichModal
+        modalData={modalData}
+        open={open}
+        setOpen={setOpen}
+        price={props.price}
+        SetPrice={props.SetPrice}
+        SetProduct={props.SetProduct}
+        product={props.product}
+        SetShowCart={props.SetShowCart}
+      />
     </div>
   );
 }
@@ -1041,6 +1052,7 @@ class SandwichCard extends React.Component {
       title: this.props.SandwichName,
       description: this.props.Description,
       picture: this.props.SandwichPicture,
+      price: this.props.Price,
     };
     this.props.setModalData(modal);
     this.props.setOpen(true);
@@ -1079,6 +1091,7 @@ class SandwichCardSmall extends React.Component {
       title: this.props.SandwichName,
       description: this.props.Description,
       picture: this.props.SandwichPicture,
+      price: this.props.Price,
     };
     this.props.setModalData(modal);
     this.props.setOpen(true);
@@ -1111,6 +1124,7 @@ class SandwichModal extends React.Component {
     super(props);
     this.closeModal = this.closeModal.bind(this);
     this.dummyfunction = this.dummyfunction.bind(this);
+    this.addProduct = this.addProduct.bind(this);
     this.ModalBgAnimate = {
       initial: { opacity: 0 },
       animate: { opacity: 1, transition: { duration: 0.3 } },
@@ -1122,6 +1136,25 @@ class SandwichModal extends React.Component {
       exit: { y: '150%', transition: { duration: 0.4 } },
     };
   }
+  addProduct() {
+    const data = {
+      id: this.props.product.length + 1,
+      title: this.props.modalData.title,
+      description: this.props.modalData.description,
+      price: this.props.modalData.price,
+      picture: this.props.modalData.picture,
+    };
+    const newData = [...this.props.product];
+    newData.push(data);
+    this.props.SetProduct(newData);
+    const sum = newData.reduce(function (a, b) {
+      return a + b.price;
+    }, 0);
+    this.props.SetPrice(sum);
+    this.closeModal();
+    this.props.SetShowCart(true);
+  }
+
   closeModal() {
     this.props.setOpen(false);
   }
@@ -1155,19 +1188,19 @@ class SandwichModal extends React.Component {
                 <div className="modalInformation">
                   <h1>{this.props.modalData.title}</h1>
                   <p>{this.props.modalData.description}</p>
-                  <h1 className="sectionModal">Price</h1>
+                  <h1 className="sectionModal">{this.props.modalData.price}</h1>
                   <br />
                   <div className="orderFlex">
-                    <a href="https://www.ordersassyssandwiches.com/">
-                      <button className="orderNow">Order</button>
-                    </a>
+                    <button className="orderNow" onClick={this.addProduct}>
+                      Order
+                    </button>
                   </div>
                 </div>
                 <div className="modalImageContainer">
                   <img
                     src={this.props.modalData.picture}
                     alt=""
-                    class="modalImage"
+                    className="modalImage"
                   />
                   <p className="modalBottom">
                     *In app orders will be added soon

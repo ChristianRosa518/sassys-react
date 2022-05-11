@@ -22,7 +22,7 @@ export default function Grid() {
             </div>
           </div>
           <div>
-            <img src={Container3} alt="" class="large_item_img" />
+            <img src={Container3} alt="" className="large_item_img" />
           </div>
           <div className="largeBottomFlexbox"></div>
         </div>
