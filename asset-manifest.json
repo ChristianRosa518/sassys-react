@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sassys-react/static/css/main.47392be5.css",
-    "main.js": "/sassys-react/static/js/main.cc1856ad.js",
+    "main.css": "/sassys-react/static/css/main.0d535914.css",
+    "main.js": "/sassys-react/static/js/main.2b055476.js",
     "static/js/787.37e76956.chunk.js": "/sassys-react/static/js/787.37e76956.chunk.js",
     "static/media/3.jpg": "/sassys-react/static/media/3.3233b40530b98a2b3cc8.jpg",
     "static/media/2.jpg": "/sassys-react/static/media/2.6754acbb541555d2421e.jpg",
@@ -51,12 +51,12 @@
     "static/media/mac.jpg": "/sassys-react/static/media/mac.0b2138e366c376503507.jpg",
     "index.html": "/sassys-react/index.html",
     "static/media/Blank.PNG": "/sassys-react/static/media/Blank.62f4b5855e216b68f1e7.PNG",
-    "main.47392be5.css.map": "/sassys-react/static/css/main.47392be5.css.map",
-    "main.cc1856ad.js.map": "/sassys-react/static/js/main.cc1856ad.js.map",
+    "main.0d535914.css.map": "/sassys-react/static/css/main.0d535914.css.map",
+    "main.2b055476.js.map": "/sassys-react/static/js/main.2b055476.js.map",
     "787.37e76956.chunk.js.map": "/sassys-react/static/js/787.37e76956.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.47392be5.css",
-    "static/js/main.cc1856ad.js"
+    "static/css/main.0d535914.css",
+    "static/js/main.2b055476.js"
   ]
 }
