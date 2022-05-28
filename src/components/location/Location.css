@@ -19,16 +19,23 @@ body {
 }
 
 .map {
-  object-fit: cover;
-  margin-top: 1.5%;
-  margin-bottom: 6%;
+  padding-top: 3vh;
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* background-color: yellow; */
 }
 
 .mapContainer {
   box-shadow: 2px 2px 8px 0px rgb(78, 78, 78);
+}
+
+.mappy {
+  height: 80vh;
+  width: 80%;
+}
+
+.none {
+  display: none;
 }

@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
 import './cart.css';
+import '../location/Checkout.css';
+import GoogleGeocode from '../location/Geocode';
+import Checkout from './Checkout';
 
 export default function Cart(props) {
+  const [verifyLoc, SetVerifyLoc] = useState(false);
+  const [viewItems, SetViewItems] = useState(true);
+  const [showCheckout, SetShowCheckout] = useState(false);
   //   if (!props.showCart) return null;
 
   function changeCartState() {
     const current = props.showCart;
     props.SetShowCart(!current);
+    SetViewItems(true);
+    SetVerifyLoc(false);
+    SetShowCheckout(false);
   }
 
   function dummyfunction(e) {
     e.stopPropagation();
+  }
+
+  function Purchase(e) {
+    e.stopPropagation();
+    const current = verifyLoc;
+    const currentItems = viewItems;
+    SetVerifyLoc(!current);
+    SetViewItems(!currentItems);
   }
 
   const ModalBgAnimate = {
@@ -39,22 +57,50 @@ export default function Cart(props) {
           className="cartContainer"
           onClick={changeCartState}
         >
-          <motion.div
-            key={'Cart'}
-            variants={CartAnimate}
-            initial={'initial'}
-            animate={'animate'}
-            exit={'exit'}
-            className="cart"
-            onClick={dummyfunction}
-          >
-            <div className="cartItems">
-              {props.product.map((item) => {
-                return <Product item={item} key={item.id} />;
-              })}
-            </div>
-            <div className="cartCheckout">{props.price}</div>
-          </motion.div>
+          {viewItems && (
+            <motion.div
+              key={'Cart'}
+              variants={CartAnimate}
+              initial={'initial'}
+              animate={'animate'}
+              exit={'exit'}
+              className="cart"
+              onClick={dummyfunction}
+            >
+              {props.product.length === 0 && (
+                <div className="cart_Empty"> Cart is empty</div>
+              )}
+              <div className="cartItems">
+                {props.product.map((item) => {
+                  return (
+                    <Product
+                      product={props.product}
+                      SetPrice={props.SetPrice}
+                      SetProduct={props.SetProduct}
+                      item={item}
+                      key={item.id}
+                      itemKey={item.id}
+                    />
+                  );
+                })}
+              </div>
+              <div className="cartCheckout">
+                {props.price}
+                <button onClick={Purchase}>Order</button>
+              </div>
+            </motion.div>
+          )}
+          {verifyLoc && (
+            <LocationChecker
+              product={props.product}
+              location={props.location}
+              dummyfunction={dummyfunction}
+              Purchase={Purchase}
+              SetVerifyLoc={SetVerifyLoc}
+              SetLocation={props.SetLocation}
+              SetShowCheckout={SetShowCheckout}
+            />
+          )}
         </motion.div>
       )}
     </AnimatePresence>
@@ -64,6 +110,20 @@ export default function Cart(props) {
 class Product extends React.Component {
   constructor(props) {
     super(props);
+    this.removeItem = this.removeItem.bind(this);
+  }
+
+  removeItem() {
+    const id = this.props.itemKey;
+    var array = this.props.product;
+    array = array.filter((obj) => {
+      return obj.id !== id;
+    });
+    const sum = array.reduce(function (a, b) {
+      return a + b.price;
+    }, 0);
+    this.props.SetProduct(array);
+    this.props.SetPrice(sum);
   }
   render() {
     return (
@@ -81,8 +141,64 @@ class Product extends React.Component {
             src={this.props.item.picture}
             alt="sandwichImage"
           />
+          <span className="closeButtonCartItem" onClick={this.removeItem}>
+            &times;
+          </span>
         </div>
       </div>
     );
   }
+}
+
+function LocationChecker(props) {
+  const productinformation = props.product;
+  const template = {};
+  for (let i = 0; i < props.product.length; i++) {
+    let value = `Order${[i]}`;
+    let addons = `Add-ons${[i]}`;
+    Object.assign(template, { [value]: productinformation[i].title });
+    // Object.assign(template, { [addons]: productinformation[i].addons });
+    console.log(value);
+    // emailjs
+    //   .send(
+    //     'service_1d6oo6u',
+    //     'template_tqxgooo',
+    //     template,
+    //     'F7eoeUPRLaGd4Yx7q'
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
+  }
+
+  return (
+    <div className="checkout_Container">
+      <div className="checkout" onClick={props.dummyfunction}>
+        <div className="checkout_Header">
+          <h3>
+            <strong>Checkout</strong>
+          </h3>
+          <span className="checkout_CloseButton" onClick={props.Purchase}>
+            &times;
+          </span>
+        </div>
+        <div className="checkout_Location_Container">
+          <GoogleGeocode
+            SetVerifyLoc={props.SetVerifyLoc}
+            SetShowCheckout={props.SetShowCheckout}
+          />
+          <Checkout></Checkout>
+        </div>
+        <div className="cartFooter"></div>
+      </div>
+      <div>
+        <form></form>
+      </div>
+    </div>
+  );
 }

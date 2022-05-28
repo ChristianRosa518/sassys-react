@@ -10,8 +10,7 @@ Contact Page (
 )
 
 Sandwich Cart Plan {
-    Onclick order, add item to cart.
-    OnClick send data to a useState variable
-    run a function that creates a component and sends it to cart
-    
+    Address verification done,
+    Open payment option,
+    once payment complete, send cart data to shop.
 }

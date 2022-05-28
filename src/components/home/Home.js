@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Grid from './Grid';
+import Sandwiches from '../sandwiches/Sandwiches';
 
 import './css/container.css';
 import './css/grid.css';
@@ -13,7 +14,7 @@ import Container3 from '../images/BrooklynChop.jpg';
 import Container4 from '../images/4.jpg';
 //
 
-export default function Home() {
+export default function Home(props) {
   const [HeroOne, setHeroOne] = useState(true);
   const [HeroTwo, setHeroTwo] = useState(false);
   const [HeroThree, setHeroThree] = useState(false);
@@ -92,6 +93,13 @@ export default function Home() {
         </div>
       </div>
       <Grid />
+      <Sandwiches
+        price={props.price}
+        product={props.product}
+        SetProduct={props.SetProduct}
+        SetPrice={props.SetPrice}
+        SetShowCart={props.SetShowCart}
+      />
     </div>
   );
 }

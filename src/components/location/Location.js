@@ -1,21 +1,33 @@
-import React from 'react';
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
 
 import './Location.css';
+import Map from './Map';
+
+const render = (status) => {
+  if (status === Status.LOADING) return <h3>{status} ..</h3>;
+  if (status === Status.FAILURE) return <h3>{status} ...</h3>;
+  return null;
+};
 
 export default function Location() {
+  const mapCenter = { lat: 40.7140408311635, lng: -73.95525507045573 };
+  const center = { lat: 40.71060416957451, lng: -73.95878700221677 };
+  const zoom = 14;
+
   return (
     <div className="container">
       <h1>Sassy's Specialty Sandwiches Location</h1>
       <p>233 S 4th St Brooklyn, Ny 11211</p>
+      <p>Polygon is the Delivery Radius</p>
       <div className="map">
-        <iframe
-          title="Map"
-          className="mapContainer"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3414872973794!2d-73.96097568434466!3d40.71049844564387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b401b0eaf5d%3A0x37b5815ac49bf98d!2sSassy&#39;s%20Specialty%20Sandwiches!5e0!3m2!1sen!2sus!4v1624836823342!5m2!1sen!2sus"
-          width="800"
-          height="600"
-          loading="lazy"
-        ></iframe>
+        <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAPS} render={render}>
+          <Map
+            mapCenter={mapCenter}
+            center={center}
+            zoom={zoom}
+            style={{ height: '100%', width: '100%' }}
+          ></Map>
+        </Wrapper>
       </div>
     </div>
   );

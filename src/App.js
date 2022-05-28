@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
 
+import Map from './components/location/Map';
 import Home from './components/home/Home';
 import Navbar from './components/navbar/Navbar';
 import Location from './components/location/Location';
@@ -13,6 +15,7 @@ function App() {
   const [showCart, SetShowCart] = useState(false);
   const [product, SetProduct] = useState([]);
   const [price, SetPrice] = useState([]);
+  const [location, SetLocation] = useState('');
 
   function appHeight() {
     const doc = document.documentElement;
@@ -26,16 +29,32 @@ function App() {
     <Router basename="/sassys-react">
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Cart
-        showCart={showCart}
+        SetLocation={SetLocation}
         SetShowCart={SetShowCart}
+        SetProduct={SetProduct}
+        SetPrice={SetPrice}
+        location={location}
+        showCart={showCart}
         product={product}
         price={price}
       />
       <Routes>
-        <Route path="/" exact element={<Home />}></Route>
+        <Route
+          path="/"
+          exact
+          element={
+            <Home
+              price={price}
+              product={product}
+              SetProduct={SetProduct}
+              SetPrice={SetPrice}
+              SetShowCart={SetShowCart}
+            />
+          }
+        ></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/location" element={<Location />}></Route>
-        <Route
+        {/* <Route
           path="/sandwiches"
           element={
             <Sandwiches
@@ -46,9 +65,14 @@ function App() {
               SetShowCart={SetShowCart}
             />
           }
-        ></Route>
+        ></Route> */}
       </Routes>
       <Footer />
+      <div className="none">
+        <Wrapper apiKey={'AIzaSyAyQo5E9RoTnz7324q_pqNjjxInO6liZho'}>
+          <Map style={{ height: '100%', width: '100%' }}></Map>
+        </Wrapper>
+      </div>
     </Router>
   );
 }

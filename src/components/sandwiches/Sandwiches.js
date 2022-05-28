@@ -87,12 +87,13 @@ export default function Sandwiches(props) {
             SandwichName={`The "Sassinator"`}
             Price={9.99}
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
-          Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
+            Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
           />
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
             SandwichPicture={BaconStack}
+            Price={7.99}
             SandwichName={`Bacon Stack`}
             Description={`Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
           with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
@@ -192,7 +193,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Burgers'}
         ContainerDescription={'Premium angus Beef!'}
       >
@@ -244,7 +245,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={`Breakfast Sandwiches`}
         ContainerDescription={`Morning Starters, even an afternoon starter!`}
       >
@@ -304,7 +305,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Chicken Sandwiches'}
         ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
       >
@@ -380,7 +381,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Chicken Wings'}
         ContainerDescription={`We left the bone in these options`}
       >
@@ -433,7 +434,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Signature Turkey Sandwiches'}
         ContainerDescription={`gobble gobble gobble`}
       >
@@ -457,7 +458,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Signature Beef and Toasted Sandwiches'}
         ContainerDescription={`Nothing but beef, except for #28, there's some turkey in there too.`}
       >
@@ -532,7 +533,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Signature Salad Sandwiches'}
         ContainerDescription={`Albacore tuna sandwich, we need more salad options`}
       >
@@ -547,7 +548,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Signature Ham Sandwiches'}
         ContainerDescription={`Black forest, Honey maple, Bourbon ham, you name it`}
       >
@@ -587,7 +588,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Signature Cured Meats and Salami Sandwiches'}
         ContainerDescription={`Sassy's Cured Meats and Salami Sandwiches`}
       >
@@ -652,7 +653,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Vegetarian Sandwiches'}
         ContainerDescription={`Vegetarian options`}
       >
@@ -677,7 +678,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Sides'}
         ContainerDescription={`Add fries, Mac-N-Cheese or a variety of options. To your order`}
       >
@@ -764,7 +765,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Milkshakes'}
         ContainerDescription={`Cool off your day`}
       >
@@ -814,7 +815,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Side Sauces'}
         ContainerDescription={`All available Sauces`}
       >
@@ -878,7 +879,7 @@ export default function Sandwiches(props) {
         </>
       </SandCardContainer>
       <SandCardContainer
-        State={false}
+        State={true}
         ContainerTitle={'Drinks'}
         ContainerDescription={`Add a drink! we absolutely have a soda for you, unless we don't!`}
       >
@@ -1136,23 +1137,32 @@ class SandwichModal extends React.Component {
       exit: { y: '150%', transition: { duration: 0.4 } },
     };
   }
-  addProduct() {
-    const data = {
-      id: this.props.product.length + 1,
-      title: this.props.modalData.title,
-      description: this.props.modalData.description,
-      price: this.props.modalData.price,
-      picture: this.props.modalData.picture,
-    };
-    const newData = [...this.props.product];
-    newData.push(data);
-    this.props.SetProduct(newData);
-    const sum = newData.reduce(function (a, b) {
-      return a + b.price;
-    }, 0);
-    this.props.SetPrice(sum);
-    this.closeModal();
-    this.props.SetShowCart(true);
+  addProduct(e) {
+    if (this.props.product.length >= 10) {
+      alert('no more than 10 items');
+    } else {
+      const data = {
+        id: this.props.product.length + 1,
+        title: this.props.modalData.title,
+        description: this.props.modalData.description,
+        price: this.props.modalData.price,
+        picture: this.props.modalData.picture,
+      };
+      const newData = [...this.props.product];
+      newData.push(data);
+      this.props.SetProduct(newData);
+      // for loop replaced by .reduce function.
+      // let sum = 0;
+      // for (let i = 0; i < newData.length + 1; i++) {
+      //   sum += newData[i].price;
+      // }
+      const sum = newData.reduce(function (a, b) {
+        return a + b.price;
+      }, 0);
+      this.props.SetPrice(sum);
+      this.closeModal();
+      this.props.SetShowCart(true);
+    }
   }
 
   closeModal() {

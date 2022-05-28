@@ -1,0 +1,148 @@
+.checkout_Container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout {
+  position: relative;
+  height: 60vh;
+  width: 40vw;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.checkout_Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 13%;
+  padding-left: 25px;
+
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+}
+
+.checkout_Header h3 {
+  font-size: calc(0.65em + 1.5vmin);
+  /* font-family: 'Montserrat', sans-serif; */
+}
+.checkout_CloseButton {
+  padding-right: 25px;
+  color: black;
+  right: 0;
+  top: 0;
+  font-size: 35px;
+  line-height: 20px;
+  cursor: pointer;
+
+  transition: 0.3s;
+  z-index: 20;
+}
+
+.cart_Location_Container {
+  padding: 10px;
+}
+
+.checkout_Label_Container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.checkout_Label {
+  padding: 20px;
+}
+
+.checkout_Label label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: calc(0.45em + 1.5vmin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.checkout_Label input {
+  padding: 10px;
+  display: none;
+}
+.checkout_Label span {
+  display: inline-block;
+  margin-left: 15px;
+  height: 15px;
+  width: 15px;
+  background-color: #ccc;
+}
+.checkout_Label span:hover {
+  background-color: #aaa;
+}
+.checkout_Label_SpanClicked {
+  background-color: #2196f3 !important;
+}
+
+.cartFooter {
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Delivery */
+
+.checkout_Delivery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkout_Delivery h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(0.65em + 1.5vmin);
+  padding-bottom: 20px;
+  pointer-events: none;
+  text-align: center;
+}
+
+.checkout_Delivery label {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(0.45em + 1vmin);
+}
+
+.checkout_Delivery input {
+  width: 60%;
+}
+
+.checkout_Delivery_Button {
+  margin-top: 15px;
+  background-color: #cded5c;
+  color: #313131;
+  cursor: pointer;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 50px;
+  opacity: 1;
+  transition: 0.3s ease 0s;
+}
+
+.checkout_Delivery_Button:hover {
+  transition: all 0.3s ease 0s;
+  color: black;
+}

@@ -52,9 +52,9 @@ export default function Navbar(props) {
           <li>
             <Link to="/location">Location</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/sandwiches">Sandwiches</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <div className={`mobileNav`}>
@@ -98,7 +98,7 @@ export default function Navbar(props) {
                   Location
                 </Link>
               </motion.li>
-              <motion.li
+              {/* <motion.li
                 key={'List2'}
                 initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ export default function Navbar(props) {
                 >
                   Sandwiches
                 </Link>
-              </motion.li>
+              </motion.li> */}
               <motion.li
                 key={'List3'}
                 initial={{ opacity: 0, y: -40 }}

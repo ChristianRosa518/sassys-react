@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
 .homeContainer {
-  height: calc(var(--vh, 1vh) * 85);
+  height: 85vh;
   width: 100%;
   background: rgb(43, 38, 36);
   /* background-image: url(./3.jpg); */
@@ -55,7 +55,7 @@ Text Nav
   align-content: center;
   flex-flow: row wrap;
 
-  height: calc(var(--vh, 1vh) * 85);
+  height: 85vh;
   width: 80%;
 }
 
@@ -98,8 +98,8 @@ Text Nav
   }
 }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 400px) {
   .homeContainer {
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
   }
 }
