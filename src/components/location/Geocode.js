@@ -1,19 +1,19 @@
 import axios from 'axios';
 import React from 'react';
 
-import './Checkout.css';
+import '../checkout/Checkout.css';
 const API_KEY = process.env.REACT_APP_GEOCODE;
 
 class GoogleGeocode extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Address: '',
-      Zipcode: '',
-      City: '',
+      Address: '', // 233 South 4th St
+      Zipcode: '', // 11211
+      City: '', // Brooklyn
       Location: 'placeholder',
-      Delivery: true,
-      Pickup: false,
+      Delivery: false,
+      Pickup: true,
     };
 
     this.CheckLocation = this.CheckLocation.bind(this);
@@ -22,7 +22,8 @@ class GoogleGeocode extends React.Component {
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
 
-  geocode() {
+  geocode(e) {
+    e.preventDefault();
     axios
       .get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
@@ -124,7 +125,7 @@ class GoogleGeocode extends React.Component {
           </div>
         </div>
         {this.state.Delivery && (
-          <div className={'checkout_Delivery'}>
+          <form className={'checkout_Delivery'}>
             <h2>Please enter your delivery address</h2>
             <label>
               Address
@@ -153,16 +154,15 @@ class GoogleGeocode extends React.Component {
                 onChange={this.handleInputChange}
               />
             </label>
-            <div>
-              {/* Delivery Status */}
+            {/* <div>
               <button
                 onClick={this.geocode}
                 className={'checkout_Delivery_Button'}
               >
                 Verify Address
               </button>
-            </div>
-          </div>
+            </div> */}
+          </form>
         )}
       </div>
     );

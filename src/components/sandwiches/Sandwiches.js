@@ -60,8 +60,8 @@ export default function Sandwiches(props) {
 
   return (
     <div className="sandContainer">
-      <section>
-        <h1>Sassy's Specialty Sandwiches</h1>
+      <section className="signature_sandwiches">
+        <h1>Sassy's Sandwiches</h1>
         <p className="center">Click to view</p>
       </section>
       <SandCardContainer

@@ -14,3 +14,8 @@ Sandwich Cart Plan {
     Open payment option,
     once payment complete, send cart data to shop.
 }
+
+
+5/30/22 
+
+Todo : On form submit, make sure all fields have values, if no value, alert user of necessary value.

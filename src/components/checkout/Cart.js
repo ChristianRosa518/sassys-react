@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 
 import './cart.css';
-import '../location/Checkout.css';
+import './Checkout.css';
 import GoogleGeocode from '../location/Geocode';
 import Checkout from './Checkout';
 
@@ -21,16 +21,16 @@ export default function Cart(props) {
     SetShowCheckout(false);
   }
 
-  function dummyfunction(e) {
-    e.stopPropagation();
-  }
-
-  function Purchase(e) {
+  function openCheckout(e) {
     e.stopPropagation();
     const current = verifyLoc;
     const currentItems = viewItems;
     SetVerifyLoc(!current);
     SetViewItems(!currentItems);
+  }
+
+  function dummyfunction(e) {
+    e.stopPropagation();
   }
 
   const ModalBgAnimate = {
@@ -86,16 +86,18 @@ export default function Cart(props) {
               </div>
               <div className="cartCheckout">
                 {props.price}
-                <button onClick={Purchase}>Order</button>
+                <button onClick={openCheckout}>Order</button>
               </div>
             </motion.div>
           )}
           {verifyLoc && (
             <LocationChecker
+              clientSecret={props.clientSecret}
+              price={props.price}
               product={props.product}
               location={props.location}
               dummyfunction={dummyfunction}
-              Purchase={Purchase}
+              openCheckout={openCheckout}
               SetVerifyLoc={SetVerifyLoc}
               SetLocation={props.SetLocation}
               SetShowCheckout={SetShowCheckout}
@@ -183,7 +185,7 @@ function LocationChecker(props) {
           <h3>
             <strong>Checkout</strong>
           </h3>
-          <span className="checkout_CloseButton" onClick={props.Purchase}>
+          <span className="checkout_CloseButton" onClick={props.openCheckout}>
             &times;
           </span>
         </div>
@@ -192,7 +194,11 @@ function LocationChecker(props) {
             SetVerifyLoc={props.SetVerifyLoc}
             SetShowCheckout={props.SetShowCheckout}
           />
-          <Checkout></Checkout>
+          <Checkout
+            price={props.price}
+            product={props.product}
+            clientSecret={props.clientSecret}
+          ></Checkout>
         </div>
         <div className="cartFooter"></div>
       </div>

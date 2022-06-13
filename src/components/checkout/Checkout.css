@@ -8,10 +8,15 @@
   align-items: center;
 }
 
-.checkout {
+.checkout_Display {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   width: 40vw;
+  background-color: white;
+}
+.checkout {
+  height: 85%;
+  width: 50%;
   background-color: white;
   overflow-y: auto;
 }
@@ -20,9 +25,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   height: 13%;
+  width: 100%;
   padding-left: 25px;
+  background-color: white;
 
   border-bottom: 1px solid #dee2e6;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
@@ -116,8 +122,8 @@
   text-align: center;
 }
 
-.checkout_Delivery label {
-  width: 50%;
+.checkout_Delivery > label {
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,23 +132,57 @@
   font-size: calc(0.45em + 1vmin);
 }
 
-.checkout_Delivery input {
+.checkout_Delivery label > input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
   width: 60%;
+  padding: 4px;
+  margin: 3px;
 }
 
 .checkout_Delivery_Button {
-  margin-top: 15px;
+  font-size: calc(0.45em + 1vmin);
+  width: 20%;
   background-color: #cded5c;
   color: #313131;
-  cursor: pointer;
-  padding: 9px 25px;
+  padding: 15px 25px;
+  margin-bottom: 20px;
   border: none;
   border-radius: 50px;
   opacity: 1;
+  cursor: pointer;
   transition: 0.3s ease 0s;
 }
-
 .checkout_Delivery_Button:hover {
-  transition: all 0.3s ease 0s;
-  color: black;
+  transition: 0.3s ease;
+  background-color: #313131;
+  color: #cded5c;
+}
+
+.checkout_Card_Container {
+  padding: 0px;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkout_Card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.checkout_Billing_Container {
+  margin-top: 10px;
+}
+
+.payment {
+  background-color: red;
+  width: 100%;
+  height: 30px;
 }
