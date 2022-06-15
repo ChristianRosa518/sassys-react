@@ -105,9 +105,7 @@ export default function Cart(props) {
               location={props.location}
               dummyfunction={dummyfunction}
               openCheckout={openCheckout}
-              SetVerifyLoc={SetVerifyLoc}
-              SetLocation={props.SetLocation}
-              SetShowCheckout={SetShowCheckout}
+              SetProduct={props.SetProduct}
             />
           )}
         </motion.div>
@@ -160,31 +158,6 @@ class Product extends React.Component {
 }
 
 function LocationChecker(props) {
-  const productinformation = props.product;
-  const template = {};
-  for (let i = 0; i < props.product.length; i++) {
-    let value = `Order${[i]}`;
-    let addons = `Add-ons${[i]}`;
-    Object.assign(template, { [value]: productinformation[i].title });
-    // Object.assign(template, { [addons]: productinformation[i].addons });
-    console.log(value);
-    // emailjs
-    //   .send(
-    //     'service_1d6oo6u',
-    //     'template_tqxgooo',
-    //     template,
-    //     'F7eoeUPRLaGd4Yx7q'
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
-  }
-
   return (
     <div className="checkout_Container">
       <div className="checkout" onClick={props.dummyfunction}>
@@ -201,7 +174,7 @@ function LocationChecker(props) {
             SetVerifyLoc={props.SetVerifyLoc}
             SetShowCheckout={props.SetShowCheckout}
           />
-          <Checkout price={props.price} product={props.product}></Checkout>
+          <Checkout product={props.product} price={props.price}></Checkout>
         </div>
         <div className="cartFooter"></div>
       </div>

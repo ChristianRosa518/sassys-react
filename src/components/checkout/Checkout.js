@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
+import { useNavigate } from 'react-router-dom';
 
 import {
   PaymentElement,
@@ -33,11 +34,6 @@ export default class Checkout extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  setClientSecret(a) {
-    this.setState({ clientSecret: a });
-    console.log(a);
   }
 
   render() {
@@ -101,6 +97,7 @@ export default class Checkout extends React.Component {
                 product={this.props.product}
                 setMessage={this.setMessage}
                 message={this.state.message}
+                orderInformation={this.props.orderInformation}
               />
             </div>
           </div>
@@ -113,9 +110,42 @@ export default class Checkout extends React.Component {
 function Payment(props) {
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const productinformation = props.product;
+  const template = {};
+
+  function orderInformation() {
+    for (let i = 0; i < props.product.length; i++) {
+      let value = `Order${[i]}`;
+      // let addons = `Add-ons${[i]}`;
+      Object.assign(template, { [value]: productinformation[i].title });
+      // Object.assign(template, { [addons]: productinformation[i].addons });
+    }
+    emailjs
+      .send(
+        'service_1d6oo6u',
+        'template_tqxgooo',
+        template,
+        'F7eoeUPRLaGd4Yx7q'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
+
+  function finishedOrder() {
+    navigate('/confirmed', { replace: true });
+    window.location.reload(false);
+  }
 
   const handlePurchase = async (e) => {
     e.preventDefault();
@@ -128,24 +158,21 @@ function Payment(props) {
 
     setIsLoading(true);
 
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        return_url: 'http://localhost:3000/sassys-react/confirmed',
-      },
-    });
+    await stripe
+      .confirmPayment({
+        elements,
 
-    // This point will only be reached if there is an immediate error when
-    // confirming the payment. Otherwise, your customer will be redirected to
-    // your `return_url`. For some payment methods like iDEAL, your customer will
-    // be redirected to an intermediate site first to authorize the payment, then
-    // redirected to the `return_url`.
-    if (error.type === 'card_error' || error.type === 'validation_error') {
-      setMessage(error.message);
-    } else {
-      setMessage('An unexpected error occurred.');
-    }
+        redirect: 'if_required',
+      })
+      .then(function (result) {
+        if (result.error) {
+          console.log('failed');
+        } else {
+          console.log('success');
+          // orderInformation();
+          finishedOrder();
+        }
+      });
 
     setIsLoading(false);
   };
@@ -187,6 +214,7 @@ function Payment(props) {
         <PaymentElement />
         {isLoading ? <div>loading</div> : 'Pay now'}
         {message && <div>{message}</div>}
+
         <input
           type="submit"
           value="Checkout"

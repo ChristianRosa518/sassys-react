@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { loadStripe } from '@stripe/stripe-js';
@@ -27,6 +27,10 @@ function App() {
     const doc = document.documentElement;
     doc.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
   }
+  useEffect(() => {
+    appHeight();
+  });
+  appHeight();
 
   window.addEventListener('resize', appHeight);
   const options = {
@@ -38,7 +42,6 @@ function App() {
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={options} stripe={stripePromise}>
         <Cart
-          clientSecret={clientSecret}
           setClientSecret={setClientSecret}
           SetLocation={SetLocation}
           SetShowCart={SetShowCart}
