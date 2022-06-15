@@ -75,7 +75,7 @@ export default function Sandwiches(props) {
             setOpen={setOpen}
             SandwichPicture={BrooklynChop}
             SandwichName="Brooklyn Chop"
-            Price={9.99}
+            Price={999}
             Description="Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
             American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
             Tomato, honey BBQ, served on toasted Italian Hero."
@@ -85,7 +85,7 @@ export default function Sandwiches(props) {
             setOpen={setOpen}
             SandwichPicture={Sassinator}
             SandwichName={`The "Sassinator"`}
-            Price={9.99}
+            Price={999}
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
             Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
           />
@@ -93,7 +93,7 @@ export default function Sandwiches(props) {
             setModalData={setModalData}
             setOpen={setOpen}
             SandwichPicture={BaconStack}
-            Price={7.99}
+            Price={799}
             SandwichName={`Bacon Stack`}
             Description={`Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
           with Crispy Bacon, Topped off with Caramelized Onions & Chipotle

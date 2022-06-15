@@ -27,6 +27,14 @@ export default function Cart(props) {
     const currentItems = viewItems;
     SetVerifyLoc(!current);
     SetViewItems(!currentItems);
+
+    fetch('/create-payment-intent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: props.price }),
+    })
+      .then((res) => res.json())
+      .then((data) => props.setClientSecret(data.clientSecret));
   }
 
   function dummyfunction(e) {
@@ -92,7 +100,6 @@ export default function Cart(props) {
           )}
           {verifyLoc && (
             <LocationChecker
-              clientSecret={props.clientSecret}
               price={props.price}
               product={props.product}
               location={props.location}
@@ -194,17 +201,11 @@ function LocationChecker(props) {
             SetVerifyLoc={props.SetVerifyLoc}
             SetShowCheckout={props.SetShowCheckout}
           />
-          <Checkout
-            price={props.price}
-            product={props.product}
-            clientSecret={props.clientSecret}
-          ></Checkout>
+          <Checkout price={props.price} product={props.product}></Checkout>
         </div>
         <div className="cartFooter"></div>
       </div>
-      <div>
-        <form></form>
-      </div>
+      <div></div>
     </div>
   );
 }
