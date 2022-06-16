@@ -15,7 +15,9 @@ import Confirmed from './components/checkout/PaymentConfirmed';
 
 function App() {
   const [stripePromise, SetStripePromise] = useState(() =>
-    loadStripe('pk_test_51L273aBV3Tp8xOImWMBmp0IdC3xXXqQZSIfOyxUm9XHfJ817hPMc5QxTdqjttN5az19D6OCU83lT42fC2Ml1rAQ700QijuarDf')
+    loadStripe(
+      'pk_test_51L273aBV3Tp8xOImWMBmp0IdC3xXXqQZSIfOyxUm9XHfJ817hPMc5QxTdqjttN5az19D6OCU83lT42fC2Ml1rAQ700QijuarDf'
+    )
   );
   const [clientSecret, setClientSecret] = useState('');
   const [showCart, SetShowCart] = useState(false);
@@ -38,7 +40,7 @@ function App() {
   };
 
   return (
-    <Router basename="/">
+    <Router>
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={options} stripe={stripePromise}>
         <Cart
