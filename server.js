@@ -7,13 +7,14 @@ const stripe = require('stripe')(
 );
 
 app.use(express.json());
+app.use('/static', express.static(path.join(__dirname, 'client/build')));
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('build'));
-  app.get('*', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('build'));
+//   app.get('*', (req, res) => {
+//     req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+//   });
+// }
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
