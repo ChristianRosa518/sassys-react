@@ -19,10 +19,10 @@ export default function Footer() {
         </div>
         <div className="footer">
           <a href="#" className="fa">
-            <img src="../images/facebook.png" alt="" />
+            {/* <img src="../images/facebook.png" alt="" /> */}
           </a>
           <a href="#" className="fa">
-            <img src="../images/yelp.png" alt="" className="" />
+            {/* <img src="../images/yelp.png" alt="" className="" /> */}
           </a>
         </div>
       </footer>
