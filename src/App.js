@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <Router basename="/sassys-react">
+    <Router basename="/">
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={options} stripe={stripePromise}>
         <Cart
