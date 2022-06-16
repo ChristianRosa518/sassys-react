@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/">
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={options} stripe={stripePromise}>
         <Cart
@@ -58,8 +58,8 @@ function App() {
       <Routes>
         <Route path={'/confirmed'} element={<Confirmed />}></Route>
         <Route
-          path="/"
           exact
+          path="/"
           element={
             <Home
               price={price}
