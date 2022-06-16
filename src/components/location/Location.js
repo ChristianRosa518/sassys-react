@@ -20,7 +20,10 @@ export default function Location() {
       <p>233 S 4th St Brooklyn, Ny 11211</p>
       <p>Polygon is the Delivery Radius</p>
       <div className="map">
-        <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAPS} render={render}>
+        <Wrapper
+          apiKey={'AIzaSyAyQo5E9RoTnz7324q_pqNjjxInO6liZho'}
+          render={render}
+        >
           <Map
             mapCenter={mapCenter}
             center={center}
