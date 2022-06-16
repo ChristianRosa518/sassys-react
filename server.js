@@ -4,15 +4,17 @@ const path = require('path');
 const stripe = require('stripe')(
   'sk_test_51L273aBV3Tp8xOImETPF6Zrbjjje3GcmZeVOAc7C2CDBEaFxEAVfNhCKbwJXYchTnLaP6xWllJVhS3pBoyP2CA8V00sLoYZEQj'
 );
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('build'));
-  app.get('*', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
+app.use(express.static('build'));
+app.get('*', (req, res) => {
+  req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
+
+// if (process.env.NODE_ENV === 'production') {
+// }
 
 const calculateOrderAmount = (items) => {
   if (items <= 1) {
@@ -41,4 +43,4 @@ app.post('/create-payment-intent', async (req, res) => {
   });
 });
 
-app.listen(4242, () => console.log('Node server listening on port 4242!'));
+app.listen(port, () => console.log('Node server listening on port 4242!'));
