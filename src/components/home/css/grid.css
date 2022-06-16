@@ -3,19 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
 .grid_container {
-  /* Container */
   position: relative;
   background-color: rgb(251, 251, 253);
 
   width: 100%;
   height: auto;
   padding-bottom: 30px;
-
-  /* box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3),
-    0px -3px 10px 0px rgba(0, 0, 0, 0.3); */
-
-  /*Padding/Margins */
-  /* padding-top: 100px; */
 }
 
 .grid {
@@ -29,7 +22,6 @@
   grid-template-rows: auto auto auto;
   column-gap: 2vw;
   row-gap: 3vh;
-  /* background-color: red; */
 }
 .item_1 {
   grid-column-start: 1;
@@ -53,7 +45,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* height: 20vh; */
   padding-top: 3%;
   padding-bottom: 3%;
 }

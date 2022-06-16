@@ -6,17 +6,12 @@ body {
 }
 
 .containerModal {
-  /* Animation */
-
-  /* position */
   margin: auto;
   margin-top: 5vh;
 
-  /* size */
   width: 40%;
   height: calc(var(--vh, 1vh) * 100);
 
-  /* style */
   border-radius: 10px;
   overflow: hidden;
   position: relative;

@@ -34,7 +34,6 @@
   padding-top: 2vh;
 }
 .cartCheckout {
-  /* background-color: blue; */
   height: 30%;
   width: 100%;
 
@@ -42,7 +41,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: blue; */
 }
 
 .cart_Empty {
@@ -71,7 +69,6 @@
 .productContainer {
   height: 15vh;
   width: 90%;
-  /* background-color: blue; */
   border-radius: 7px;
   border: 1px solid rgba(0, 0, 0, 0.253);
   overflow: hidden;

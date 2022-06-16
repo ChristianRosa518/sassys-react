@@ -19,7 +19,6 @@ header {
   height: 10vh;
   width: 100%;
 
-  /* box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5); */
   background-color: #4f535c;
   display: flex;
   justify-content: space-between;
@@ -41,7 +40,6 @@ header {
   width: 70px;
   height: 70px;
 
-  /* background-color: black; */
   border-radius: 50%;
 }
 
@@ -91,7 +89,6 @@ header {
 .orderButton:hover {
   transition: all 0.3s ease 0s;
   color: black;
-  /* text-shadow: 2px 1px 8px black; */
 }
 
 .title {
@@ -110,8 +107,6 @@ header {
   font-style: italic;
   color: #a0eb31;
 }
-
-/* Dropdown menu test */
 
 .noMargin {
   margin: 0;
@@ -167,11 +162,9 @@ header {
   .navlinks li {
     display: block;
     padding: 5px 2vw;
-    /* text-shadow: 1px 1px 3px black; */
   }
 
   .orderButton {
-    /* display: none; */
     margin-left: 20px;
   }
 }

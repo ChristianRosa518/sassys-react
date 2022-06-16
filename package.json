@@ -1,8 +1,6 @@
 {
   "name": "sassys-react",
   "version": "0.1.0",
-  "homepage": "https://christianrosa518.github.io/sassys-react/",
-  "proxy": "http://localhost:4242/",
   "private": true,
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.33",

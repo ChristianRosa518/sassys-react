@@ -52,9 +52,6 @@ export default function Navbar(props) {
           <li>
             <Link to="/location">Location</Link>
           </li>
-          {/* <li>
-            <Link to="/sandwiches">Sandwiches</Link>
-          </li> */}
         </ul>
       </nav>
       <div className={`mobileNav`}>
@@ -98,21 +95,7 @@ export default function Navbar(props) {
                   Location
                 </Link>
               </motion.li>
-              {/* <motion.li
-                key={'List2'}
-                initial={{ opacity: 0, y: -40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
-              >
-                <Link
-                  to="/sandwiches"
-                  className="listItem"
-                  onClick={changeOpen}
-                >
-                  Sandwiches
-                </Link>
-              </motion.li> */}
+
               <motion.li
                 key={'List3'}
                 initial={{ opacity: 0, y: -40 }}
