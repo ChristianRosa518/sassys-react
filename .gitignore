@@ -6,7 +6,6 @@
 .pnp.js
 /.env
 /.prettierignore
-/server.js
 
 # testing
 /coverage
