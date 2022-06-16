@@ -2,6 +2,7 @@
   "name": "sassys-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.33",
     "@stripe/react-stripe-js": "^1.8.0",
