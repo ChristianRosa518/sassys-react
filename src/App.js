@@ -15,6 +15,7 @@ import Cart from './components/checkout/Cart';
 import Confirmed from './components/checkout/PaymentConfirmed';
 
 function App() {
+  require('dotenv').config();
   const [clientSecret, setClientSecret] = useState('');
   const [showCart, SetShowCart] = useState(false);
   const [product, SetProduct] = useState([]);
