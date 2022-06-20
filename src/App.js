@@ -30,6 +30,7 @@ function App() {
   }
   useEffect(() => {
     appHeight();
+    console.log(stripeKey, googleKey);
   });
   window.addEventListener('resize', appHeight);
 
