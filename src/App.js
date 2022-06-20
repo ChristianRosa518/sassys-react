@@ -15,15 +15,12 @@ import Cart from './components/checkout/Cart';
 import Confirmed from './components/checkout/PaymentConfirmed';
 
 function App() {
-  require('dotenv').config();
   const [clientSecret, setClientSecret] = useState('');
   const [showCart, SetShowCart] = useState(false);
   const [product, SetProduct] = useState([]);
   const [price, SetPrice] = useState(100);
   const [location, SetLocation] = useState('');
-  const stripeKey = JSON.stringify(process.env.REACT_APP_PUBLISH_KEY);
-  const googleKey = JSON.stringify(process.env.REACT_APP_GOOGLE_MAPS);
-  const stripePromise = loadStripe(stripeKey);
+  const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
 
   function appHeight() {
     const doc = document.documentElement;
@@ -31,7 +28,6 @@ function App() {
   }
   useEffect(() => {
     appHeight();
-    console.log(stripeKey, googleKey);
   });
   window.addEventListener('resize', appHeight);
 
@@ -75,7 +71,7 @@ function App() {
       </Routes>
       <Footer />
       <div className="none">
-        <Wrapper apiKey={googleKey}>
+        <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAPS}>
           <Map style={{ height: '100%', width: '100%' }}></Map>
         </Wrapper>
       </div>

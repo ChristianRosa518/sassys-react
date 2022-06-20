@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: '/.env' });
 
 // Keys
 const stripeSecret = process.env.REACT_APP_SECRET_KEY;
