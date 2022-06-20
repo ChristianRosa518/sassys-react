@@ -20,8 +20,8 @@ function App() {
   const [product, SetProduct] = useState([]);
   const [price, SetPrice] = useState(100);
   const [location, SetLocation] = useState('');
-  const stripeKey = process.env.REACT_APP_PUBLISH_KEY;
-  const googleKey = process.env.REACT_APP_GOOGLE_MAPS;
+  const stripeKey = JSON.stringify(process.env.REACT_APP_PUBLISH_KEY);
+  const googleKey = JSON.stringify(process.env.REACT_APP_GOOGLE_MAPS);
   const stripePromise = loadStripe(stripeKey);
 
   function appHeight() {
