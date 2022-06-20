@@ -20,7 +20,9 @@ function App() {
   const [product, SetProduct] = useState([]);
   const [price, SetPrice] = useState(100);
   const [location, SetLocation] = useState('');
-  const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
+  const stripeKey = process.env.REACT_APP_PUBLISH_KEY;
+  const googleKey = process.env.REACT_APP_GOOGLE_MAPS;
+  const stripePromise = loadStripe(stripeKey);
 
   function appHeight() {
     const doc = document.documentElement;
@@ -71,7 +73,7 @@ function App() {
       </Routes>
       <Footer />
       <div className="none">
-        <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAPS}>
+        <Wrapper apiKey={googleKey}>
           <Map style={{ height: '100%', width: '100%' }}></Map>
         </Wrapper>
       </div>
