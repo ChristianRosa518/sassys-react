@@ -21,6 +21,7 @@ function App() {
   const [price, SetPrice] = useState(100);
   const [location, SetLocation] = useState('');
   const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
+  const test = test;
 
   function appHeight() {
     const doc = document.documentElement;
