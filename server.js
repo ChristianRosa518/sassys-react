@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const path = require('path');
-require('dotenv').config({ path: '/.env' });
+require('dotenv').config();
 
 // Keys
 const stripeSecret = process.env.REACT_APP_SECRET_KEY;
@@ -43,27 +43,6 @@ app.post('/create-payment-intent', async (req, res) => {
   res.send({
     clientSecret: paymentIntent.client_secret,
   });
-});
-
-app.get('/getKeys', (req, res) => {
-  const options = {
-    method: 'GET',
-    url: '/getKeys',
-    headers: {
-      googleKey: process.env.REACT_APP_GOOGLE_MAPS,
-      stripePK: process.env.REACT_APP_PUBLISH_KEY,
-    },
-  };
-
-  axios
-    .request(options)
-    .then((response) => {
-      res.json(response.data);
-    })
-    .catch((error) => {
-      // console.log(error);
-      console.log('error');
-    });
 });
 
 app.listen(port, () => console.log(`Node server listening on port ${port}!`));
