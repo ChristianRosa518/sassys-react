@@ -1,11 +1,14 @@
+const port = process.env.PORT || 5000;
 const express = require('express');
+const axios = require('axios');
 const app = express();
 const path = require('path');
-const stripe = require('stripe')(
-  'sk_test_51L273aBV3Tp8xOImETPF6Zrbjjje3GcmZeVOAc7C2CDBEaFxEAVfNhCKbwJXYchTnLaP6xWllJVhS3pBoyP2CA8V00sLoYZEQj'
-);
-const port = process.env.PORT || 5000;
+require('dotenv').config();
 
+// Keys
+const stripeSecret = process.env.REACT_APP_SECRET_KEY;
+
+const stripe = require('stripe')(stripeSecret);
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
@@ -42,4 +45,25 @@ app.post('/create-payment-intent', async (req, res) => {
   });
 });
 
-app.listen(port, () => console.log('Node server listening on port 4242!'));
+app.get('/getKeys', (req, res) => {
+  const options = {
+    method: 'GET',
+    url: '/getKeys',
+    headers: {
+      googleKey: process.env.REACT_APP_GOOGLE_MAPS,
+      stripePK: process.env.REACT_APP_PUBLISH_KEY,
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((error) => {
+      // console.log(error);
+      console.log('error');
+    });
+});
+
+app.listen(port, () => console.log(`Node server listening on port ${port}!`));
