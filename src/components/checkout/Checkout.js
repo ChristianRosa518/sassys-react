@@ -91,7 +91,7 @@ export default class Checkout extends React.Component {
                   onChange={this.handleInputChange}
                 />
               </label>
-              {this.props.price}
+              <div className="checkout_Price">Total : {this.props.price}</div>
               <div className={'checkout_Card_Container'}></div>
               <Payment
                 product={this.props.product}
@@ -212,14 +212,16 @@ function Payment(props) {
     <div className="payment">
       <form onSubmit={handlePurchase}>
         <PaymentElement />
-        {isLoading ? <div>loading</div> : 'Pay now'}
-        {message && <div>{message}</div>}
+        <div className="payment_Handler">
+          {isLoading ? <div>loading</div> : 'Confirm Payment'}
+          {message && <div>{message}</div>}
 
-        <input
-          type="submit"
-          value="Checkout"
-          className={'checkout_Delivery_Button'}
-        ></input>
+          <input
+            type="submit"
+            value="Checkout"
+            className={'checkout_Delivery_Button'}
+          ></input>
+        </div>
       </form>
     </div>
   );

@@ -55,7 +55,7 @@ export default function Navbar(props) {
         </ul>
       </nav>
       <div className={`mobileNav`}>
-        <FaShoppingCart className="mobileCart" />
+        <FaShoppingCart className="mobileCart" onClick={changeCartState} />
         <div
           className={`burger_container ${open ? 'open' : ''}`}
           onClick={changeOpen}

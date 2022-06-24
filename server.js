@@ -19,10 +19,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const calculateOrderAmount = (items) => {
-  if (items <= 1) {
+  let value = items;
+  value = value.slice(1).replace('.', '');
+  value = parseInt(value);
+
+  if (value <= 1) {
     var number = 100;
   } else {
-    number = items;
+    number = value;
   }
   console.log(number);
   return number;

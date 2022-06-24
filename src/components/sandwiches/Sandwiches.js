@@ -75,7 +75,7 @@ export default function Sandwiches(props) {
             setOpen={setOpen}
             SandwichPicture={BrooklynChop}
             SandwichName="Brooklyn Chop"
-            Price={999}
+            Price={9.99}
             Description="Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese,
             American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe
             Tomato, honey BBQ, served on toasted Italian Hero."
@@ -85,7 +85,7 @@ export default function Sandwiches(props) {
             setOpen={setOpen}
             SandwichPicture={Sassinator}
             SandwichName={`The "Sassinator"`}
-            Price={999}
+            Price={9.99}
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
             Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
           />
@@ -93,7 +93,7 @@ export default function Sandwiches(props) {
             setModalData={setModalData}
             setOpen={setOpen}
             SandwichPicture={BaconStack}
-            Price={799}
+            Price={7.99}
             SandwichName={`Bacon Stack`}
             Description={`Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
           with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
@@ -1151,15 +1151,15 @@ class SandwichModal extends React.Component {
       const newData = [...this.props.product];
       newData.push(data);
       this.props.SetProduct(newData);
-      // for loop replaced by .reduce function.
-      // let sum = 0;
-      // for (let i = 0; i < newData.length + 1; i++) {
-      //   sum += newData[i].price;
-      // }
       const sum = newData.reduce(function (a, b) {
         return a + b.price;
       }, 0);
-      this.props.SetPrice(sum);
+      let dollarUS = Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+      let price = dollarUS.format(sum);
+      this.props.SetPrice(price);
       this.closeModal();
       this.props.SetShowCart(true);
     }
