@@ -8,10 +8,10 @@ import './css/grid.css';
 import './css/grid_items.css';
 
 // Images
-import Container1 from '../images/3.jpg';
-import Container2 from '../images/2.jpg';
-import Container3 from '../images/BrooklynChop.jpg';
-import Container4 from '../images/4.jpg';
+import Container1 from '../../images/3.jpg';
+import Container2 from '../../images/2.jpg';
+import Container3 from '../../images/BrooklynChop.jpg';
+import Container4 from '../../images/4.jpg';
 //
 
 export default function Home(props) {

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Sassinator from '../images/Sassinator.jpg';
-import Container3 from '../images/BrooklynChop.jpg';
-import baconStack from '../images/baconStack.jpg';
-import sandwich5 from '../images/5.jpg';
-import goudaMeal from '../images/gouda.png';
-import macNChicken from '../images/macnChicken.png';
-import macNBurger from '../images/macburger.png';
+import Sassinator from '../../images/Sassinator.jpg';
+import Container3 from '../../images/BrooklynChop.jpg';
+import baconStack from '../../images/baconStack.jpg';
+import sandwich5 from '../../images/5.jpg';
+import goudaMeal from '../../images/gouda.png';
+import macNChicken from '../../images/macnChicken.png';
+import macNBurger from '../../images/macburger.png';
 
 export default function Grid() {
   return (

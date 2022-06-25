@@ -1,0 +1,90 @@
+{
+  "Speciality": [
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    },
+    {
+      "name": "Brooklyn Chop",
+      "price": 9.99,
+      "image": "../images/BrooklynChop.jpg",
+      "description": "Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero."
+    }
+  ],
+  "Burgers": [{}],
+  "Breakfast": {}
+}

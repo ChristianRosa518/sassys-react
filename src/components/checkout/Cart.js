@@ -23,18 +23,23 @@ export default function Cart(props) {
 
   function openCheckout(e) {
     e.stopPropagation();
-    const current = verifyLoc;
-    const currentItems = viewItems;
-    SetVerifyLoc(!current);
-    SetViewItems(!currentItems);
 
-    fetch('/create-payment-intent', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: props.price }),
-    })
-      .then((res) => res.json())
-      .then((data) => props.setClientSecret(data.clientSecret));
+    if (props.product.length === 0) {
+      console.log('cart is empty.');
+    } else {
+      const current = verifyLoc;
+      const currentItems = viewItems;
+      SetVerifyLoc(!current);
+      SetViewItems(!currentItems);
+
+      fetch('/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: props.price }),
+      })
+        .then((res) => res.json())
+        .then((data) => props.setClientSecret(data.clientSecret));
+    }
   }
 
   function dummyfunction(e) {

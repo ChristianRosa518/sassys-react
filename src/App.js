@@ -18,7 +18,7 @@ function App() {
   const [clientSecret, setClientSecret] = useState('');
   const [showCart, SetShowCart] = useState(false);
   const [product, SetProduct] = useState([]);
-  const [price, SetPrice] = useState(100);
+  const [price, SetPrice] = useState('$0.00');
   const [location, SetLocation] = useState('');
   const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
   const test = '12123';
