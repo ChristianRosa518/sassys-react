@@ -134,8 +134,13 @@ class Product extends React.Component {
     const sum = array.reduce(function (a, b) {
       return a + b.price;
     }, 0);
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let price = dollarUS.format(sum);
     this.props.SetProduct(array);
-    this.props.SetPrice(sum);
+    this.props.SetPrice(price);
   }
   render() {
     return (

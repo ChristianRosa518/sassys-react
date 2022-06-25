@@ -6,7 +6,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import './Burger.css';
 import './Navbar.css';
 
-import StoreLogo from '../images/logo.png';
+import StoreLogo from '../../images/logo.png';
 
 export default function Navbar(props) {
   const [open, setOpen] = useState('');

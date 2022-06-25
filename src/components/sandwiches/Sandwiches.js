@@ -3,10 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import './Sandwiches.css';
 import './modal.css';
-import data from '../../data/sandwiches';
+import { data } from '../../data/sandwichData.js';
 
-import BrooklynChop from '../../images/BrooklynChop.jpg';
-import Sassinator from '../../images/Sassinator.jpg';
 import BaconStack from '../../images/baconStack.jpg';
 import Philly from '../../images/philly.png';
 import Blt from '../../images/blt.png';
@@ -77,15 +75,6 @@ export default function Sandwiches(props) {
             />
           ))}
 
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Sassinator}
-            SandwichName={`The "Sassinator"`}
-            Price={9.99}
-            Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
-            Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
-          />
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
@@ -1043,7 +1032,6 @@ class SandwichCard extends React.Component {
   constructor(props) {
     super(props);
     this.sendModalData = this.sendModalData.bind(this);
-    this.image = this.props.SandwichPicture;
   }
 
   sendModalData() {
@@ -1068,7 +1056,11 @@ class SandwichCard extends React.Component {
             <p>{this.props.Description}</p>
           </div>
           <div className="cardImgCon">
-            <img src={this.image} alt="Sandwich Card Img" className="cardImg" />
+            <img
+              src={this.props.SandwichPicture}
+              alt="Sandwich Card Img"
+              className="cardImg"
+            />
           </div>
         </div>
       </div>
@@ -1130,7 +1122,6 @@ class SandwichModal extends React.Component {
       animate: { y: 0, transition: { duration: 0.4 } },
       exit: { y: '150%', transition: { duration: 0.4 } },
     };
-    this.image = this.props.modalData.picture;
   }
   addProduct(e) {
     if (this.props.product.length >= 10) {
@@ -1202,7 +1193,11 @@ class SandwichModal extends React.Component {
                   </div>
                 </div>
                 <div className="modalImageContainer">
-                  <img src={this.image} alt="" className="modalImage" />
+                  <img
+                    src={this.props.modalData.picture}
+                    alt=""
+                    className="modalImage"
+                  />
 
                   <span className="closeButton" onClick={this.closeModal}>
                     &times;
