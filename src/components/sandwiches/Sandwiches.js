@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import './Sandwiches.css';
 import './modal.css';
-import { data } from '../../data/sandwichData.js';
+import { data, toppings } from '../../data/sandwichData.js';
 
 import BaconStack from '../../images/baconStack.jpg';
 import Philly from '../../images/philly.png';
@@ -1122,6 +1122,9 @@ class SandwichModal extends React.Component {
       animate: { y: 0, transition: { duration: 0.4 } },
       exit: { y: '150%', transition: { duration: 0.4 } },
     };
+    this.state = {
+      amount: this.props.modalData.price,
+    };
   }
   addProduct(e) {
     if (this.props.product.length >= 10) {
@@ -1131,7 +1134,7 @@ class SandwichModal extends React.Component {
         id: this.props.product.length + 1,
         title: this.props.modalData.title,
         description: this.props.modalData.description,
-        price: this.props.modalData.price,
+        price: this.state.amount,
         picture: this.props.modalData.picture,
       };
       const newData = [...this.props.product];
@@ -1181,12 +1184,11 @@ class SandwichModal extends React.Component {
                 animate={'animate'}
                 exit={'exit'}
               >
-                <div className="modalInformation">
+                <div className="modalInformation sectionModal">
                   <h1>{this.props.modalData.title}</h1>
                   <p>{this.props.modalData.description}</p>
-                  <h1 className="sectionModal">{this.props.modalData.price}</h1>
-                  <br />
-                  <div className="orderFlex">
+                  <div className="mobileOrderFlex">
+                    <h2>${this.props.modalData.price}</h2>
                     <button className="orderNow" onClick={this.addProduct}>
                       Order
                     </button>
@@ -1198,11 +1200,35 @@ class SandwichModal extends React.Component {
                     alt=""
                     className="modalImage"
                   />
+                  {/* Toppings */}
+                  <h3>Bread Option</h3>
+                  <ul className="modalToppings">
+                    {toppings.Bread.map(({ name, price }, index) => {
+                      return (
+                        <li key={index}>
+                          <div>
+                            <input type="radio" name={name} value={name} />
+                            <label>{name}</label>
+                          </div>
+                          <div>${price}</div>
+                        </li>
+                      );
+                    })}
+                  </ul>
 
-                  <span className="closeButton" onClick={this.closeModal}>
-                    &times;
-                  </span>
+                  <br />
+                  <br />
                 </div>
+
+                <div className="orderFlex">
+                  <h2>${this.state.amount}</h2>
+                  <button className="orderNow" onClick={this.addProduct}>
+                    Order
+                  </button>
+                </div>
+                <span className="closeButton" onClick={this.closeModal}>
+                  &times;
+                </span>
               </motion.div>
             </motion.div>
           )}

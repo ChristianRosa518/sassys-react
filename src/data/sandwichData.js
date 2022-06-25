@@ -146,3 +146,40 @@ export const data = {
     },
   ],
 };
+
+export const toppings = {
+  Bread: [
+    {
+      name: 'Roll',
+      price: 0.0,
+    },
+    {
+      name: 'Ciabatta',
+      price: 1.0,
+    },
+    {
+      name: 'Hero',
+      price: 1.25,
+    },
+    {
+      name: 'Spinach & Herb',
+      price: 1.0,
+    },
+    {
+      name: 'garlicherb',
+      price: 1.0,
+    },
+    {
+      name: 'tomatobasil',
+      price: 1.0,
+    },
+    {
+      name: 'habanerosalsa',
+      price: 1.0,
+    },
+    {
+      name: 'wholewheat',
+      price: 1.0,
+    },
+  ],
+};
