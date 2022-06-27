@@ -55,14 +55,14 @@ export const data = {
     },
     {
       name: `The "Sassinator"`,
-      price: 9.99,
+      price: 8.99,
       image: Sassinator,
       description: `Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`,
     },
     {
       name: `Bacon Stack`,
-      price: 9.99,
+      price: 7.99,
       image: BaconStack,
       description: `Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
       with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
@@ -76,74 +76,26 @@ export const data = {
       and Mayo`,
     },
     {
-      name: 'Brooklyn Chop',
+      name: `BLT`,
       price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
+      image: Blt,
+      description: `Bacon, Romaine Lettuce, Tomato & Mayo! Served on Toasted Bread!`,
     },
     {
-      name: 'Brooklyn Chop',
+      name: `Sassy's Mad Burger`,
       price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
+      image: MadBurger,
+      description: `8oz Angus Beef Topped with Melted American Cheese, Crispy Bacon,
+      Crispy Jumbo Onion Rings, Ketchup & Mayo. Served on Toasted
+      Broiche Bun.`,
     },
     {
-      name: 'Brooklyn Chop',
+      name: `4. Gouda Meal`,
       price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
-    },
-    {
-      name: 'Brooklyn Chop',
-      price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
+      image: Gouda,
+      description: `Crispy Chicken Cutlet, Chipotle gouda, Smoked Bacon, Lettuce,
+      Tomato, topped off with Ketchup, & Ranch. We all agreed that it
+      was a good meal. A really "Gouda Meal"!`,
     },
   ],
 };
@@ -181,6 +133,60 @@ export const toppings = {
     {
       name: 'wholewheat',
       price: 1.0,
+    },
+  ],
+  Extras: [
+    {
+      name: 'Avocado',
+      price: 2.0,
+    },
+    {
+      name: 'Bacon',
+      price: 2.0,
+    },
+    {
+      name: 'Extra Meat',
+      price: 3.0,
+    },
+    {
+      name: 'Cheese',
+      price: 1.0,
+    },
+    {
+      name: 'Pickles',
+      price: 0.5,
+    },
+    {
+      name: 'Hot Cherry Pepper',
+      price: 0.5,
+    },
+    {
+      name: 'Sweet Roasted Pepper',
+      price: 0.5,
+    },
+    {
+      name: 'Baby Spinach',
+      price: 0.5,
+    },
+    {
+      name: 'Arugula',
+      price: 0.5,
+    },
+    {
+      name: 'Leafy Lettuce',
+      price: 0.5,
+    },
+    {
+      name: 'Red Onion',
+      price: 0.5,
+    },
+    {
+      name: 'White Onion',
+      price: 0.5,
+    },
+    {
+      name: 'Mushrooms',
+      price: 0.75,
     },
   ],
 };

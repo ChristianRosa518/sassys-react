@@ -78,40 +78,6 @@ export default function Sandwiches(props) {
           <SandwichCard
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={BaconStack}
-            Price={7.99}
-            SandwichName={`Bacon Stack`}
-            Description={`Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
-          with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
-          Mayo Aioli`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Philly}
-            SandwichName={`Philly Cheese Steak`}
-            Description={`Steak, Provolone & American Cheese, Red & Green Peppers, Onions,
-          and Mayo`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blt}
-            SandwichName={`BLT`}
-            Description={`Bacon, Romaine Lettuce, Tomato & Mayo! Served on Toasted Bread!`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={MadBurger}
-            SandwichName={`Sassy's Mad Burger`}
-            Description={`8oz Angus Beef Topped with Melted American Cheese, Crispy Bacon,
-          Crispy Jumbo Onion Rings, Ketchup & Mayo. Served on Toasted
-          Broiche Bun.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
             SandwichPicture={Gouda}
             SandwichName={`4. Gouda Meal`}
             Description={`Crispy Chicken Cutlet, Chipotle gouda, Smoked Bacon, Lettuce,
@@ -1112,6 +1078,8 @@ class SandwichModal extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.dummyfunction = this.dummyfunction.bind(this);
     this.addProduct = this.addProduct.bind(this);
+    this.onCheckChange = this.onCheckChange.bind(this);
+    this.onCheckChangeMultiple = this.onCheckChangeMultiple.bind(this);
     this.ModalBgAnimate = {
       initial: { opacity: 0 },
       animate: { opacity: 1, transition: { duration: 0.3 } },
@@ -1124,8 +1092,11 @@ class SandwichModal extends React.Component {
     };
     this.state = {
       amount: this.props.modalData.price,
+      bread: new Array(toppings.Bread.length).fill(false),
+      extra: new Array(toppings.Extras.length).fill(false),
     };
   }
+
   addProduct(e) {
     if (this.props.product.length >= 10) {
       alert('no more than 10 items');
@@ -1156,10 +1127,49 @@ class SandwichModal extends React.Component {
 
   closeModal() {
     this.props.setOpen(false);
+    this.setState({
+      bread: new Array(toppings.Bread.length).fill(false),
+      extra: new Array(toppings.Extras.length).fill(false),
+      amount: 0,
+    });
   }
   dummyfunction(e) {
     e.stopPropagation();
   }
+  onCheckChange(position) {
+    const updateCheckedState = this.state.bread.map(
+      (item, index) => (index === position ? true : false)
+      //  ? !item : item for multiple options
+    );
+
+    this.setState({ bread: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        return sum + toppings.Bread[index].price;
+      }
+      return sum;
+    }, this.props.modalData.price);
+
+    this.setState({ amount: totalPrice });
+  }
+  onCheckChangeMultiple(position) {
+    const updateCheckedState = this.state.extra.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    this.setState({ extra: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        return sum + toppings.Extras[index].price;
+      }
+      return sum;
+    }, this.props.modalData.price);
+
+    this.setState({ amount: totalPrice });
+  }
+
   render() {
     // if (!this.props.open) return null;
     return (
@@ -1206,10 +1216,36 @@ class SandwichModal extends React.Component {
                     {toppings.Bread.map(({ name, price }, index) => {
                       return (
                         <li key={index}>
-                          <div>
-                            <input type="radio" name={name} value={name} />
-                            <label>{name}</label>
-                          </div>
+                          <label>
+                            <input
+                              type="radio"
+                              name={name}
+                              value={price}
+                              checked={this.state.bread[index]}
+                              onChange={() => this.onCheckChange(index)}
+                            />
+                            {name}
+                          </label>
+                          <div>${price}</div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <h3>Extras</h3>
+                  <ul className="modalToppings">
+                    {toppings.Extras.map(({ name, price }, index) => {
+                      return (
+                        <li key={index}>
+                          <label>
+                            <input
+                              type="radio"
+                              name={name}
+                              value={price}
+                              checked={this.state.extra[index]}
+                              onChange={() => this.onCheckChangeMultiple(index)}
+                            />
+                            {name}
+                          </label>
                           <div>${price}</div>
                         </li>
                       );
@@ -1218,10 +1254,17 @@ class SandwichModal extends React.Component {
 
                   <br />
                   <br />
+                  <br />
+                  <br />
                 </div>
 
                 <div className="orderFlex">
-                  <h2>${this.state.amount}</h2>
+                  <h2>
+                    $
+                    {this.state.amount > this.props.modalData.price
+                      ? this.state.amount
+                      : this.props.modalData.price}
+                  </h2>
                   <button className="orderNow" onClick={this.addProduct}>
                     Order
                   </button>
