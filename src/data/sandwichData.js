@@ -61,18 +61,19 @@ export const data = {
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`,
     },
     {
-      name: 'Brooklyn Chop',
+      name: `Bacon Stack`,
       price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
+      image: BaconStack,
+      description: `Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
+      with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
+      Mayo Aioli`,
     },
     {
-      name: 'Brooklyn Chop',
+      name: `Philly Cheese Steak`,
       price: 9.99,
-      image: '../images/BrooklynChop.jpg',
-      description:
-        'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
+      image: Philly,
+      description: `Steak, Provolone & American Cheese, Red & Green Peppers, Onions,
+      and Mayo`,
     },
     {
       name: 'Brooklyn Chop',
