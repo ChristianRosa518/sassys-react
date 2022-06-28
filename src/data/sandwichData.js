@@ -48,14 +48,14 @@ export const data = {
   Speciality: [
     {
       name: 'Brooklyn Chop',
-      price: 9.99,
+      price: 13.95,
       image: BrooklynChop,
       description:
         'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
     },
     {
       name: `The "Sassinator"`,
-      price: 8.99,
+      price: 12.95,
       image: Sassinator,
       description: `Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`,

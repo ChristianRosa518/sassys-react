@@ -5,10 +5,6 @@ import './Sandwiches.css';
 import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
-import BaconStack from '../../images/baconStack.jpg';
-import Philly from '../../images/philly.png';
-import Blt from '../../images/blt.png';
-import MadBurger from '../../images/mad.png';
 import Gouda from '../../images/gouda.png';
 import Parm from '../../images/parm.png';
 import SpicyMama from '../../images/spicymama.png';
@@ -1094,6 +1090,8 @@ class SandwichModal extends React.Component {
       amount: this.props.modalData.price,
       bread: new Array(toppings.Bread.length).fill(false),
       extra: new Array(toppings.Extras.length).fill(false),
+      breadCost: 0,
+      extrasCost: 0,
     };
   }
 
@@ -1130,7 +1128,9 @@ class SandwichModal extends React.Component {
     this.setState({
       bread: new Array(toppings.Bread.length).fill(false),
       extra: new Array(toppings.Extras.length).fill(false),
-      amount: 0,
+      amount: this.props.modalData.price,
+      breadCost: 0,
+      extrasCost: 0,
     });
   }
   dummyfunction(e) {
@@ -1149,9 +1149,13 @@ class SandwichModal extends React.Component {
         return sum + toppings.Bread[index].price;
       }
       return sum;
-    }, this.props.modalData.price);
+    }, 0);
 
-    this.setState({ amount: totalPrice });
+    this.setState({ breadCost: totalPrice });
+    var extras = this.state.extrasCost;
+    var base = this.props.modalData.price + totalPrice + extras;
+
+    this.setState({ amount: base });
   }
   onCheckChangeMultiple(position) {
     const updateCheckedState = this.state.extra.map((item, index) =>
@@ -1165,9 +1169,14 @@ class SandwichModal extends React.Component {
         return sum + toppings.Extras[index].price;
       }
       return sum;
-    }, this.props.modalData.price);
+    }, 0);
 
-    this.setState({ amount: totalPrice });
+    this.setState({ extrasCost: totalPrice });
+    var extras = this.state.breadCost;
+    var base = this.props.modalData.price + extras + totalPrice;
+    this.setState({
+      amount: base,
+    });
   }
 
   render() {
@@ -1238,7 +1247,7 @@ class SandwichModal extends React.Component {
                         <li key={index}>
                           <label>
                             <input
-                              type="radio"
+                              type="checkbox"
                               name={name}
                               value={price}
                               checked={this.state.extra[index]}

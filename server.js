@@ -20,6 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const calculateOrderAmount = (items) => {
   let value = items;
+
   value = value.slice(1).replace('.', '');
   value = parseInt(value);
 
