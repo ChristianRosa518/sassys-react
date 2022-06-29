@@ -30,15 +30,6 @@ export default function Navbar(props) {
             <img src={StoreLogo} className="logo" alt="#" />
           </Link>
         </div>
-        <button className="orderButton">
-          <a
-            href="https://www.ordersassyssandwiches.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Order
-          </a>
-        </button>
       </div>
       <nav className="desktopNav">
         <ul className="navlinks">
@@ -94,24 +85,6 @@ export default function Navbar(props) {
                 <Link to="/location" className="listItem" onClick={changeOpen}>
                   Location
                 </Link>
-              </motion.li>
-
-              <motion.li
-                key={'List3'}
-                initial={{ opacity: 0, y: -40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                exit={{ opacity: 0, y: -40, transition: { delay: 0 } }}
-              >
-                <a
-                  onClick={changeOpen}
-                  href="https://www.ordersassyssandwiches.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="listItem"
-                >
-                  Order
-                </a>
               </motion.li>
             </motion.ul>
           )}

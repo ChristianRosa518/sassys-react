@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import emailjs from 'emailjs-com';
 
 import './cart.css';
 import './Checkout.css';
@@ -10,7 +9,7 @@ import Checkout from './Checkout';
 export default function Cart(props) {
   const [verifyLoc, SetVerifyLoc] = useState(false);
   const [viewItems, SetViewItems] = useState(true);
-  const [showCheckout, SetShowCheckout] = useState(false);
+  // const [showCheckout, SetShowCheckout] = useState(false);
   //   if (!props.showCart) return null;
 
   function changeCartState() {
@@ -18,7 +17,7 @@ export default function Cart(props) {
     props.SetShowCart(!current);
     SetViewItems(true);
     SetVerifyLoc(false);
-    SetShowCheckout(false);
+    // SetShowCheckout(false);
   }
 
   function openCheckout(e) {
@@ -32,14 +31,22 @@ export default function Cart(props) {
       SetVerifyLoc(!current);
       SetViewItems(!currentItems);
 
-      fetch('/create-payment-intent', {
+      fetch('/update-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: props.price }),
-      })
-        .then((res) => res.json())
-        .then((data) => props.setClientSecret(data.clientSecret));
+        body: JSON.stringify({
+          price: props.price,
+          info: props.payment,
+        }),
+      });
     }
+  }
+
+  function closeCheckout(e) {
+    const current = verifyLoc;
+    const currentItems = viewItems;
+    SetVerifyLoc(!current);
+    SetViewItems(!currentItems);
   }
 
   function dummyfunction(e) {
@@ -109,8 +116,9 @@ export default function Cart(props) {
               product={props.product}
               location={props.location}
               dummyfunction={dummyfunction}
-              openCheckout={openCheckout}
+              closeCheckout={closeCheckout}
               SetProduct={props.SetProduct}
+              clientSecret={props.clientSecret}
             />
           )}
         </motion.div>
@@ -123,6 +131,16 @@ class Product extends React.Component {
   constructor(props) {
     super(props);
     this.removeItem = this.removeItem.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
+  }
+
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
   }
 
   removeItem() {
@@ -148,7 +166,7 @@ class Product extends React.Component {
         <div className="productDesContainer">
           <div className="productTitleCon">
             <h3>-{this.props.item.title}-</h3>
-            <h4>Price: {this.props.item.price}</h4>
+            <h4>Price: {this.formatPrice(this.props.item.price)}</h4>
           </div>
           <p>{this.props.item.description}</p>
         </div>
@@ -175,7 +193,7 @@ function LocationChecker(props) {
           <h3>
             <strong>Checkout</strong>
           </h3>
-          <span className="checkout_CloseButton" onClick={props.openCheckout}>
+          <span className="checkout_CloseButton" onClick={props.closeCheckout}>
             &times;
           </span>
         </div>
@@ -184,7 +202,11 @@ function LocationChecker(props) {
             SetVerifyLoc={props.SetVerifyLoc}
             SetShowCheckout={props.SetShowCheckout}
           />
-          <Checkout product={props.product} price={props.price}></Checkout>
+          <Checkout
+            product={props.product}
+            price={props.price}
+            clientSecret={props.clientSecret}
+          ></Checkout>
         </div>
         <div className="cartFooter"></div>
       </div>

@@ -94,6 +94,8 @@ export default class Checkout extends React.Component {
               <div className="checkout_Price">Total : {this.props.price}</div>
               <div className={'checkout_Card_Container'}></div>
               <Payment
+                price={this.props.price}
+                clientSecret={this.props.clientSecret}
                 product={this.props.product}
                 setMessage={this.setMessage}
                 message={this.state.message}

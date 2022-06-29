@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import axios from 'axios';
 
 import Map from './components/location/Map';
 import Home from './components/home/Home';
@@ -14,22 +13,39 @@ import Contact from './components/contact/Contact';
 import Cart from './components/checkout/Cart';
 import Confirmed from './components/checkout/PaymentConfirmed';
 
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
+
 function App() {
   const [clientSecret, setClientSecret] = useState('');
+  const [payment, setPayment] = useState('');
   const [showCart, SetShowCart] = useState(false);
   const [product, SetProduct] = useState([]);
   const [price, SetPrice] = useState('$0.00');
   const [location, SetLocation] = useState('');
-  const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
-  const test = '12123';
 
   function appHeight() {
     const doc = document.documentElement;
     doc.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
   }
+
+  function setData(data) {
+    setClientSecret(data.clientSecret);
+    setPayment(data.paymentIntent);
+    console.log(data.paymentIntent);
+  }
+
   useEffect(() => {
-    appHeight();
-  });
+    // appHeight();
+
+    fetch('/create-payment-intent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: 's' }),
+    })
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
   window.addEventListener('resize', appHeight);
 
   const stripeOptions = {
@@ -41,7 +57,6 @@ function App() {
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={stripeOptions} stripe={stripePromise}>
         <Cart
-          setClientSecret={setClientSecret}
           SetLocation={SetLocation}
           SetShowCart={SetShowCart}
           SetProduct={SetProduct}
@@ -50,6 +65,7 @@ function App() {
           showCart={showCart}
           product={product}
           price={price}
+          payment={payment}
         />
       </Elements>
       <Routes>

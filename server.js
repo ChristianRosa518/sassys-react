@@ -1,6 +1,5 @@
 const port = process.env.PORT || 5000;
 const express = require('express');
-const axios = require('axios');
 const app = express();
 const path = require('path');
 require('dotenv').config();
@@ -20,7 +19,6 @@ if (process.env.NODE_ENV === 'production') {
 
 const calculateOrderAmount = (items) => {
   let value = items;
-
   value = value.slice(1).replace('.', '');
   value = parseInt(value);
 
@@ -34,19 +32,26 @@ const calculateOrderAmount = (items) => {
 };
 
 app.post('/create-payment-intent', async (req, res) => {
-  const { items } = req.body;
-
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(items),
+    amount: 100,
     currency: 'usd',
-    automatic_payment_methods: {
-      enabled: true,
-    },
   });
 
   res.send({
     clientSecret: paymentIntent.client_secret,
+    paymentIntent: paymentIntent.id,
+  });
+});
+
+app.post('/update-payment-intent', async (req) => {
+  const { price, info } = req.body;
+
+  console.log(info);
+  console.log(price);
+
+  await stripe.paymentIntents.update(info, {
+    amount: calculateOrderAmount(price),
   });
 });
 

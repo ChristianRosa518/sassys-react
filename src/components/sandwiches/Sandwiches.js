@@ -1076,6 +1076,7 @@ class SandwichModal extends React.Component {
     this.addProduct = this.addProduct.bind(this);
     this.onCheckChange = this.onCheckChange.bind(this);
     this.onCheckChangeMultiple = this.onCheckChangeMultiple.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
     this.ModalBgAnimate = {
       initial: { opacity: 0 },
       animate: { opacity: 1, transition: { duration: 0.3 } },
@@ -1135,6 +1136,14 @@ class SandwichModal extends React.Component {
   }
   dummyfunction(e) {
     e.stopPropagation();
+  }
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
   }
   onCheckChange(position) {
     const updateCheckedState = this.state.bread.map(
@@ -1207,7 +1216,11 @@ class SandwichModal extends React.Component {
                   <h1>{this.props.modalData.title}</h1>
                   <p>{this.props.modalData.description}</p>
                   <div className="mobileOrderFlex">
-                    <h2>${this.props.modalData.price}</h2>
+                    <h2>
+                      {this.state.amount > this.props.modalData.price
+                        ? this.formatPrice(this.state.amount)
+                        : this.formatPrice(this.props.modalData.price)}
+                    </h2>
                     <button className="orderNow" onClick={this.addProduct}>
                       Order
                     </button>
@@ -1224,8 +1237,11 @@ class SandwichModal extends React.Component {
                   <ul className="modalToppings">
                     {toppings.Bread.map(({ name, price }, index) => {
                       return (
-                        <li key={index}>
-                          <label>
+                        <li
+                          key={index}
+                          onClick={() => this.onCheckChange(index)}
+                        >
+                          <div className="modalInput">
                             <input
                               type="radio"
                               name={name}
@@ -1233,9 +1249,9 @@ class SandwichModal extends React.Component {
                               checked={this.state.bread[index]}
                               onChange={() => this.onCheckChange(index)}
                             />
-                            {name}
-                          </label>
-                          <div>${price}</div>
+                            <label htmlFor={name}>{name}</label>
+                          </div>
+                          <div>{this.formatPrice(price)}</div>
                         </li>
                       );
                     })}
@@ -1244,8 +1260,11 @@ class SandwichModal extends React.Component {
                   <ul className="modalToppings">
                     {toppings.Extras.map(({ name, price }, index) => {
                       return (
-                        <li key={index}>
-                          <label>
+                        <li
+                          key={index}
+                          onClick={() => this.onCheckChangeMultiple(index)}
+                        >
+                          <div className="modalInput">
                             <input
                               type="checkbox"
                               name={name}
@@ -1253,29 +1272,24 @@ class SandwichModal extends React.Component {
                               checked={this.state.extra[index]}
                               onChange={() => this.onCheckChangeMultiple(index)}
                             />
-                            {name}
-                          </label>
-                          <div>${price}</div>
+                            <label htmlFor={name}>{name}</label>
+                          </div>
+                          <div>{this.formatPrice(price)}</div>
                         </li>
                       );
                     })}
                   </ul>
-
-                  <br />
-                  <br />
-                  <br />
                   <br />
                 </div>
 
                 <div className="orderFlex">
                   <h2>
-                    $
                     {this.state.amount > this.props.modalData.price
-                      ? this.state.amount
-                      : this.props.modalData.price}
+                      ? this.formatPrice(this.state.amount)
+                      : this.formatPrice(this.props.modalData.price)}
                   </h2>
                   <button className="orderNow" onClick={this.addProduct}>
-                    Order
+                    Add to Cart
                   </button>
                 </div>
                 <span className="closeButton" onClick={this.closeModal}>
