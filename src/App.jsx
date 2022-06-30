@@ -35,7 +35,7 @@ function App() {
   }
 
   useEffect(() => {
-    // appHeight();
+    appHeight();
 
     fetch('/create-payment-intent', {
       method: 'POST',
