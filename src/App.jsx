@@ -31,7 +31,6 @@ function App() {
   function setData(data) {
     setClientSecret(data.clientSecret);
     setPayment(data.paymentIntent);
-    console.log(data.paymentIntent);
   }
 
   useEffect(() => {

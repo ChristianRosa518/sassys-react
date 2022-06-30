@@ -1100,11 +1100,15 @@ class SandwichModal extends React.Component {
     if (this.props.product.length >= 10) {
       alert('no more than 10 items');
     } else {
+      let amount =
+        this.props.modalData.price +
+        this.state.breadCost +
+        this.state.extrasCost;
       const data = {
         id: this.props.product.length + 1,
         title: this.props.modalData.title,
         description: this.props.modalData.description,
-        price: this.state.amount,
+        price: amount,
         picture: this.props.modalData.picture,
       };
       const newData = [...this.props.product];
