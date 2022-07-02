@@ -39,7 +39,7 @@ function App() {
     fetch('/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: 's' }),
+      body: JSON.stringify({ items: 'soup' }),
     })
       .then((res) => res.json())
       .then((data) => setData(data));
