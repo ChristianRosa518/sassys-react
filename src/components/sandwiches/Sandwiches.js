@@ -985,6 +985,8 @@ export class SandwichModal extends React.Component {
       extra: new Array(toppings.Extras.length).fill(false),
       breadCost: 0,
       extrasCost: 0,
+      Bread: 'Roll',
+      Toppings: '',
     };
   }
 
@@ -996,12 +998,15 @@ export class SandwichModal extends React.Component {
         this.props.modalData.price +
         this.state.breadCost +
         this.state.extrasCost;
+
+      let tops = this.state.Bread + '\n' + this.state.Toppings;
       const data = {
         id: this.props.product.length + 1,
         title: this.props.modalData.title,
         description: this.props.modalData.description,
         price: amount,
         picture: this.props.modalData.picture,
+        toppings: tops,
       };
       const newData = [...this.props.product];
       newData.push(data);
@@ -1028,6 +1033,8 @@ export class SandwichModal extends React.Component {
       amount: this.props.modalData.price,
       breadCost: 0,
       extrasCost: 0,
+      Bread: 'Roll',
+      Toppings: '',
     });
   }
   dummyfunction(e) {
@@ -1051,6 +1058,7 @@ export class SandwichModal extends React.Component {
 
     const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
       if (currentState === true) {
+        this.setState({ Bread: toppings.Bread[index].name });
         return sum + toppings.Bread[index].price;
       }
       return sum;
@@ -1075,6 +1083,15 @@ export class SandwichModal extends React.Component {
       }
       return sum;
     }, 0);
+
+    const totalNames = updateCheckedState.reduce((name, current, index) => {
+      if (current === true) {
+        return name + toppings.Extras[index].name + '\n';
+      }
+      return name;
+    }, '');
+
+    this.setState({ Toppings: totalNames });
 
     this.setState({ extrasCost: totalPrice });
     var extras = this.state.breadCost;

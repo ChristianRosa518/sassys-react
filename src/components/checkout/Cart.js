@@ -213,23 +213,23 @@ function LocationChecker(props) {
       })
       .then((response) => {
         var local = response.data.results[0].geometry.location;
-        if (CheckLocation(local) === true) {
-          return true;
-        } else {
-          return false;
-        }
+        CheckLocation(local);
       })
 
       .catch((error) => {
         console.log(error);
       });
   }
-  function orderInformation() {
+  function orderInformationDelivery() {
+    var Location = address + ',' + city + ',' + zip;
+    Object.assign(template, { Delivery: 'Delivery' });
+    Object.assign(template, { Address: Location });
+
     for (let i = 0; i < props.product.length; i++) {
       let value = `Order${[i]}`;
-      // let addons = `Add-ons${[i]}`;
+      let addons = `Toppings${[i]}`;
       Object.assign(template, { [value]: productinformation[i].title });
-      // Object.assign(template, { [addons]: productinformation[i].addons });
+      Object.assign(template, { [addons]: productinformation[i].toppings });
     }
     emailjs
       .send(
@@ -277,7 +277,7 @@ function LocationChecker(props) {
             console.log('failed');
           } else {
             console.log('success');
-            // orderInformation();
+            orderInformationDelivery();
           }
         });
     } else {

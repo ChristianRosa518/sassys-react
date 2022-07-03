@@ -123,12 +123,13 @@ function Payment(props) {
   const productinformation = props.product;
   const template = {};
 
-  function orderInformation() {
+  function orderInformationPickup() {
+    Object.assign(template, { Pickup: 'Pickup' });
     for (let i = 0; i < props.product.length; i++) {
       let value = `Order${[i]}`;
-      // let addons = `Add-ons${[i]}`;
+      let addons = `Toppings${[i]}`;
       Object.assign(template, { [value]: productinformation[i].title });
-      // Object.assign(template, { [addons]: productinformation[i].addons });
+      Object.assign(template, { [addons]: productinformation[i].toppings });
     }
     emailjs
       .send(
@@ -140,6 +141,7 @@ function Payment(props) {
       .then(
         (result) => {
           console.log(result.text);
+          finishedOrder();
         },
         (error) => {
           console.log(error.text);
@@ -177,8 +179,7 @@ function Payment(props) {
             console.log('failed');
           } else {
             console.log('success');
-            // orderInformation();
-            finishedOrder();
+            orderInformationPickup();
           }
         });
 
