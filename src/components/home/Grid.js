@@ -1,4 +1,5 @@
 import React from 'react';
+import { SandwichModal } from '../sandwiches/Sandwiches';
 
 import Sassinator from '../../images/Sassinator.jpg';
 import Container3 from '../../images/BrooklynChop.jpg';
@@ -8,9 +9,19 @@ import goudaMeal from '../../images/gouda.png';
 import macNChicken from '../../images/macnChicken.png';
 import macNBurger from '../../images/macburger.png';
 
-export default function Grid() {
+export default function Grid(props) {
   return (
     <div className="grid_container">
+      {/* <SandwichModal
+        // modalData={modalData}
+        // open={open}
+        // setOpen={setOpen}
+        price={props.price}
+        SetPrice={props.SetPrice}
+        SetProduct={props.SetProduct}
+        product={props.product}
+        SetShowCart={props.SetShowCart}
+      ></SandwichModal> */}
       <div className="signature_sandwiches">
         <h1>Signature Sandwiches</h1>
       </div>

@@ -125,7 +125,7 @@ class GoogleGeocode extends React.Component {
           </div>
         </div>
         {this.state.Delivery && (
-          <form className={'checkout_Delivery'}>
+          <div className={'checkout_Delivery'}>
             <h2>Please enter your delivery address</h2>
             <label>
               Address
@@ -162,7 +162,7 @@ class GoogleGeocode extends React.Component {
                 Verify Address
               </button>
             </div> */}
-          </form>
+          </div>
         )}
       </div>
     );

@@ -45,8 +45,9 @@ import mac from '../images/mac.jpg';
 import shoefries from '../images/shoeFries.jpg';
 
 export const data = {
-  Speciality: [
+  Sandwiches: [
     {
+      tag: 'Specialty',
       name: 'Brooklyn Chop',
       price: 13.95,
       image: BrooklynChop,
@@ -54,6 +55,7 @@ export const data = {
         'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
     },
     {
+      tag: 'Specialty',
       name: `The "Sassinator"`,
       price: 12.95,
       image: Sassinator,
@@ -61,27 +63,31 @@ export const data = {
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`,
     },
     {
+      tag: 'Specialty',
       name: `Bacon Stack`,
       price: 7.99,
       image: BaconStack,
       description: `Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
-      with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
-      Mayo Aioli`,
+    with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
+    Mayo Aioli`,
     },
     {
+      tag: 'Specialty',
       name: `Philly Cheese Steak`,
       price: 9.99,
       image: Philly,
       description: `Steak, Provolone & American Cheese, Red & Green Peppers, Onions,
-      and Mayo`,
+    and Mayo`,
     },
     {
+      tag: 'Specialty',
       name: `BLT`,
       price: 9.99,
       image: Blt,
       description: `Bacon, Romaine Lettuce, Tomato & Mayo! Served on Toasted Bread!`,
     },
     {
+      tag: 'Specialty',
       name: `Sassy's Mad Burger`,
       price: 9.99,
       image: MadBurger,
@@ -90,12 +96,115 @@ export const data = {
       Broiche Bun.`,
     },
     {
+      tag: 'Specialty',
       name: `4. Gouda Meal`,
       price: 9.99,
       image: Gouda,
       description: `Crispy Chicken Cutlet, Chipotle gouda, Smoked Bacon, Lettuce,
       Tomato, topped off with Ketchup, & Ranch. We all agreed that it
       was a good meal. A really "Gouda Meal"!`,
+    },
+    {
+      tag: 'Specialty',
+      name: `7. Crispy Chicken Cutlet Parmigina`,
+      price: 9.99,
+      image: Parm,
+      description: `Crispy Chicken Cutlet, Fresh Marinara Sauce, Melted Mozzarella,
+      Parmesan Cheese, Basil. Served on Garlic Bread`,
+    },
+    {
+      tag: 'Specialty',
+      name: `The Spicy Mama`,
+      price: 9.99,
+      image: SpicyMama,
+      description: `Salsalito Turkey Breast, Pepper-jack Cheese, Avocado, Jalapeno
+      Peppers, Baby Spinach, Sliced Tomato, Mayonnaise`,
+    },
+    {
+      tag: 'Specialty',
+      name: `Regula Degula`,
+      price: 9.99,
+      image: Regula,
+      description: `Ovengold Roasted Turkey, American Cheese, Smoked Bacon, Avocado,
+      Leafy Lettuce, Tomato, Mayonnaise`,
+    },
+    {
+      tag: 'Specialty',
+      price: 9.99,
+      image: QuickBite,
+      name: `38. "Quik-Bite"`,
+      description: `Maple Honey Turkey, Cheddar Cheese, Leafy Lettuce, Hot Cherry
+      Peppers, Tomato, Mayonnaise`,
+    },
+    {
+      tag: 'Specialty',
+      price: 9.99,
+      image: SmokeyMeunster,
+      name: `Smokey Muenster`,
+      description: `Smoked Mesquite Turkey Breast, Muenster cheese, Arugula, Creamy
+      Russian, ripe tomato, red onion`,
+    },
+    {
+      tag: 'Specialty',
+      price: 9.99,
+      image: Blank,
+      name: `The Bourbon`,
+      description: `Bourbon Smoked Boars Head Ham, Smoked Gouda Cheese, Caramalized
+      Mushrooms, Onions, & Bell Peppers, BBQ & Mayo. Served on Toasted
+      Garlic Bread`,
+    },
+    {
+      tag: 'Specialty',
+      price: 9.99,
+      image: BrooklynBreak,
+      name: `"The BKLYN" Breakfast`,
+      description: `2 Eggs Scrambled, Grilled Pastrami, Vermont Sharp Cheddar
+      Cheese, Fresh Baby Arugula, Sliced Tomato, White Onion, &
+      Chipotle Mayo Aioli`,
+    },
+    {
+      tag: 'Burgers',
+      price: 9.99,
+      image: macBurger,
+      name: `Mac-n-Cheese Bacon Beef Burger`,
+      description: `Cheddar burger topped with our creamy mac n cheese, bacon,
+      sauteed onions, and BBQ sauce`,
+    },
+    {
+      tag: 'Burgers',
+      price: 9.99,
+      image: Blank,
+      name: `Impossible Burger`,
+      description: `Quarter Pound Impossible burger Patty topped plant based
+      cheddar, lettuce, tomato, onion, pickles, and vegan roasted
+      pepper aioli`,
+    },
+    {
+      tag: 'Burgers',
+      price: 9.99,
+      image: Blank,
+      name: `100% Angus Beef Burger`,
+      description: `100% Juicy Angus Beef Burger Topped With Leafy Lettuce, Sliced
+      Tomato, Red Onion, and Pickles. Served on a Toasted Brioche Bun
+      (Default is well done)`,
+    },
+    {
+      tag: 'Burgers',
+      price: 9.99,
+      image: angusCheese,
+      name: `100% Angus Cheeseburger`,
+      description: `100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Leafy
+      Lettuce, Sliced Tomato, Red Onion, and Pickles. Served on a
+      Toasted Brioche Bun (Default is well done)`,
+    },
+    {
+      tag: 'Burgers',
+      price: 9.99,
+      image: baconCheese,
+      name: `Bacon Cheese Burger`,
+      description: `100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Smoked
+      Bacon Leafy Lettuce, Sliced Tomato, Red Onion, and Pickles.
+      Served on a Toasted Brioche Bun (Default is well done)`,
     },
   ],
 };

@@ -5,13 +5,6 @@ import './Sandwiches.css';
 import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
-import Gouda from '../../images/gouda.png';
-import Parm from '../../images/parm.png';
-import SpicyMama from '../../images/spicymama.png';
-import Regula from '../../images/regula.png';
-import QuickBite from '../../images/quik.png';
-import SmokeyMeunster from '../../images/smokey.png';
-import BrooklynBreak from '../../images/brklynbreak.png';
 import Blank from '../../images/Blank.PNG';
 import macBurger from '../../images/macburger.png';
 import angusCheese from '../../images/angusCheese.png';
@@ -58,8 +51,8 @@ export default function Sandwiches(props) {
         ContainerTitle={'Specialty Sandwiches'}
         ContainerDescription={"The customer's favorites!"}
       >
-        <>
-          {data.Speciality.map((sandwich) => (
+        {data.Sandwiches.filter((Sand) => Sand.tag === 'Specialty').map(
+          (sandwich) => (
             <SandwichCard
               key={sandwich.name}
               setModalData={setModalData}
@@ -69,128 +62,27 @@ export default function Sandwiches(props) {
               Price={sandwich.price}
               Description={sandwich.description}
             />
-          ))}
-
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Gouda}
-            SandwichName={`4. Gouda Meal`}
-            Description={`Crispy Chicken Cutlet, Chipotle gouda, Smoked Bacon, Lettuce,
-          Tomato, topped off with Ketchup, & Ranch. We all agreed that it
-          was a good meal. A really "Gouda Meal"!`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Parm}
-            SandwichName={`7. Crispy Chicken Cutlet Parmigina`}
-            Description={`Crispy Chicken Cutlet, Fresh Marinara Sauce, Melted Mozzarella,
-          Parmesan Cheese, Basil. Served on Garlic Bread`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={SpicyMama}
-            SandwichName={`The Spicy Mama`}
-            Description={`Salsalito Turkey Breast, Pepper-jack Cheese, Avocado, Jalapeno
-          Peppers, Baby Spinach, Sliced Tomato, Mayonnaise`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Regula}
-            SandwichName={`Regula Degula`}
-            Description={`Ovengold Roasted Turkey, American Cheese, Smoked Bacon, Avocado,
-            Leafy Lettuce, Tomato, Mayonnaise`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={QuickBite}
-            SandwichName={`38. "Quik-Bite"`}
-            Description={`Maple Honey Turkey, Cheddar Cheese, Leafy Lettuce, Hot Cherry
-              Peppers, Tomato, Mayonnaise`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={SmokeyMeunster}
-            SandwichName={`Smokey Muenster`}
-            Description={`Smoked Mesquite Turkey Breast, Muenster cheese, Arugula, Creamy
-            Russian, ripe tomato, red onion`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`The Bourbon`}
-            Description={`Bourbon Smoked Boars Head Ham, Smoked Gouda Cheese, Caramalized
-            Mushrooms, Onions, & Bell Peppers, BBQ & Mayo. Served on Toasted
-            Garlic Bread`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={BrooklynBreak}
-            SandwichName={`"The BKLYN" Breakfast`}
-            Description={`2 Eggs Scrambled, Grilled Pastrami, Vermont Sharp Cheddar
-            Cheese, Fresh Baby Arugula, Sliced Tomato, White Onion, &
-            Chipotle Mayo Aioli`}
-          />
-        </>
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Burgers'}
         ContainerDescription={'Premium angus Beef!'}
       >
-        <>
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={macBurger}
-            SandwichName={`Mac-n-Cheese Bacon Beef Burger`}
-            Description={`Cheddar burger topped with our creamy mac n cheese, bacon,
-            sauteed onions, and BBQ sauce`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Impossible Burger`}
-            Description={`Quarter Pound Impossible burger Patty topped plant based
-            cheddar, lettuce, tomato, onion, pickles, and vegan roasted
-            pepper aioli`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`100% Angus Beef Burger`}
-            Description={`100% Juicy Angus Beef Burger Topped With Leafy Lettuce, Sliced
-            Tomato, Red Onion, and Pickles. Served on a Toasted Brioche Bun
-            (Default is well done)`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={angusCheese}
-            SandwichName={`100% Angus Cheeseburger`}
-            Description={`100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Leafy
-            Lettuce, Sliced Tomato, Red Onion, and Pickles. Served on a
-            Toasted Brioche Bun (Default is well done)`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={baconCheese}
-            SandwichName={`Bacon Cheese Burger`}
-            Description={`100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Smoked
-            Bacon Leafy Lettuce, Sliced Tomato, Red Onion, and Pickles.
-            Served on a Toasted Brioche Bun (Default is well done)`}
-          />
-        </>
+        {data.Sandwiches.filter((Sand) => Sand.tag === 'Burgers').map(
+          (sandwich) => (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setModalData}
+              setOpen={setOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
@@ -1068,7 +960,7 @@ class SandwichCardSmall extends React.Component {
     );
   }
 }
-class SandwichModal extends React.Component {
+export class SandwichModal extends React.Component {
   constructor(props) {
     super(props);
     this.closeModal = this.closeModal.bind(this);

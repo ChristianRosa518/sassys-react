@@ -92,7 +92,13 @@ export default function Home(props) {
           </div>
         </div>
       </div>
-      <Grid />
+      <Grid
+        price={props.price}
+        product={props.product}
+        SetProduct={props.SetProduct}
+        SetPrice={props.SetPrice}
+        SetShowCart={props.SetShowCart}
+      />
       <Sandwiches
         price={props.price}
         product={props.product}

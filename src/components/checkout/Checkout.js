@@ -94,6 +94,9 @@ export default class Checkout extends React.Component {
               <div className="checkout_Price">Total : {this.props.price}</div>
               <div className={'checkout_Card_Container'}></div>
               <Payment
+                LocationAccept={this.props.LocationAccept}
+                delivery={this.props.delivery}
+                geocode={this.props.geocode}
                 price={this.props.price}
                 clientSecret={this.props.clientSecret}
                 product={this.props.product}
@@ -158,25 +161,29 @@ function Payment(props) {
       return;
     }
 
-    setIsLoading(true);
+    if (props.delivery === 'delivery') {
+      props.geocode(e);
+    } else if (props.delivery === 'pickup') {
+      setIsLoading(true);
 
-    await stripe
-      .confirmPayment({
-        elements,
+      await stripe
+        .confirmPayment({
+          elements,
 
-        redirect: 'if_required',
-      })
-      .then(function (result) {
-        if (result.error) {
-          console.log('failed');
-        } else {
-          console.log('success');
-          // orderInformation();
-          finishedOrder();
-        }
-      });
+          redirect: 'if_required',
+        })
+        .then(function (result) {
+          if (result.error) {
+            console.log('failed');
+          } else {
+            console.log('success');
+            // orderInformation();
+            finishedOrder();
+          }
+        });
 
-    setIsLoading(false);
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {

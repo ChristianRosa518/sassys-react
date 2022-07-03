@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import axios from 'axios';
+import { useStripe, useElements } from '@stripe/react-stripe-js';
 
 import './cart.css';
 import './Checkout.css';
 import GoogleGeocode from '../location/Geocode';
 import Checkout from './Checkout';
+import emailjs from 'emailjs-com';
+
+const API_KEY = process.env.REACT_APP_GEOCODE;
 
 export default function Cart(props) {
   const [verifyLoc, SetVerifyLoc] = useState(false);
@@ -186,6 +191,103 @@ class Product extends React.Component {
 }
 
 function LocationChecker(props) {
+  const [address, setAddress] = useState('');
+  const [zip, setZip] = useState('');
+  const [city, setCity] = useState('');
+  const [delivery, setDelivery] = useState('pickup');
+
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const template = {};
+  const productinformation = props.product;
+
+  function geocode(e) {
+    e.preventDefault();
+    axios
+      .get('https://maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address: address + city + zip,
+          key: API_KEY,
+        },
+      })
+      .then((response) => {
+        var local = response.data.results[0].geometry.location;
+        if (CheckLocation(local) === true) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  function orderInformation() {
+    for (let i = 0; i < props.product.length; i++) {
+      let value = `Order${[i]}`;
+      // let addons = `Add-ons${[i]}`;
+      Object.assign(template, { [value]: productinformation[i].title });
+      // Object.assign(template, { [addons]: productinformation[i].addons });
+    }
+    emailjs
+      .send(
+        'service_1d6oo6u',
+        'template_tqxgooo',
+        template,
+        'F7eoeUPRLaGd4Yx7q'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
+  function CheckLocation(local) {
+    const position = new google.maps.LatLng(local.lat, local.lng);
+
+    const coordsMap: google.maps.LatLngLiteral[] = [
+      { lat: 40.698368338470225, lng: -73.98564910894787 },
+      { lat: 40.69866554506028, lng: -73.9568281173706 },
+      { lat: 40.70428236757431, lng: -73.9481162817999 },
+      { lat: 40.71193901146775, lng: -73.94047737121582 },
+      { lat: 40.7304783951045, lng: -73.95150661468506 },
+      { lat: 40.73586254432281, lng: -73.95508495006308 },
+      { lat: 40.72955373901099, lng: -73.95920482310996 },
+    ];
+    const deliveryRadius = new google.maps.Polygon({
+      paths: coordsMap,
+    });
+    if (
+      google.maps.geometry.poly.containsLocation(position, deliveryRadius) ===
+      true
+    ) {
+      stripe
+        .confirmPayment({
+          elements,
+
+          redirect: 'if_required',
+        })
+        .then(function (result) {
+          if (result.error) {
+            console.log('failed');
+          } else {
+            console.log('success');
+            // orderInformation();
+          }
+        });
+    } else {
+      alert("Address isn't in delivery Radius");
+    }
+  }
+
+  function handleCheckboxChange(e) {
+    setDelivery(e.target.value);
+  }
   return (
     <div className="checkout_Container">
       <div className="checkout" onClick={props.dummyfunction}>
@@ -198,17 +300,84 @@ function LocationChecker(props) {
           </span>
         </div>
         <div className="checkout_Location_Container">
-          <GoogleGeocode
-            SetVerifyLoc={props.SetVerifyLoc}
-            SetShowCheckout={props.SetShowCheckout}
-          />
+          <div>
+            <div className="checkout_Label_Container">
+              <div className="checkout_Label">
+                <label>
+                  Pickup
+                  <span
+                    className={`${
+                      delivery === 'pickup' ? 'checkout_Label_SpanClicked' : ''
+                    }`}
+                  />
+                  <input
+                    type="radio"
+                    value="pickup"
+                    checked={delivery === 'pickup'}
+                    onChange={handleCheckboxChange}
+                  />
+                </label>
+              </div>
+              <div className="checkout_Label">
+                <label>
+                  Delivery
+                  <input
+                    type="radio"
+                    value="delivery"
+                    checked={delivery === 'delivery'}
+                    onChange={handleCheckboxChange}
+                  />
+                  <span
+                    className={`${
+                      delivery === 'delivery'
+                        ? 'checkout_Label_SpanClicked'
+                        : ''
+                    }`}
+                  />
+                </label>
+              </div>
+            </div>
+            {delivery === 'delivery' && (
+              <div className={'checkout_Delivery'}>
+                <h2>Please enter your delivery address</h2>
+                <label>
+                  Address
+                  <input
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    name="Address"
+                  />
+                </label>
+                <label>
+                  Zip
+                  <input
+                    type="text"
+                    name="Zipcode"
+                    value={zip}
+                    onChange={(e) => setZip(e.target.value)}
+                  />
+                </label>
+                <label>
+                  City
+                  <input
+                    type="text"
+                    name="City"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                  />
+                </label>
+              </div>
+            )}
+          </div>
           <Checkout
+            delivery={delivery}
+            geocode={geocode}
             product={props.product}
             price={props.price}
             clientSecret={props.clientSecret}
           ></Checkout>
         </div>
-        <div className="cartFooter"></div>
       </div>
       <div></div>
     </div>
