@@ -45,10 +45,6 @@ app.post('/create-payment-intent', async (req, res) => {
 
 app.post('/update-payment-intent', async (req) => {
   const { price, info } = req.body;
-
-  console.log(info);
-  console.log(price);
-
   await stripe.paymentIntents.update(info, {
     amount: calculateOrderAmount(price),
   });
