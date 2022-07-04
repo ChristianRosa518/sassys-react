@@ -19,7 +19,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-/* 
+
 .cartItems {
   height: 70%;
   width: 100%;
@@ -66,7 +66,7 @@
   z-index: 20;
 }
 
-.productContainer {
+/* .productContainer {
   height: 15vh;
   width: 90%;
   border-radius: 7px;
