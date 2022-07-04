@@ -10,19 +10,15 @@ const stripeSecret = process.env.REACT_APP_SECRET_KEY;
 const stripe = require('stripe')(stripeSecret);
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('build'));
-  app.get('*', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
+app.use(express.static('build'));
+app.get('*', (req, res) => {
+  req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
 
 const calculateOrderAmount = (items) => {
   let value = items;
   value = value.slice(1).replace('.', '');
   value = parseInt(value);
-
-  console.log('hidsadas');
 
   if (value <= 1) {
     var number = 100;
