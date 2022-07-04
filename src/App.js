@@ -10,8 +10,8 @@ import Navbar from './components/navbar/Navbar';
 import Location from './components/location/Location';
 import Footer from './components/footer/Footer';
 import Contact from './components/contact/Contact';
-import Cart from './components/checkout/Cart';
-import Confirmed from './components/checkout/PaymentConfirmed';
+// import Cart from '../hide/checkout/Cart';
+// import Confirmed from '../hide/checkout/PaymentConfirmed';
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
 
@@ -55,7 +55,7 @@ function App() {
     <Router basename="/">
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={stripeOptions} stripe={stripePromise}>
-        <Cart
+        {/* <Cart
           SetLocation={SetLocation}
           SetShowCart={SetShowCart}
           SetProduct={SetProduct}
@@ -65,10 +65,10 @@ function App() {
           product={product}
           price={price}
           payment={payment}
-        />
+        /> */}
       </Elements>
       <Routes>
-        <Route path={'/confirmed'} element={<Confirmed />}></Route>
+        {/* <Route path={'/confirmed'} element={<Confirmed />}></Route> */}
         <Route
           exact
           path="/"
