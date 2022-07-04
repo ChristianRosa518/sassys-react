@@ -1,2 +1,0 @@
-  "homepage": "https://christianrosa518.github.io/sassys-react/",
-  "proxy": "http://localhost:4242/",

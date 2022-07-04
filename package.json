@@ -2,6 +2,7 @@
   "name": "sassys-react",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "proxy": "http://localhost:5000",
   "homepage": "/",
   "dependencies": {
