@@ -22,7 +22,7 @@ const calculateOrderAmount = (items) => {
   value = value.slice(1).replace('.', '');
   value = parseInt(value);
 
-  console.log('hi');
+  console.log('hidsadas');
 
   if (value <= 1) {
     var number = 100;
