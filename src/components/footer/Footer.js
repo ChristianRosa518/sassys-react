@@ -17,14 +17,6 @@ export default function Footer() {
             <li>233 S 4th St Brooklyn, Ny 11211</li>
           </ul>
         </div>
-        <div className="footer">
-          <a href="#" className="fa">
-            {/* <img src="../images/facebook.png" alt="" /> */}
-          </a>
-          <a href="#" className="fa">
-            {/* <img src="../images/yelp.png" alt="" className="" /> */}
-          </a>
-        </div>
       </footer>
     </div>
   );
