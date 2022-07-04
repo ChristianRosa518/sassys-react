@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === 'production') {
     req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   });
 }
+
 const calculateOrderAmount = (items) => {
   let value = items;
   value = value.slice(1).replace('.', '');
@@ -45,6 +46,10 @@ app.post('/create-payment-intent', async (req, res) => {
 
 app.post('/update-payment-intent', async (req) => {
   const { price, info } = req.body;
+
+  console.log(info);
+  console.log(price);
+
   await stripe.paymentIntents.update(info, {
     amount: calculateOrderAmount(price),
   });
