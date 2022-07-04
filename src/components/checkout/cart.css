@@ -10,7 +10,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* .cart {
+.cart {
   position: absolute;
   height: 100%;
   width: 40%;
@@ -19,7 +19,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-
+/* 
 .cartItems {
   height: 70%;
   width: 100%;
