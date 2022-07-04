@@ -12,6 +12,7 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
+  app.use(express.static(__dirname + '/public'));
   app.get('*', (req, res) => {
     req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   });
