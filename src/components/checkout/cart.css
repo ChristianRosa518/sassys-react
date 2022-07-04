@@ -102,12 +102,12 @@
   align-items: center;
 }
 
-/* .productDesContainer h3 {
+.productDesContainer > h3 {
   padding-left: 10px;
   font-size: 20px;
 }
 
-.productDesContainer h4 {
+/* .productDesContainer h4 {
   padding-left: 10px;
   font-size: 20px;
   color: grey;
