@@ -10,7 +10,7 @@ import {
 } from '@stripe/react-stripe-js';
 
 import './Checkout.css';
-import './cart.css';
+// import './cart.css';
 
 export default class Checkout extends React.Component {
   constructor(props) {

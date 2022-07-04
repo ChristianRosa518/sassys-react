@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import axios from 'axios';
 import { useStripe, useElements } from '@stripe/react-stripe-js';
 
-import './cart.css';
+// import './cart.css';
 import './Checkout.css';
 import Checkout from './Checkout';
 import emailjs from 'emailjs-com';

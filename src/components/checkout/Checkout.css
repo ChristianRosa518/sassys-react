@@ -31,7 +31,6 @@
 
 .checkout_Header h3 {
   font-size: calc(0.65em + 1.5vmin);
-  /* font-family: 'Montserrat', sans-serif; */
 }
 .checkout_CloseButton {
   padding-right: 25px;
