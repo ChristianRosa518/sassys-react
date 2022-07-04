@@ -5,8 +5,6 @@
 /.pnp
 .pnp.js
 /.prettierignore
-savedText.txt
-server.js
 
 # testing
 /coverage
