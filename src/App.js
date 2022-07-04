@@ -55,7 +55,7 @@ function App() {
     <Router basename="/">
       <Navbar showCart={showCart} SetShowCart={SetShowCart} />
       <Elements options={stripeOptions} stripe={stripePromise}>
-        {/* <Cart
+        <Cart
           SetLocation={SetLocation}
           SetShowCart={SetShowCart}
           SetProduct={SetProduct}
@@ -65,7 +65,7 @@ function App() {
           product={product}
           price={price}
           payment={payment}
-        /> */}
+        />
       </Elements>
       <Routes>
         {/* <Route path={'/confirmed'} element={<Confirmed />}></Route> */}
