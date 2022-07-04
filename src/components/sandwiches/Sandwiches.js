@@ -6,9 +6,6 @@ import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
 import Blank from '../../images/Blank.PNG';
-import macBurger from '../../images/macburger.png';
-import angusCheese from '../../images/angusCheese.png';
-import baconCheese from '../../images/baconcheese.png';
 import chicken6 from '../../images/Chicken6.jpg';
 import macnchicken from '../../images/macnChicken.png';
 import chicken5 from '../../images/chickenSwiss5.png';

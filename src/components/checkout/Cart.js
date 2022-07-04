@@ -5,7 +5,6 @@ import { useStripe, useElements } from '@stripe/react-stripe-js';
 
 import './cart.css';
 import './Checkout.css';
-import GoogleGeocode from '../location/Geocode';
 import Checkout from './Checkout';
 import emailjs from 'emailjs-com';
 
