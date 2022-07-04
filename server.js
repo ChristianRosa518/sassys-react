@@ -13,16 +13,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
   app.get('*', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build'));
-  });
-  app.get('/confirmed', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build'));
-  });
-  app.get('/contact', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build'));
-  });
-  app.get('/location', (req, res) => {
-    req.sendFile(path.resolve(__dirname, 'build'));
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   });
 }
 
