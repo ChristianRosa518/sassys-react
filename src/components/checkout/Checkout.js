@@ -9,7 +9,7 @@ import {
   useElements,
 } from '@stripe/react-stripe-js';
 
-import './Checkout.css';
+// import './Checkout.css';
 
 export default class Checkout extends React.Component {
   constructor(props) {
