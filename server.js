@@ -22,6 +22,8 @@ const calculateOrderAmount = (items) => {
   value = value.slice(1).replace('.', '');
   value = parseInt(value);
 
+  console.log('hi');
+
   if (value <= 1) {
     var number = 100;
   } else {
