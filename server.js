@@ -15,6 +15,15 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     req.sendFile(path.resolve(__dirname, 'build'));
   });
+  app.get('/confirmed', (req, res) => {
+    req.sendFile(path.resolve(__dirname, 'build'));
+  });
+  app.get('/contact', (req, res) => {
+    req.sendFile(path.resolve(__dirname, 'build'));
+  });
+  app.get('/location', (req, res) => {
+    req.sendFile(path.resolve(__dirname, 'build'));
+  });
 }
 
 const calculateOrderAmount = (items) => {
