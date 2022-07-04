@@ -5,7 +5,7 @@ import { useStripe, useElements } from '@stripe/react-stripe-js';
 
 // import './cart.css';
 // import './Checkout.css';
-import Checkout from '../../../hide/Checkout';
+import Checkout from './Checkout';
 import emailjs from 'emailjs-com';
 
 const API_KEY = process.env.REACT_APP_GEOCODE;
