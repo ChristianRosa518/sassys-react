@@ -11,7 +11,7 @@ import Location from './components/location/Location';
 import Footer from './components/footer/Footer';
 import Contact from './components/contact/Contact';
 import Cart from './components/checkout/Cart';
-// import Confirmed from '../hide/checkout/PaymentConfirmed';
+import Confirmed from '../hide/checkout/PaymentConfirmed';
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLISH_KEY);
 
@@ -68,7 +68,7 @@ function App() {
         />
       </Elements>
       <Routes>
-        {/* <Route path={'/confirmed'} element={<Confirmed />}></Route> */}
+        <Route path={'/confirmed'} element={<Confirmed />}></Route>
         <Route
           exact
           path="/"
