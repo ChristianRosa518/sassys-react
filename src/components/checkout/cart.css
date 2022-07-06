@@ -66,6 +66,34 @@
   z-index: 20;
 }
 
+.cartTotal {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cartTotalInfo {
+  height: 10%;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cartTotalInfo > h3 {
+  height: 10%;
+  width: 50%;
+  font-size: 16px;
+}
+.cartTotalInfo > p {
+  height: 10%;
+  width: 50%;
+  font-size: 16px;
+}
+
 .productContainer {
   height: 15vh;
   width: 90%;

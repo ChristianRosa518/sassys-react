@@ -18,16 +18,23 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const calculateOrderAmount = (items) => {
+  let dollarUS = Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
   let value = items;
   value = value.slice(1).replace('.', '');
   value = parseInt(value);
+  value = value * 0.0108875;
+  let amount = dollarUS.format(value);
+  amount = amount.slice(1).replace('.', '');
+  amount = parseInt(amount);
 
   if (value <= 1) {
     var number = 100;
   } else {
-    number = value;
+    number = amount;
   }
-  console.log(number);
   return number;
 };
 

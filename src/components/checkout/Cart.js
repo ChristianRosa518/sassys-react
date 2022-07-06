@@ -57,6 +57,31 @@ export default function Cart(props) {
     e.stopPropagation();
   }
 
+  function taxPrice(num) {
+    let value = num;
+    value = value.slice(1).replace('.', '');
+    value = parseInt(value);
+    value = value * 0.0008875;
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(value);
+    return amount;
+  }
+  function totalPrice(num) {
+    let value = num;
+    value = value.slice(1).replace('.', '');
+    value = parseInt(value);
+    value = value * 0.0108875;
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(value);
+    return amount;
+  }
+
   const ModalBgAnimate = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.3 } },
@@ -109,7 +134,24 @@ export default function Cart(props) {
                 })}
               </div>
               <div className="cartCheckout">
-                {props.price}
+                <div className="cartTotal">
+                  <div className="cartTotalInfo">
+                    <h3>Subtotal:</h3>
+                    <p>{props.price}</p>
+                  </div>
+                  <div className="cartTotalInfo">
+                    <h3>Tax:</h3>
+                    <p>{taxPrice(props.price)}</p>
+                  </div>
+                  <div className="cartTotalInfo">
+                    <h3>Delivery Fee:</h3>
+                    <p>free.99</p>
+                  </div>
+                  <div className="cartTotalInfo">
+                    <h3>Total:</h3>
+                    <p>{totalPrice(props.price)}</p>
+                  </div>
+                </div>
                 <button onClick={openCheckout}>Order</button>
               </div>
             </motion.div>

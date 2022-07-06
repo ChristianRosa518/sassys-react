@@ -24,6 +24,20 @@ export default class Checkout extends React.Component {
       isLoading: false,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.totalPrice = this.totalPrice.bind(this);
+  }
+
+  totalPrice(num) {
+    let value = num;
+    value = value.slice(1).replace('.', '');
+    value = parseInt(value);
+    value = value * 0.0108875;
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(value);
+    return amount;
   }
 
   handleInputChange(e) {
@@ -91,7 +105,9 @@ export default class Checkout extends React.Component {
                   onChange={this.handleInputChange}
                 />
               </label>
-              <div className="checkout_Price">Total : {this.props.price}</div>
+              <div className="checkout_Price">
+                Total : {this.totalPrice(this.props.price)}
+              </div>
               <div className={'checkout_Card_Container'}></div>
               <Payment
                 LocationAccept={this.props.LocationAccept}
