@@ -137,6 +137,12 @@ export default function Cart(props) {
                 })}
               </div>
               <div className="cartCheckout">
+                <span
+                  className="closeButtonCartItem_cartCheckout"
+                  onClick={changeCartState}
+                >
+                  &times;
+                </span>
                 <div className="cartOrderContainer">
                   <button className="cartOrder" onClick={openCheckout}>
                     Order
