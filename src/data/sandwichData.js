@@ -170,15 +170,7 @@ export const data = {
       description: `Cheddar burger topped with our creamy mac n cheese, bacon,
       sauteed onions, and BBQ sauce`,
     },
-    {
-      tag: 'Burgers',
-      price: 9.99,
-      image: Blank,
-      name: `Impossible Burger`,
-      description: `Quarter Pound Impossible burger Patty topped plant based
-      cheddar, lettuce, tomato, onion, pickles, and vegan roasted
-      pepper aioli`,
-    },
+
     {
       tag: 'Burgers',
       price: 9.99,
@@ -205,6 +197,127 @@ export const data = {
       description: `100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Smoked
       Bacon Leafy Lettuce, Sliced Tomato, Red Onion, and Pickles.
       Served on a Toasted Brioche Bun (Default is well done)`,
+    },
+
+    {
+      tag: 'Breakfast',
+      price: 9.99,
+      image: Blank,
+      name: `Bacon Egg n' Cheese`,
+      description: `2 Eggs Scrambled, Your choice of Cheese, & Crispy Bacon`,
+    },
+    {
+      tag: 'Breakfast',
+      price: 9.99,
+      image: Blank,
+      name: `Sausage Egg n' Cheese`,
+      description: `2 Eggs Scrambled, Your choice of Cheese, & Savory Sausage`,
+    },
+    {
+      tag: 'Breakfast',
+      price: 9.99,
+      image: Blank,
+      name: `2 Eggs Breakfast`,
+      description: `Two Eggs Served Any Way With Your Choice Of Cheese`,
+    },
+    {
+      tag: 'Breakfast',
+      price: 9.99,
+      image: Blank,
+      name: `French Toast`,
+      description: `3 Slices of French Toast from scratch Served with Two Eggs And A
+      Side of Syrup`,
+    },
+    {
+      tag: 'Breakfast',
+      price: 9.99,
+      image: Blank,
+      name: `Pancake Platter`,
+      description: `3 pieces of hot pancakes Served with Two Eggs, Choice of Fruit
+      And A Side of Syrup`,
+    },
+    {
+      tag: 'Breakfast',
+      price: 9.99,
+      image: Blank,
+      name: `Grilled Cheese Sandwich`,
+      description: `Melted American Cheese Served on Toasted Sliced White or Wheat`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: chicken6,
+      name: `6. Crispy Chicken W/ American Cheese & Avocado`,
+      description: `Crispy Chicken Cutlet with American Cheese, Ripe avocado, hot
+      cherry peppers, tomato, leafy lettuce, and honey Dijon mustard.`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: macnchicken,
+      name: `Mac N' Chicken`,
+      description: `Crispy Chicken Cutlet topped with Melted Cheddar, Cheddar Mac
+      and Cheese, Crispy Bacon, and Sassy's Chipotle Mayo Aioli.
+      Served on a Toasted Broiche Bun.`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: chicken5,
+      name: `5. Crispy Chicken W/ Imported Swiss & Bacon`,
+      description: `Crispy Chicken Cutlet Topped With Smoked Bacon, Melted Swiss
+      Cheese, Leafy Lettuce, Sliced Tomato, Mayonnaise`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: chicken8,
+      name: `8. Grilled Chicken W/ Pepperjack & Avocado`,
+      description: `Grilled Chicken Breast Topped With Melted Pepper Jack Cheese,
+      Baby Spinach, Sliced Tomato, Creamy Ranch Dressing`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: chicken9,
+      name: `9. Grilled Balsamic Chicken W/ Mozzarella & Bacon`,
+      description: `Grilled Chicken Breast Topped With Melted Mozzarella Cheese,
+      Avocado, Smoked Bacon, Caramelized Onions, Leafy Lettuce,
+      Sassy’s Chipotle Mayo Aioli`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: Blank,
+      name: `10. Grilled Chicken W/ Cheddar & Bacon`,
+      description: `Grilled Chicken Breast Topped With Melted Cheddar Cheese, Smoked
+      Bacon, Caramelized Red Onions Leafy Lettuce, Sliced Tomato,
+      Honey Dijon Mustard`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: chicken11,
+      name: `11. Hot Chipotle Chicken`,
+      description: `Chipotle Chicken Breast, Pepper-jack Cheese, Smoked Bacon, Baby
+      Spinach, Hot cherry peppers, Tomato, & Sassy’s Chipotle Mayo
+      Aioli`,
+    },
+    {
+      tag: 'Chicken',
+      price: 9.99,
+      image: Blank,
+      name: `#12. The Buffalo`,
+      description: `Grilled Buffalo Chicken Cutlet, Melted Muenster Cheese,
+      Caramelized Mushrooms, Leafy Lettuce, Blue Cheese Dressing`,
+    },
+    {
+      tag: 'Wings',
+      price: 9.99,
+      image: Blank,
+      name: `#12. The Buffalo`,
+      description: `Grilled Buffalo Chicken Cutlet, Melted Muenster Cheese,
+      Caramelized Mushrooms, Leafy Lettuce, Blue Cheese Dressing`,
     },
   ],
 };

@@ -24,12 +24,22 @@ export default function Location() {
           apiKey={'AIzaSyAyQo5E9RoTnz7324q_pqNjjxInO6liZho'}
           render={render}
         >
-          <Map
-            mapCenter={mapCenter}
-            center={center}
-            zoom={zoom}
-            style={{ height: '100%', width: '100%' }}
-          ></Map>
+          <div className="bigMap">
+            <Map
+              mapCenter={mapCenter}
+              center={center}
+              zoom={zoom}
+              style={{ height: '100%', width: '100%' }}
+            ></Map>
+          </div>
+          <div className="smallMap">
+            <Map
+              mapCenter={mapCenter}
+              center={center}
+              zoom={13}
+              style={{ height: '100%', width: '100%' }}
+            ></Map>
+          </div>
         </Wrapper>
       </div>
     </div>

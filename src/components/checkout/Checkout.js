@@ -144,8 +144,12 @@ function Payment(props) {
     for (let i = 0; i < props.product.length; i++) {
       let value = `Order${[i]}`;
       let addons = `Toppings${[i]}`;
+      let Instructions = `Instructions${[i]}`;
       Object.assign(template, { [value]: productinformation[i].title });
       Object.assign(template, { [addons]: productinformation[i].toppings });
+      Object.assign(template, {
+        [Instructions]: productinformation[i].instructions,
+      });
     }
     emailjs
       .send(

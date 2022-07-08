@@ -38,3 +38,26 @@ body {
 .none {
   display: none;
 }
+
+.smallMap {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.bigMap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .smallMap {
+    display: flex;
+    justify-content: center;
+  }
+  .bigMap {
+    display: none;
+  }
+}

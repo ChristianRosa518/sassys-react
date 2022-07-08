@@ -117,7 +117,10 @@ export default function Cart(props) {
               onClick={dummyfunction}
             >
               {props.product.length === 0 && (
-                <div className="cart_Empty"> Cart is empty</div>
+                <div className="cart_Empty">
+                  <h2>Cart is empty</h2>
+                  <p></p>
+                </div>
               )}
               <div className="cartItems">
                 {props.product.map((item) => {
@@ -134,6 +137,11 @@ export default function Cart(props) {
                 })}
               </div>
               <div className="cartCheckout">
+                <div className="cartOrderContainer">
+                  <button className="cartOrder" onClick={openCheckout}>
+                    Order
+                  </button>
+                </div>
                 <div className="cartTotal">
                   <div className="cartTotalInfo">
                     <h3>Subtotal:</h3>
@@ -143,16 +151,12 @@ export default function Cart(props) {
                     <h3>Tax:</h3>
                     <p>{taxPrice(props.price)}</p>
                   </div>
-                  <div className="cartTotalInfo">
-                    <h3>Delivery Fee:</h3>
-                    <p>free.99</p>
-                  </div>
+
                   <div className="cartTotalInfo">
                     <h3>Total:</h3>
                     <p>{totalPrice(props.price)}</p>
                   </div>
                 </div>
-                <button onClick={openCheckout}>Order</button>
               </div>
             </motion.div>
           )}
@@ -206,15 +210,32 @@ class Product extends React.Component {
     this.props.SetProduct(array);
     this.props.SetPrice(price);
   }
+  breadType() {
+    var bread = this.props.item.toppings[1];
+    return bread;
+  }
   render() {
     return (
       <div className={'productContainer'}>
         <div className="productDesContainer">
           <div className="productTitleCon">
             <h3>-{this.props.item.title}-</h3>
-            <h4>Price: {this.formatPrice(this.props.item.price)}</h4>
+            <h4>{this.formatPrice(this.props.item.price)}</h4>
           </div>
-          <p>{this.props.item.description}</p>
+          <div className="productDes">
+            <p className="productTraits">
+              - {this.props.item.bread === '' ? '' : this.props.item.bread}
+            </p>
+            <p className="productTraits">
+              {this.props.item.adds === '' ? '' : `- ${this.props.item.adds}`}
+            </p>
+            <p className="productTraits">
+              {this.props.item.instructions === ''
+                ? ''
+                : `- ${this.props.item.instructions}`}
+            </p>
+            <p className="productInfo">{this.props.item.description}</p>
+          </div>
         </div>
         <div className="productImageContainer">
           <img
@@ -269,8 +290,12 @@ function LocationChecker(props) {
     for (let i = 0; i < props.product.length; i++) {
       let value = `Order${[i]}`;
       let addons = `Toppings${[i]}`;
+      let Instructions = `Instructions${[i]}`;
       Object.assign(template, { [value]: productinformation[i].title });
       Object.assign(template, { [addons]: productinformation[i].toppings });
+      Object.assign(template, {
+        [Instructions]: productinformation[i].instructions,
+      });
     }
     emailjs
       .send(

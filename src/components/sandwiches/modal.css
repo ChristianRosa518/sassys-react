@@ -176,6 +176,12 @@
   cursor: pointer;
   margin-right: 10px;
 }
+
+.modalExtraInstructions {
+  height: 10vh;
+  width: 100%;
+  resize: none;
+}
 @media only screen and (max-width: 1440px) and (max-height: 600px) {
   .modalImageContainer {
     height: 60%;

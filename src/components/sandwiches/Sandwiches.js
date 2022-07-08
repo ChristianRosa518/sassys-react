@@ -6,12 +6,6 @@ import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
 import Blank from '../../images/Blank.PNG';
-import chicken6 from '../../images/Chicken6.jpg';
-import macnchicken from '../../images/macnChicken.png';
-import chicken5 from '../../images/chickenSwiss5.png';
-import chicken8 from '../../images/chickennumba6.png';
-import chicken9 from '../../images/5.jpg';
-import chicken11 from '../../images/chicken11.png';
 import chipotlewings from '../../images/chipotlewings.png';
 import buffalowings from '../../images/buffaloWings.png';
 import turkey37 from '../../images/37.png';
@@ -86,136 +80,38 @@ export default function Sandwiches(props) {
         ContainerTitle={`Breakfast Sandwiches`}
         ContainerDescription={`Morning Starters, even an afternoon starter!`}
       >
-        <>
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Bacon Egg n' Cheese`}
-            Description={`2 Eggs Scrambled, Your choice of Cheese, & Crispy Bacon`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Sausage Egg n' Cheese`}
-            Description={`2 Eggs Scrambled, Your choice of Cheese, & Savory Sausage`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`2 Eggs Breakfast`}
-            Description={`Two Eggs Served Any Way With Your Choice Of Cheese`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Vegetarian Omelette`}
-            Description={`3 Eggs, Diced Bell peppers, mushrooms, tomato, onion and
-            spinach. Served on choice of bread or platter.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Grilled Cheese Sandwich`}
-            Description={`Melted American Cheese Served on Toasted Sliced White or Wheat`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`French Toast`}
-            Description={`3 Slices of French Toast from scratch Served with Two Eggs And A
-            Side of Syrup`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Pancake Platter`}
-            Description={`3 pieces of hot pancakes Served with Two Eggs, Choice of Fruit
-            And A Side of Syrup`}
-          />
-        </>
+        {data.Sandwiches.filter((Sand) => Sand.tag === 'Breakfast').map(
+          (sandwich) => (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setModalData}
+              setOpen={setOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Chicken Sandwiches'}
         ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
       >
-        <>
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={chicken6}
-            SandwichName={`6. Crispy Chicken W/ American Cheese & Avocado`}
-            Description={`Crispy Chicken Cutlet with American Cheese, Ripe avocado, hot
-            cherry peppers, tomato, leafy lettuce, and honey Dijon mustard.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={macnchicken}
-            SandwichName={`Mac N' Chicken`}
-            Description={`Crispy Chicken Cutlet topped with Melted Cheddar, Cheddar Mac
-            and Cheese, Crispy Bacon, and Sassy's Chipotle Mayo Aioli.
-            Served on a Toasted Broiche Bun.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={chicken5}
-            SandwichName={`5. Crispy Chicken W/ Imported Swiss & Bacon`}
-            Description={`Crispy Chicken Cutlet Topped With Smoked Bacon, Melted Swiss
-            Cheese, Leafy Lettuce, Sliced Tomato, Mayonnaise`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={chicken8}
-            SandwichName={`8. Grilled Chicken W/ Pepperjack & Avocado`}
-            Description={`Grilled Chicken Breast Topped With Melted Pepper Jack Cheese,
-            Baby Spinach, Sliced Tomato, Creamy Ranch Dressing`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={chicken9}
-            SandwichName={`9. Grilled Balsamic Chicken W/ Mozzarella & Bacon`}
-            Description={`Grilled Chicken Breast Topped With Melted Mozzarella Cheese,
-            Avocado, Smoked Bacon, Caramelized Onions, Leafy Lettuce,
-            Sassy’s Chipotle Mayo Aioli`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`10. Grilled Chicken W/ Cheddar & Bacon`}
-            Description={`Grilled Chicken Breast Topped With Melted Cheddar Cheese, Smoked
-            Bacon, Caramelized Red Onions Leafy Lettuce, Sliced Tomato,
-            Honey Dijon Mustard`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={chicken11}
-            SandwichName={`11. Hot Chipotle Chicken`}
-            Description={`Chipotle Chicken Breast, Pepper-jack Cheese, Smoked Bacon, Baby
-            Spinach, Hot cherry peppers, Tomato, & Sassy’s Chipotle Mayo
-            Aioli`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`#12. The Buffalo`}
-            Description={`Grilled Buffalo Chicken Cutlet, Melted Muenster Cheese,
-            Caramelized Mushrooms, Leafy Lettuce, Blue Cheese Dressing`}
-          />
-        </>
+        {data.Sandwiches.filter((Sand) => Sand.tag === 'Chicken').map(
+          (sandwich) => (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setModalData}
+              setOpen={setOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
@@ -984,6 +880,7 @@ export class SandwichModal extends React.Component {
       extrasCost: 0,
       Bread: 'Roll',
       Toppings: '',
+      Instructions: '',
     };
   }
 
@@ -1004,6 +901,9 @@ export class SandwichModal extends React.Component {
         price: amount,
         picture: this.props.modalData.picture,
         toppings: tops,
+        bread: this.state.Bread,
+        adds: this.state.Toppings,
+        instructions: this.state.Instructions,
       };
       const newData = [...this.props.product];
       newData.push(data);
@@ -1032,6 +932,7 @@ export class SandwichModal extends React.Component {
       extrasCost: 0,
       Bread: 'Roll',
       Toppings: '',
+      Instructions: '',
     });
   }
   dummyfunction(e) {
@@ -1083,7 +984,7 @@ export class SandwichModal extends React.Component {
 
     const totalNames = updateCheckedState.reduce((name, current, index) => {
       if (current === true) {
-        return name + toppings.Extras[index].name + '\n';
+        return name + toppings.Extras[index].name + ',\n';
       }
       return name;
     }, '');
@@ -1189,6 +1090,16 @@ export class SandwichModal extends React.Component {
                       );
                     })}
                   </ul>
+                  <div>
+                    <h3>Extra instructions</h3>
+                    <textarea
+                      className="modalExtraInstructions"
+                      value={this.state.Instructions}
+                      onChange={(e) =>
+                        this.setState({ Instructions: e.target.value })
+                      }
+                    ></textarea>
+                  </div>
                   <br />
                 </div>
 
