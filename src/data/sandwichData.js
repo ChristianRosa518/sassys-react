@@ -314,10 +314,47 @@ export const data = {
     {
       tag: 'Wings',
       price: 9.99,
+      image: chipotlewings,
+      name: `Chipotle Tossed Chicken Wings`,
+      description: `Crispy Chicken Wings Tossed in Sassy’s Chipotle Mayo Aioli (Half
+        Dozen or Dozen)`,
+    },
+    {
+      tag: 'Wings',
+      price: 9.99,
       image: Blank,
-      name: `#12. The Buffalo`,
-      description: `Grilled Buffalo Chicken Cutlet, Melted Muenster Cheese,
-      Caramelized Mushrooms, Leafy Lettuce, Blue Cheese Dressing`,
+      name: `Lemon Pepper Chicken Wings`,
+      description: ``,
+    },
+    {
+      tag: 'Wings',
+      price: 9.99,
+      image: Blank,
+      name: `Honey BBQ Tossed Chicken Wings`,
+      description: `Crispy Chicken Wings Tossed in Our Homemade Honey BBQ Mix (Half
+        Dozen or Dozen)`,
+    },
+    {
+      tag: 'Wings',
+      price: 9.99,
+      image: buffalowings,
+      name: `Buffalo Tossed Chicken Wings`,
+      description: `Crispy Chicken Wings Tossed in Buffalo Sauce (Half Dozen or
+        Dozen)`,
+    },
+    {
+      tag: 'Wings',
+      price: 9.99,
+      image: Blank,
+      name: `Chicken Wings`,
+      description: `Plain Chicken Wings (Half Dozen or Dozen)`,
+    },
+    {
+      tag: 'Wings',
+      price: 9.99,
+      image: Blank,
+      name: `Mango Habanero Chicken Wings`,
+      description: ``,
     },
   ],
 };

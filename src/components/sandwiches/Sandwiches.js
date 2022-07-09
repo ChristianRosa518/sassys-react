@@ -118,53 +118,19 @@ export default function Sandwiches(props) {
         ContainerTitle={'Chicken Wings'}
         ContainerDescription={`We left the bone in these options`}
       >
-        <>
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={chipotlewings}
-            SandwichName={`Chipotle Tossed Chicken Wings`}
-            Description={`Crispy Chicken Wings Tossed in Sassy’s Chipotle Mayo Aioli (Half
-              Dozen or Dozen)`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={buffalowings}
-            SandwichName={`Buffalo Tossed Chicken Wings`}
-            Description={`Crispy Chicken Wings Tossed in Buffalo Sauce (Half Dozen or
-              Dozen)`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Lemon Pepper Chicken Wings`}
-            Description={``}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Honey BBQ Tossed Chicken Wings`}
-            Description={`Crispy Chicken Wings Tossed in Our Homemade Honey BBQ Mix (Half
-              Dozen or Dozen)`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Chicken Wings`}
-            Description={`Plain Chicken Wings (Half Dozen or Dozen)`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Mango Habanero Chicken Wings`}
-            Description={``}
-          />
-        </>
+        {data.Sandwiches.filter((Sand) => Sand.tag === 'Wings').map(
+          (sandwich) => (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setModalData}
+              setOpen={setOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
