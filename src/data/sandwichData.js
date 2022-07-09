@@ -356,6 +356,22 @@ export const data = {
       name: `Mango Habanero Chicken Wings`,
       description: ``,
     },
+    {
+      tag: 'Turkey',
+      price: 9.99,
+      image: turkey37,
+      name: `37. Peppermill Smoked Turkey Breast Sandwich`,
+      description: `Imported Swiss, shredded iceberg, sliced tomato and Russian
+      dressing.`,
+    },
+    {
+      tag: 'Turkey',
+      price: 9.99,
+      image: turkey41,
+      name: `41. Honey Bbq Turkey Sandwich`,
+      description: `Maple Honey Turkey, Bacon, Lettuce, Tomato, & BBQ Sauce. This
+      Sandwich is Christian's Personal Favorite`,
+    },
   ],
 };
 

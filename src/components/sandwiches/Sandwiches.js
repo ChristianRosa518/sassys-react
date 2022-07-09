@@ -137,24 +137,19 @@ export default function Sandwiches(props) {
         ContainerTitle={'Signature Turkey Sandwiches'}
         ContainerDescription={`gobble gobble gobble`}
       >
-        <>
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={turkey37}
-            SandwichName={`37. Peppermill Smoked Turkey Breast Sandwich`}
-            Description={`Imported Swiss, shredded iceberg, sliced tomato and Russian
-            dressing.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={turkey41}
-            SandwichName={`41. Honey Bbq Turkey Sandwich`}
-            Description={`Maple Honey Turkey, Bacon, Lettuce, Tomato, & BBQ Sauce. This
-            Sandwich is Christian's Personal Favorite`}
-          />
-        </>
+        {data.Sandwiches.filter((Sand) => Sand.tag === 'Turkey').map(
+          (sandwich) => (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setModalData}
+              setOpen={setOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
