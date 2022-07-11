@@ -117,6 +117,19 @@ h2:hover {
   align-items: center;
 }
 
+.cardHeader h3 {
+  width: 80%;
+  height: 100%;
+}
+
+.cardHeader p {
+  width: 20%;
+  height: 100%;
+  text-align: right;
+  color: black !important;
+  margin-right: 7px;
+}
+
 .cardDes {
   overflow: hidden;
   text-overflow: ellipsis;

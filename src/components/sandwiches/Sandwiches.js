@@ -756,6 +756,7 @@ class SandwichCard extends React.Component {
           <div className="cardDes">
             <div className="cardHeader">
               <h3>- {this.props.SandwichName} -</h3>
+              <p>{this.props.Price}</p>
             </div>
             <p>{this.props.Description}</p>
           </div>

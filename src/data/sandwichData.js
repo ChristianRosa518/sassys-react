@@ -56,7 +56,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      name: `The "Sassinator"`,
+      name: `The "Sassinator`,
       price: 12.95,
       image: Sassinator,
       description: `Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
@@ -65,7 +65,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Bacon Stack`,
-      price: 7.99,
+      price: 12.95,
       image: BaconStack,
       description: `Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
     with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
@@ -74,7 +74,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Philly Cheese Steak`,
-      price: 9.99,
+      price: 11.95,
       image: Philly,
       description: `Steak, Provolone & American Cheese, Red & Green Peppers, Onions,
     and Mayo`,
@@ -82,14 +82,14 @@ export const data = {
     {
       tag: 'Specialty',
       name: `BLT`,
-      price: 9.99,
+      price: 6.95,
       image: Blt,
       description: `Bacon, Romaine Lettuce, Tomato & Mayo! Served on Toasted Bread!`,
     },
     {
       tag: 'Specialty',
       name: `Sassy's Mad Burger`,
-      price: 9.99,
+      price: 12.95,
       image: MadBurger,
       description: `8oz Angus Beef Topped with Melted American Cheese, Crispy Bacon,
       Crispy Jumbo Onion Rings, Ketchup & Mayo. Served on Toasted
@@ -98,7 +98,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `4. Gouda Meal`,
-      price: 9.99,
+      price: 11.95,
       image: Gouda,
       description: `Crispy Chicken Cutlet, Chipotle gouda, Smoked Bacon, Lettuce,
       Tomato, topped off with Ketchup, & Ranch. We all agreed that it
@@ -107,7 +107,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `7. Crispy Chicken Cutlet Parmigina`,
-      price: 9.99,
+      price: 11.95,
       image: Parm,
       description: `Crispy Chicken Cutlet, Fresh Marinara Sauce, Melted Mozzarella,
       Parmesan Cheese, Basil. Served on Garlic Bread`,
@@ -115,7 +115,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `The Spicy Mama`,
-      price: 9.99,
+      price: 10.95,
       image: SpicyMama,
       description: `Salsalito Turkey Breast, Pepper-jack Cheese, Avocado, Jalapeno
       Peppers, Baby Spinach, Sliced Tomato, Mayonnaise`,
@@ -123,14 +123,14 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Regula Degula`,
-      price: 9.99,
+      price: 10.95,
       image: Regula,
       description: `Ovengold Roasted Turkey, American Cheese, Smoked Bacon, Avocado,
       Leafy Lettuce, Tomato, Mayonnaise`,
     },
     {
       tag: 'Specialty',
-      price: 9.99,
+      price: 10.95,
       image: QuickBite,
       name: `38. "Quik-Bite"`,
       description: `Maple Honey Turkey, Cheddar Cheese, Leafy Lettuce, Hot Cherry
@@ -138,7 +138,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      price: 9.99,
+      price: 10.95,
       image: SmokeyMeunster,
       name: `Smokey Muenster`,
       description: `Smoked Mesquite Turkey Breast, Muenster cheese, Arugula, Creamy
@@ -146,7 +146,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      price: 9.99,
+      price: 9.95,
       image: Blank,
       name: `The Bourbon`,
       description: `Bourbon Smoked Boars Head Ham, Smoked Gouda Cheese, Caramalized
@@ -155,7 +155,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      price: 9.99,
+      price: 10.95,
       image: BrooklynBreak,
       name: `"The BKLYN" Breakfast`,
       description: `2 Eggs Scrambled, Grilled Pastrami, Vermont Sharp Cheddar
@@ -164,7 +164,7 @@ export const data = {
     },
     {
       tag: 'Burgers',
-      price: 9.99,
+      price: 11.95,
       image: macBurger,
       name: `Mac-n-Cheese Bacon Beef Burger`,
       description: `Cheddar burger topped with our creamy mac n cheese, bacon,
@@ -173,7 +173,7 @@ export const data = {
 
     {
       tag: 'Burgers',
-      price: 9.99,
+      price: 8.95,
       image: Blank,
       name: `100% Angus Beef Burger`,
       description: `100% Juicy Angus Beef Burger Topped With Leafy Lettuce, Sliced
@@ -182,7 +182,7 @@ export const data = {
     },
     {
       tag: 'Burgers',
-      price: 9.99,
+      price: 9.95,
       image: angusCheese,
       name: `100% Angus Cheeseburger`,
       description: `100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Leafy
@@ -191,7 +191,7 @@ export const data = {
     },
     {
       tag: 'Burgers',
-      price: 9.99,
+      price: 11.95,
       image: baconCheese,
       name: `Bacon Cheese Burger`,
       description: `100% Juicy Angus Beef Burger Topped With Cheddar Cheese, Smoked
