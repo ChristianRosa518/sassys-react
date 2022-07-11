@@ -6,10 +6,6 @@ import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
 import Blank from '../../images/Blank.PNG';
-import chipotlewings from '../../images/chipotlewings.png';
-import buffalowings from '../../images/buffaloWings.png';
-import turkey37 from '../../images/37.png';
-import turkey41 from '../../images/41.png';
 import beef25 from '../../images/25.png';
 import beef26 from '../../images/26.png';
 import beef27 from '../../images/27.png';
