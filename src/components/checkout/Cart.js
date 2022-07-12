@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import axios from 'axios';
 import { useStripe, useElements } from '@stripe/react-stripe-js';
+import { useNavigate } from 'react-router-dom';
 
 import './cart.css';
 import './Checkout.css';
@@ -266,6 +267,7 @@ function LocationChecker(props) {
 
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
 
   const template = {};
   const productinformation = props.product;
@@ -313,11 +315,16 @@ function LocationChecker(props) {
       .then(
         (result) => {
           console.log(result.text);
+          finishedOrder();
         },
         (error) => {
           console.log(error.text);
         }
       );
+  }
+  function finishedOrder() {
+    navigate('/confirmed', { replace: true });
+    window.location.reload(false);
   }
   function CheckLocation(local) {
     const position = new google.maps.LatLng(local.lat, local.lng);

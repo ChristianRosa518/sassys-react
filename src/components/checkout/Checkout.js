@@ -253,6 +253,9 @@ function Payment(props) {
           ></input>
         </div>
       </form>
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
