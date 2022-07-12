@@ -6,20 +6,6 @@ import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
 import Blank from '../../images/Blank.PNG';
-import beef25 from '../../images/25.png';
-import beef26 from '../../images/26.png';
-import beef27 from '../../images/27.png';
-import beef28 from '../../images/28.png';
-import beef29 from '../../images/29.jpg';
-import beef30 from '../../images/30.jpg';
-import beef33 from '../../images/33.jpg';
-import ham16 from '../../images/16.jpg';
-import meat19 from '../../images/19.jpg';
-import meat20 from '../../images/20.jpg';
-import meat21 from '../../images/21.jpg';
-import meat23 from '../../images/23.jpg';
-import meat23_2 from '../../images/23.2.jpg';
-import meat24 from '../../images/24.jpg';
 import mac from '../../images/mac.jpg';
 import shoefries from '../../images/shoeFries.jpg';
 
@@ -140,195 +126,68 @@ export default function Sandwiches(props) {
         ContainerTitle={'Signature Beef and Toasted Sandwiches'}
         ContainerDescription={`Nothing but beef, except for #28, there's some turkey in there too.`}
       >
-        <>
+        {data.Beef.map((sandwich) => (
           <SandwichCard
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={beef25}
-            SandwichName={`#25`}
-            Description={`Roast Beef Served With Melted Provolone Cheese, Caramelized
-            Onions, Baby Arugula, Creamy Russian Dressing`}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={beef26}
-            SandwichName={`#26`}
-            Description={`Roast Beef Topped With Melted Swiss Cheese, Pickles, Leafy
-            Lettuce, Sliced Tomato, Sassy’s Chipotle Mayo Aioli`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={beef27}
-            SandwichName={`#27`}
-            Description={`Roast Beef Topped With Melted Swiss And Cheddar Cheese,
-            Caramelized Onions, Homemade Honey BBQ Sauce. Served on Toasted
-            Garlic Bread`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={beef28}
-            SandwichName={`28. B.H. Roast Beef and Roasted Turkey Combo`}
-            Description={`Roast Beef And Ovengold Turkey Topped With Melted Mozzarella
-            Cheese, Leafy Lettuce, Sliced Tomato, Pickles, Creamy Russian
-            Dressing`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={beef29}
-            SandwichName={`29`}
-            Description={`Roast Beef Topped With Melted Cheddar Cheese, Smoked Bacon,
-            Leafy Lettuce, Caramelized Red Onions, Sliced Tomato, A1 Steak
-            Sauce`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={beef30}
-            SandwichName={`Toasted Beef Meatball Parmigiana`}
-            Description={`Homemade Marinara Sauce, Melted Mozzarella Cheese, Basil, Grated
-            Parmigiana, and Sassy's Homemade Meatballs`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`32.Toasted Reuben Sandwich`}
-            Description={`First Cut Corned Beef, Melted Swiss Cheese, Sauerkraut, Pickles,
-            Creamy Russian Dressing`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={beef33}
-            SandwichName={`Big Brooklyn`}
-            Description={`Pastrami Topped With Melted Swiss Cheese, Leafy Lettuce, Sliced
-            Tomato, Pickles, Spicy Deli Mustard`}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Signature Salad Sandwiches'}
         ContainerDescription={`Albacore tuna sandwich, we need more salad options`}
       >
-        <>
+        {data.Salad.map((sandwich) => (
           <SandwichCard
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`3. Albacore Tuna Salad Sandwich`}
-            Description={`Lettuce, tomato, red onion, olive oil and red wine vinegar.`}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Signature Ham Sandwiches'}
         ContainerDescription={`Black forest, Honey maple, Bourbon ham, you name it`}
       >
-        <>
+        {data.Ham.map((sandwich) => (
           <SandwichCard
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`13. Deluxe Boiled Ham Sandwich `}
-            Description={`American cheese, shredded lettuce, tomato, mayo, oil and
-            vinegar.`}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`14. Black Forest Ham Sandwich `}
-            Description={`Swiss American cheese, leafy green lettuce, red onion, tomato
-            and honey Dijon mustard.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={ham16}
-            SandwichName={`16. Honey Maple Ham Sandwich `}
-            Description={`Provolone, hot cherry peppers, shredded lettuce, tomato and
-            honey Dijon mustard.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`18. The Bourbon `}
-            Description={`Bourbon Smoked Ham, Smoked Guoda Cheese, Caramalized Mushrooms,
-            Onions & Peppers, BBQ & Mayo served on Toasted garlic bread.`}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Signature Cured Meats and Salami Sandwiches'}
         ContainerDescription={`Sassy's Cured Meats and Salami Sandwiches`}
       >
-        <>
+        {data.Salami.map((sandwich) => (
           <SandwichCard
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={meat19}
-            SandwichName={`19. Imported Prosciutto D’ Parma Sandwich`}
-            Description={` Provolone, ripe tomato, red onion, romaine, olive oil, red
-            peppers and balsamic vinegar.`}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={meat20}
-            SandwichName={`20. Imported Prosciutto D’ Parma With Fresh Mozzarella
-            Sandwich`}
-            Description={`Roasted red peppers, baby arugula, tomatoes and red wine
-            vinaigrette.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={meat21}
-            SandwichName={`21. Imported Mortadella With Pistachio Sandwich `}
-            Description={`Provolone, sliced hot cherry peppers, leafy lettuce, tomatoes
-            and balsamic vinaigrette.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`22. Hard Salami Sandwich`}
-            Description={`Muenster cheese, alfalfa sprouts, sliced cucumber, red roasted
-            peppers and herb mayo.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={meat23}
-            SandwichName={`23. Hot Sopressata Salami Sandwich`}
-            Description={`Provolone cheese, shredded lettuce, hot cherry peppers, ripe
-              tomato, mayo and red wine vinaigrette.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={meat23_2}
-            SandwichName={`23.2. Sweet Sopressata Salami Sandwich`}
-            Description={`Provolone cheese, shredded lettuce, hot cherry peppers, ripe
-            tomato, mayo and red wine vinaigrette.`}
-          />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={meat24}
-            SandwichName={`24. Genoa Salami Sandwich`}
-            Description={`Provolone, leafy lettuce, ripe tomato, mayo and balsamic
-            vinaigrette.`}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
@@ -788,6 +647,7 @@ class SandwichCardSmall extends React.Component {
           <div className="cardDes">
             <div className="cardHeader">
               <h3>- {this.props.SandwichName} -</h3>
+              <p>{this.props.Price}</p>
             </div>
             <p>{this.props.Description}</p>
           </div>

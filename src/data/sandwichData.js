@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BrooklynChop from '../images/BrooklynChop.jpg';
 import baconEgg from '../images/baconegg.PNG';
 import veggieEgg from '../images/veggieOmelette.PNG';
@@ -396,7 +394,7 @@ export const data = {
     //
     {
       tag: 'Turkey',
-      price: 9.99,
+      price: 10.95,
       image: turkey37,
       name: `37. Peppermill Smoked Turkey Breast Sandwich`,
       description: `Imported Swiss, shredded iceberg, sliced tomato and Russian
@@ -404,11 +402,174 @@ export const data = {
     },
     {
       tag: 'Turkey',
-      price: 9.99,
+      price: 10.95,
       image: turkey41,
       name: `41. Honey Bbq Turkey Sandwich`,
       description: `Maple Honey Turkey, Bacon, Lettuce, Tomato, & BBQ Sauce. This
       Sandwich is Christian's Personal Favorite`,
+    },
+  ],
+  //
+  //
+  //
+  Beef: [
+    //
+    //
+    //
+    {
+      price: 10.95,
+      image: beef25,
+      name: `Rare Grass Fed Roast Beef Sandwich with Provolone Cheese Sandwich`,
+      description: `Roast Beef Served With Melted Provolone Cheese, Caramelized
+      Onions, Baby Arugula, Creamy Russian Dressing`,
+    },
+    {
+      price: 10.95,
+      image: beef26,
+      name: `Rare Grass Fed Roast Beef with Imported Swiss Cheese Sandwich`,
+      description: `Roast Beef Topped With Melted Swiss Cheese, Pickles, Leafy
+      Lettuce, Sliced Tomato, Sassy’s Chipotle Mayo Aioli`,
+    },
+    {
+      price: 10.95,
+      image: beef27,
+      name: `Rare Grass Fed Roast Beef with Melted Swiss and Cheddar Cheese Sandwich`,
+      description: `Roast Beef Topped With Melted Swiss And Cheddar Cheese, Caramelized Onions, Homemade Honey BBQ Sauce. Served on Toasted Garlic Bread`,
+    },
+    {
+      price: 10.95,
+      image: beef28,
+      name: `B.H. Roast Beef and Roasted Turkey Combo`,
+      description: `Roast Beef And Ovengold Turkey Topped With Melted Mozzarella Cheese, Leafy Lettuce, Sliced Tomato, Pickles, Creamy Russian Dressing`,
+    },
+    {
+      price: 10.95,
+      image: beef29,
+      name: `Toasted Rare Grass Fed Roast Beef Sandwich`,
+      description: `Roast Beef Topped With Melted Cheddar Cheese, Smoked Bacon, Leafy Lettuce, Caramelized Red Onions, Sliced Tomato, A1 Steak Sauce`,
+    },
+    {
+      price: 10.95,
+      image: beef30,
+      name: `Toasted Beef Meatball Parmigiana
+      `,
+      description: `Homemade Marinara Sauce, Melted Mozzarella Cheese, Basil, Grated Parmigiana, and Sassy's Homemade Meatballs`,
+    },
+    {
+      price: 10.95,
+      image: Blank,
+      name: `Toasted Beef Meatball Parmigiana
+      `,
+      description: `Homemade Marinara Sauce, Melted Mozzarella Cheese, Basil, Grated Parmigiana, and Sassy's Homemade Meatballs`,
+    },
+    {
+      price: 10.95,
+      image: beef33,
+      name: `Toasted “Big Brooklyn” Pastrami Sandwich
+      `,
+      description: `Pastrami Topped With Melted Swiss Cheese, Leafy Lettuce, Sliced Tomato, Pickles, Spicy Deli Mustard`,
+    },
+  ],
+  //
+  //
+  //
+  Salad: [
+    //
+    //
+    //
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Albacore Tuna Salad Sandwich
+
+      `,
+      description: `Lettuce, tomato, red onion, olive oil and red wine vinegar.
+
+
+      `,
+    },
+  ],
+  //
+  //
+  //
+  Ham: [
+    //
+    //
+    //
+    {
+      price: 10.95,
+      image: Blank,
+      name: `13. Deluxe Boiled Ham Sandwich`,
+      description: `American cheese, shredded lettuce, tomato, mayo, oil and vinegar.`,
+    },
+    {
+      price: 10.95,
+      image: Blank,
+      name: `14. Black Forest Ham Sandwich`,
+      description: `Swiss American cheese, leafy green lettuce, red onion, tomato and honey Dijon mustard.`,
+    },
+    {
+      price: 10.95,
+      image: ham16,
+      name: `16. Honey Maple Ham Sandwich`,
+      description: `Provolone, hot cherry peppers, shredded lettuce, tomato and honey Dijon mustard.`,
+    },
+    {
+      price: 10.95,
+      image: Blank,
+      name: `18. The Bourbon`,
+      description: `Bourbon Smoked Ham, Smoked Guoda Cheese, Caramalized Mushrooms, Onions & Peppers, BBQ & Mayo served on Toasted garlic bread.`,
+    },
+  ],
+  //
+  //
+  //
+  Salami: [
+    //
+    //
+    //
+    {
+      price: 12.95,
+      image: meat19,
+      name: `19. Imported Prosciutto D’ Parma Sandwich`,
+      description: `Provolone, ripe tomato, red onion, romaine, olive oil, red peppers and balsamic vinegar.`,
+    },
+    {
+      price: 12.95,
+      image: meat20,
+      name: `20. Imported Prosciutto D’ Parma With Fresh Mozzarella Sandwich`,
+      description: `Roasted red peppers, baby arugula, tomatoes and red wine vinaigrette.`,
+    },
+    {
+      price: 10.95,
+      image: meat21,
+      name: `21. Imported Mortadella With Pistachio Sandwich`,
+      description: `Provolone, sliced hot cherry peppers, leafy lettuce, tomatoes and balsamic vinaigrette.`,
+    },
+    {
+      price: 10.95,
+      image: Blank,
+      name: `22. Hard Salami Sandwich`,
+      description: `Muenster cheese, alfalfa sprouts, sliced cucumber, red roasted peppers and herb mayo.`,
+    },
+    {
+      price: 10.95,
+      image: meat23,
+      name: `23. Hot Sopressata Salami Sandwich
+      `,
+      description: `Provolone cheese, shredded lettuce, hot cherry peppers, ripe tomato, mayo and red wine vinaigrette.`,
+    },
+    {
+      price: 10.95,
+      image: meat23_2,
+      name: `23.2. Sweet Sopressata Salami Sandwich`,
+      description: `Provolone cheese, shredded lettuce, hot cherry peppers, ripe tomato, mayo and red wine vinaigrette.      `,
+    },
+    {
+      price: 10.95,
+      image: meat24,
+      name: `24. Genoa Salami Sandwich`,
+      description: `Provolone, leafy lettuce, ripe tomato, mayo and balsamic vinaigrette.`,
     },
   ],
 };
