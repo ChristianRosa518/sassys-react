@@ -38,7 +38,7 @@ export default function Grid(props) {
             setGridOpen={setGridOpen}
             SandwichPicture={Container3}
             SandwichName={'Brooklyn Chop'}
-            Price={13.95}
+            Price={14.95}
             Description={
               'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.'
             }
@@ -51,7 +51,7 @@ export default function Grid(props) {
             setGridOpen={setGridOpen}
             SandwichPicture={Sassinator}
             SandwichName={`The "Sassinator`}
-            Price={12.95}
+            Price={13.95}
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
           />
@@ -63,7 +63,7 @@ export default function Grid(props) {
             setGridOpen={setGridOpen}
             SandwichPicture={baconStack}
             SandwichName={'Bacon Stack'}
-            Price={12.95}
+            Price={13.95}
             Description={`Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
     with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
     Mayo Aioli`}
@@ -101,7 +101,7 @@ export default function Grid(props) {
             setGridOpen={setGridOpen}
             SandwichPicture={macNChicken}
             SandwichName={`Mac N' Chicken`}
-            Price={12.95}
+            Price={13.95}
             Description={`Crispy Chicken Cutlet topped with Melted Cheddar, Cheddar Mac and Cheese, Crispy Bacon, and Sassy's Chipotle Mayo Aioli. Served on a Toasted Broiche Bun.`}
           />
           <SmallGrid
@@ -112,7 +112,7 @@ export default function Grid(props) {
             setGridOpen={setGridOpen}
             SandwichPicture={macNBurger}
             SandwichName={'Mac N Cheese Beef Burger'}
-            Price={11.95}
+            Price={12.95}
             Description={
               'Cheddar burger topped with our creamy mac n cheese, bacon, sauteed onions, and BBQ sauce'
             }

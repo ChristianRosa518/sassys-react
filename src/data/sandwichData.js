@@ -1,6 +1,8 @@
 import React from 'react';
 
 import BrooklynChop from '../images/BrooklynChop.jpg';
+import baconEgg from '../images/baconegg.PNG';
+import veggieEgg from '../images/veggieOmelette.PNG';
 import Sassinator from '../images/Sassinator.jpg';
 import BaconStack from '../images/baconStack.jpg';
 import Philly from '../images/philly.png';
@@ -45,11 +47,11 @@ import mac from '../images/mac.jpg';
 import shoefries from '../images/shoeFries.jpg';
 
 export const data = {
-  Sandwiches: [
+  Specialty: [
     {
       tag: 'Specialty',
       name: 'Brooklyn Chop',
-      price: 13.95,
+      price: 14.95,
       image: BrooklynChop,
       description:
         'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
@@ -57,7 +59,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `The "Sassinator`,
-      price: 12.95,
+      price: 13.95,
       image: Sassinator,
       description: `Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`,
@@ -65,7 +67,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Bacon Stack`,
-      price: 12.95,
+      price: 13.95,
       image: BaconStack,
       description: `Double Cheesburger WIth Cheddar and Mozzarella Cheese, Stacked
     with Crispy Bacon, Topped off with Caramelized Onions & Chipotle
@@ -74,7 +76,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Philly Cheese Steak`,
-      price: 11.95,
+      price: 12.95,
       image: Philly,
       description: `Steak, Provolone & American Cheese, Red & Green Peppers, Onions,
     and Mayo`,
@@ -89,7 +91,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Sassy's Mad Burger`,
-      price: 12.95,
+      price: 13.95,
       image: MadBurger,
       description: `8oz Angus Beef Topped with Melted American Cheese, Crispy Bacon,
       Crispy Jumbo Onion Rings, Ketchup & Mayo. Served on Toasted
@@ -98,7 +100,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `4. Gouda Meal`,
-      price: 11.95,
+      price: 12.95,
       image: Gouda,
       description: `Crispy Chicken Cutlet, Chipotle gouda, Smoked Bacon, Lettuce,
       Tomato, topped off with Ketchup, & Ranch. We all agreed that it
@@ -107,7 +109,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `7. Crispy Chicken Cutlet Parmigina`,
-      price: 11.95,
+      price: 12.95,
       image: Parm,
       description: `Crispy Chicken Cutlet, Fresh Marinara Sauce, Melted Mozzarella,
       Parmesan Cheese, Basil. Served on Garlic Bread`,
@@ -115,7 +117,7 @@ export const data = {
     {
       tag: 'Specialty',
       name: `The Spicy Mama`,
-      price: 10.95,
+      price: 11.95,
       image: SpicyMama,
       description: `Salsalito Turkey Breast, Pepper-jack Cheese, Avocado, Jalapeno
       Peppers, Baby Spinach, Sliced Tomato, Mayonnaise`,
@@ -123,14 +125,14 @@ export const data = {
     {
       tag: 'Specialty',
       name: `Regula Degula`,
-      price: 10.95,
+      price: 11.95,
       image: Regula,
       description: `Ovengold Roasted Turkey, American Cheese, Smoked Bacon, Avocado,
       Leafy Lettuce, Tomato, Mayonnaise`,
     },
     {
       tag: 'Specialty',
-      price: 10.95,
+      price: 11.95,
       image: QuickBite,
       name: `38. "Quik-Bite"`,
       description: `Maple Honey Turkey, Cheddar Cheese, Leafy Lettuce, Hot Cherry
@@ -138,7 +140,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      price: 10.95,
+      price: 11.95,
       image: SmokeyMeunster,
       name: `Smokey Muenster`,
       description: `Smoked Mesquite Turkey Breast, Muenster cheese, Arugula, Creamy
@@ -146,7 +148,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      price: 9.95,
+      price: 10.95,
       image: Blank,
       name: `The Bourbon`,
       description: `Bourbon Smoked Boars Head Ham, Smoked Gouda Cheese, Caramalized
@@ -155,16 +157,18 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      price: 10.95,
+      price: 11.95,
       image: BrooklynBreak,
       name: `"The BKLYN" Breakfast`,
       description: `2 Eggs Scrambled, Grilled Pastrami, Vermont Sharp Cheddar
       Cheese, Fresh Baby Arugula, Sliced Tomato, White Onion, &
       Chipotle Mayo Aioli`,
     },
+  ],
+  Burgers: [
     {
       tag: 'Burgers',
-      price: 11.95,
+      price: 12.95,
       image: macBurger,
       name: `Mac-n-Cheese Bacon Beef Burger`,
       description: `Cheddar burger topped with our creamy mac n cheese, bacon,
@@ -198,31 +202,32 @@ export const data = {
       Bacon Leafy Lettuce, Sliced Tomato, Red Onion, and Pickles.
       Served on a Toasted Brioche Bun (Default is well done)`,
     },
-
+  ],
+  Breakfast: [
     {
       tag: 'Breakfast',
-      price: 9.99,
-      image: Blank,
+      price: 4.95,
+      image: baconEgg,
       name: `Bacon Egg n' Cheese`,
       description: `2 Eggs Scrambled, Your choice of Cheese, & Crispy Bacon`,
     },
     {
       tag: 'Breakfast',
-      price: 9.99,
+      price: 4.95,
       image: Blank,
       name: `Sausage Egg n' Cheese`,
       description: `2 Eggs Scrambled, Your choice of Cheese, & Savory Sausage`,
     },
     {
       tag: 'Breakfast',
-      price: 9.99,
+      price: 3.95,
       image: Blank,
       name: `2 Eggs Breakfast`,
       description: `Two Eggs Served Any Way With Your Choice Of Cheese`,
     },
     {
       tag: 'Breakfast',
-      price: 9.99,
+      price: 11.95,
       image: Blank,
       name: `French Toast`,
       description: `3 Slices of French Toast from scratch Served with Two Eggs And A
@@ -230,7 +235,7 @@ export const data = {
     },
     {
       tag: 'Breakfast',
-      price: 9.99,
+      price: 11.95,
       image: Blank,
       name: `Pancake Platter`,
       description: `3 pieces of hot pancakes Served with Two Eggs, Choice of Fruit
@@ -238,14 +243,23 @@ export const data = {
     },
     {
       tag: 'Breakfast',
-      price: 9.99,
+      price: 4.95,
       image: Blank,
       name: `Grilled Cheese Sandwich`,
       description: `Melted American Cheese Served on Toasted Sliced White or Wheat`,
     },
     {
+      tag: 'Breakfast',
+      price: 9.95,
+      image: veggieEgg,
+      name: `Vegetarian Omelette`,
+      description: `3 Eggs, Diced Bell peppers, mushrooms, tomato, onion and spinach. Served on choice of bread or platter.`,
+    },
+  ],
+  Chicken: [
+    {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: chicken6,
       name: `6. Crispy Chicken W/ American Cheese & Avocado`,
       description: `Crispy Chicken Cutlet with American Cheese, Ripe avocado, hot
@@ -253,7 +267,7 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 13.95,
       image: macnchicken,
       name: `Mac N' Chicken`,
       description: `Crispy Chicken Cutlet topped with Melted Cheddar, Cheddar Mac
@@ -262,7 +276,7 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: chicken5,
       name: `5. Crispy Chicken W/ Imported Swiss & Bacon`,
       description: `Crispy Chicken Cutlet Topped With Smoked Bacon, Melted Swiss
@@ -270,7 +284,7 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: chicken8,
       name: `8. Grilled Chicken W/ Pepperjack & Avocado`,
       description: `Grilled Chicken Breast Topped With Melted Pepper Jack Cheese,
@@ -278,7 +292,7 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: chicken9,
       name: `9. Grilled Balsamic Chicken W/ Mozzarella & Bacon`,
       description: `Grilled Chicken Breast Topped With Melted Mozzarella Cheese,
@@ -287,7 +301,7 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: Blank,
       name: `10. Grilled Chicken W/ Cheddar & Bacon`,
       description: `Grilled Chicken Breast Topped With Melted Cheddar Cheese, Smoked
@@ -296,7 +310,7 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: chicken11,
       name: `11. Hot Chipotle Chicken`,
       description: `Chipotle Chicken Breast, Pepper-jack Cheese, Smoked Bacon, Baby
@@ -305,15 +319,23 @@ export const data = {
     },
     {
       tag: 'Chicken',
-      price: 9.99,
+      price: 12.95,
       image: Blank,
       name: `#12. The Buffalo`,
       description: `Grilled Buffalo Chicken Cutlet, Melted Muenster Cheese,
       Caramelized Mushrooms, Leafy Lettuce, Blue Cheese Dressing`,
     },
+  ],
+  //
+  //
+  //
+  Wings: [
+    //
+    //
+    //
     {
       tag: 'Wings',
-      price: 9.99,
+      price: 8.95,
       image: chipotlewings,
       name: `Chipotle Tossed Chicken Wings`,
       description: `Crispy Chicken Wings Tossed in Sassy’s Chipotle Mayo Aioli (Half
@@ -321,14 +343,14 @@ export const data = {
     },
     {
       tag: 'Wings',
-      price: 9.99,
+      price: 8.95,
       image: Blank,
       name: `Lemon Pepper Chicken Wings`,
       description: ``,
     },
     {
       tag: 'Wings',
-      price: 9.99,
+      price: 8.95,
       image: Blank,
       name: `Honey BBQ Tossed Chicken Wings`,
       description: `Crispy Chicken Wings Tossed in Our Homemade Honey BBQ Mix (Half
@@ -336,7 +358,7 @@ export const data = {
     },
     {
       tag: 'Wings',
-      price: 9.99,
+      price: 8.95,
       image: buffalowings,
       name: `Buffalo Tossed Chicken Wings`,
       description: `Crispy Chicken Wings Tossed in Buffalo Sauce (Half Dozen or
@@ -344,18 +366,34 @@ export const data = {
     },
     {
       tag: 'Wings',
-      price: 9.99,
+      price: 8.95,
       image: Blank,
       name: `Chicken Wings`,
       description: `Plain Chicken Wings (Half Dozen or Dozen)`,
     },
     {
       tag: 'Wings',
-      price: 9.99,
+      price: 8.95,
       image: Blank,
       name: `Mango Habanero Chicken Wings`,
       description: ``,
     },
+    {
+      tag: 'Wings',
+      price: 8.95,
+      image: Blank,
+      name: `Hot Honey Wings`,
+      description: `Crispy chicken wings tossed in hot honey sauce
+      `,
+    },
+  ],
+  //
+  //
+  //
+  Turkey: [
+    //
+    //
+    //
     {
       tag: 'Turkey',
       price: 9.99,

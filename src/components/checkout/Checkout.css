@@ -133,18 +133,18 @@
 }
 
 .checkout_Delivery_Button {
-  font-size: calc(0.45em + 1.2vmin);
+  font-size: calc(0.55em + 1.2vmin);
   /* width: 100%; */
   background-color: #cded5c;
   color: #313131;
-  padding: 15px 25px;
+  padding: 15px 40px;
   margin-bottom: 20px;
   border: none;
   border-radius: 50px;
   opacity: 1;
   cursor: pointer;
   transition: 0.3s ease 0s;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .checkout_Delivery_Button:hover {
   transition: 0.3s ease;

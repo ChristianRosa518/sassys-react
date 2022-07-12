@@ -38,114 +38,102 @@ export default function Sandwiches(props) {
         ContainerTitle={'Specialty Sandwiches'}
         ContainerDescription={"The customer's favorites!"}
       >
-        {data.Sandwiches.filter((Sand) => Sand.tag === 'Specialty').map(
-          (sandwich) => (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
+        {data.Specialty.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Burgers'}
         ContainerDescription={'Premium angus Beef!'}
       >
-        {data.Sandwiches.filter((Sand) => Sand.tag === 'Burgers').map(
-          (sandwich) => (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
+        {data.Burgers.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={`Breakfast Sandwiches`}
         ContainerDescription={`Morning Starters, even an afternoon starter!`}
       >
-        {data.Sandwiches.filter((Sand) => Sand.tag === 'Breakfast').map(
-          (sandwich) => (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
+        {data.Breakfast.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Chicken Sandwiches'}
         ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
       >
-        {data.Sandwiches.filter((Sand) => Sand.tag === 'Chicken').map(
-          (sandwich) => (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
+        {data.Chicken.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Chicken Wings'}
         ContainerDescription={`We left the bone in these options`}
       >
-        {data.Sandwiches.filter((Sand) => Sand.tag === 'Wings').map(
-          (sandwich) => (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
+        {data.Wings.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Signature Turkey Sandwiches'}
         ContainerDescription={`gobble gobble gobble`}
       >
-        {data.Sandwiches.filter((Sand) => Sand.tag === 'Turkey').map(
-          (sandwich) => (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
+        {data.Turkey.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
@@ -754,19 +742,23 @@ class SandwichCard extends React.Component {
       <div>
         <div className={'itemCard'} onClick={this.sendModalData}>
           <div className="cardDes">
-            <div className="cardHeader">
+            <div className={`cardHeader`}>
               <h3>- {this.props.SandwichName} -</h3>
               <p>{this.props.Price}</p>
             </div>
             <p>{this.props.Description}</p>
           </div>
-          <div className="cardImgCon">
-            <img
-              src={this.props.SandwichPicture}
-              alt="Sandwich Card Img"
-              className="cardImg"
-            />
-          </div>
+          {this.props.SandwichPicture === Blank ? (
+            ''
+          ) : (
+            <div className="cardImgCon">
+              <img
+                src={this.props.SandwichPicture}
+                alt="Sandwich Card Img"
+                className="cardImg"
+              />
+            </div>
+          )}
         </div>
       </div>
     );
@@ -799,13 +791,17 @@ class SandwichCardSmall extends React.Component {
             </div>
             <p>{this.props.Description}</p>
           </div>
-          <div className="cardImgCon">
-            <img
-              src={this.props.SandwichPicture}
-              alt="Sandwich Card Img"
-              className="cardImg"
-            />
-          </div>
+          {this.props.SandwichPicture === Blank ? (
+            ''
+          ) : (
+            <div className="cardImgCon">
+              <img
+                src={this.props.SandwichPicture}
+                alt="Sandwich Card Img"
+                className="cardImg"
+              />
+            </div>
+          )}
         </div>
       </div>
     );
@@ -996,11 +992,16 @@ export class SandwichModal extends React.Component {
                   </div>
                 </div>
                 <div className="modalImageContainer">
-                  <img
-                    src={this.props.modalData.picture}
-                    alt=""
-                    className="modalImage"
-                  />
+                  {this.props.modalData.picture === Blank ? (
+                    ''
+                  ) : (
+                    <img
+                      src={this.props.modalData.picture}
+                      alt=""
+                      className="modalImage"
+                    />
+                  )}
+
                   {/* Toppings */}
                   <h3>Bread Option</h3>
                   <ul className="modalToppings">

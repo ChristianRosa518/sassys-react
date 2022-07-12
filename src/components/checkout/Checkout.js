@@ -256,6 +256,7 @@ function Payment(props) {
       <br />
       <br />
       <br />
+      <br />
     </div>
   );
 }
