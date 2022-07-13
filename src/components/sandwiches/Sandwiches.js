@@ -6,8 +6,6 @@ import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
 
 import Blank from '../../images/Blank.PNG';
-import mac from '../../images/mac.jpg';
-import shoefries from '../../images/shoeFries.jpg';
 
 export default function Sandwiches(props) {
   const [open, setOpen] = useState(false);
@@ -194,226 +192,68 @@ export default function Sandwiches(props) {
         ContainerTitle={'Vegetarian Sandwiches'}
         ContainerDescription={`Vegetarian options`}
       >
-        <>
+        {data.Vegan.map((sandwich) => (
           <SandwichCard
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Eggplant Parmigiana`}
-            Description={`Breaded Eggplant Topped with Homemade Marinara Sauce, Mozzarella
-            Cheese, Parmigiana Cheese, and Basil. Served on Toasted Buttered
-            Garlic Bread.`}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCard
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Avocado Delight`}
-            Description={`Roasted Peppers, Mushrooms, Spinach, Onions, Tomato, Avocado,
-              and pesto spread.`}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Sides'}
         ContainerDescription={`Add fries, Mac-N-Cheese or a variety of options. To your order`}
       >
-        <>
+        {data.Sides.map((sandwich) => (
           <SandwichCardSmall
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={mac}
-            SandwichName={`Sassy's Creamy Mac-n-Cheddar Cheese`}
-            Description={``}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Crispy Chicken Strips`}
-            Description={`5 Pcs of our delicious crispy chicken strips! Comes with your
-            choice of side sauce.`}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Steak Cut Fries`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Sweet Potato Fries`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={shoefries}
-            SandwichName={`Shoe-String Fries`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Onion Rings`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Potato Chips`}
-            Description={`Variety of Potato Chips`}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Seasoned Fries`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Jalapeno Poppers`}
-            Description={`6pcs`}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Crazy Fries`}
-            Description={`French Fries topped with melted mozzarella and cheddar,
-            jalapeño, ketchup, & our homemade chipotle mayo`}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Chicken Nuggets`}
-            Description={`Crispy chicken nuggets`}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Milkshakes'}
         ContainerDescription={`Cool off your day`}
       >
-        <>
+        {data.MilkShakes.map((sandwich) => (
           <SandwichCardSmall
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Vanilla Shake`}
-            Description={``}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Hershey's Chocolate Shake`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Resse’s Peanut Butter Cup Shake`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Strawberry Shake`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Oreo Cookies & Cream Shake`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Dulce de Leche Shake`}
-            Description={``}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
         ContainerTitle={'Side Sauces'}
         ContainerDescription={`All available Sauces`}
       >
-        <>
+        {data.Sauces.map((sandwich) => (
           <SandwichCardSmall
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Marinara Sauce`}
-            Description={``}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Ranch`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Buffalo Sauce`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Chipotle Mayo Sauce`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Blue Cheese`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Honey Mustard`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`BBQ`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Balsamic Vinaigrette`}
-            Description={``}
-          />
-        </>
+        ))}
       </SandCardContainer>
       <SandCardContainer
         State={true}
@@ -583,6 +423,16 @@ class SandwichCard extends React.Component {
   constructor(props) {
     super(props);
     this.sendModalData = this.sendModalData.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
+  }
+
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
   }
 
   sendModalData() {
@@ -603,7 +453,7 @@ class SandwichCard extends React.Component {
           <div className="cardDes">
             <div className={`cardHeader`}>
               <h3>- {this.props.SandwichName} -</h3>
-              <p>{this.props.Price}</p>
+              <p>{this.formatPrice(this.props.Price)}</p>
             </div>
             <p>{this.props.Description}</p>
           </div>
@@ -627,6 +477,16 @@ class SandwichCardSmall extends React.Component {
   constructor(props) {
     super(props);
     this.sendModalData = this.sendModalData.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
+  }
+
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
   }
 
   sendModalData() {
@@ -647,7 +507,7 @@ class SandwichCardSmall extends React.Component {
           <div className="cardDes">
             <div className="cardHeader">
               <h3>- {this.props.SandwichName} -</h3>
-              <p>{this.props.Price}</p>
+              <p>{this.formatPrice(this.props.Price)}</p>
             </div>
             <p>{this.props.Description}</p>
           </div>

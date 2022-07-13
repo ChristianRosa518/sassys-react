@@ -1,6 +1,6 @@
 import BrooklynChop from '../images/BrooklynChop.jpg';
-import baconEgg from '../images/baconegg.PNG';
-import veggieEgg from '../images/veggieOmelette.PNG';
+import baconEgg from '../images/baconegg.jpg';
+import veggieEgg from '../images/veggieOmelette.jpg';
 import Sassinator from '../images/Sassinator.jpg';
 import BaconStack from '../images/baconStack.jpg';
 import Philly from '../images/philly.png';
@@ -14,7 +14,7 @@ import QuickBite from '../images/quik.png';
 import SmokeyMeunster from '../images/smokey.png';
 import BrooklynBreak from '../images/brklynbreak.png';
 import Blank from '../images/Blank.PNG';
-import macBurger from '../images/macburger.png';
+import macBurger from '../images/macburger.jpg';
 import angusCheese from '../images/angusCheese.png';
 import baconCheese from '../images/baconcheese.png';
 import chicken6 from '../images/Chicken6.jpg';
@@ -41,6 +41,7 @@ import meat21 from '../images/21.jpg';
 import meat23 from '../images/23.jpg';
 import meat23_2 from '../images/23.2.jpg';
 import meat24 from '../images/24.jpg';
+import avoDel from '../images/avocadoDelight.jpg';
 import mac from '../images/mac.jpg';
 import shoefries from '../images/shoeFries.jpg';
 
@@ -570,6 +571,194 @@ export const data = {
       image: meat24,
       name: `24. Genoa Salami Sandwich`,
       description: `Provolone, leafy lettuce, ripe tomato, mayo and balsamic vinaigrette.`,
+    },
+  ],
+  //
+  //
+  //
+  Vegan: [
+    //
+    //
+    //
+    {
+      price: 10.95,
+      image: Blank,
+      name: `Eggplant Parmigiana`,
+      description: `Breaded Eggplant Topped with Homemade Marinara Sauce, Mozzarella Cheese, Parmigiana Cheese, and Basil. Served on Toasted Buttered Garlic Bread.`,
+    },
+    {
+      price: 10.95,
+      image: avoDel,
+      name: `Avocado Delight`,
+      description: `Breaded Eggplant Topped with Homemade Marinara Sauce, Mozzarella Cheese, Parmigiana Cheese, and Basil. Served on Toasted Buttered Garlic Bread.`,
+    },
+  ],
+  //
+  //
+  //
+  Sides: [
+    //
+    //
+    //
+    {
+      price: 6.95,
+      image: mac,
+      name: `Sassy's Creamy Mac-n-Cheddar Cheese`,
+      description: ``,
+    },
+    {
+      price: 7.45,
+      image: Blank,
+      name: `Crispy Chicken Strips`,
+      description: `5 Pcs of our delicious crispy chicken strips! Comes with your choice of side sauce.`,
+    },
+    {
+      price: 5.95,
+      image: Blank,
+      name: `Mozzarella Sticks`,
+      description: `Crunchy Golden Mozzarella Sticks with Gooey Cheese. Served with a side of Marinara Sauce`,
+    },
+    {
+      price: 5.95,
+      image: Blank,
+      name: `Steak Cut Fries`,
+      description: ``,
+    },
+    {
+      price: 5.95,
+      image: shoefries,
+      name: `Shoe-String Fries`,
+      description: ``,
+    },
+    {
+      price: 5.95,
+      image: Blank,
+      name: `Sweet Potato Fries`,
+      description: ``,
+    },
+    {
+      price: 5.95,
+      image: Blank,
+      name: `Onion Rings`,
+      description: ``,
+    },
+    {
+      price: 3.95,
+      image: Blank,
+      name: `Homestyle Cole Slaw`,
+      description: ``,
+    },
+    {
+      price: 5.95,
+      image: Blank,
+      name: `Seasoned Fries`,
+      description: ``,
+    },
+    {
+      price: 5.95,
+      image: Blank,
+      name: `Jalapeno Poppers`,
+      description: ``,
+    },
+  ],
+  //
+  //
+  //
+  MilkShakes: [
+    //
+    //
+    //
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Vanilla Shake`,
+      description: ``,
+    },
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Hershey's Chocolate Shake`,
+      description: ``,
+    },
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Resse’s Peanut Butter Cup Shake`,
+      description: ``,
+    },
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Strawberry Shake`,
+      description: ``,
+    },
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Oreo Cookies & Cream Shake`,
+      description: ``,
+    },
+    {
+      price: 8.95,
+      image: Blank,
+      name: `Dulce de Leche Shake`,
+      description: ``,
+    },
+  ],
+  //
+  //
+  //
+  Sauces: [
+    //
+    //
+    //
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Marinara Sauce`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Ranch`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Buffalo Sauce`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Chipotle Mayo Sauce`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Blue Cheese`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Honey Mustard`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `BBQ`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Balsamic Vinaigrette`,
+      description: ``,
     },
   ],
 };

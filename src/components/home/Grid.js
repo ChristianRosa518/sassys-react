@@ -7,7 +7,7 @@ import baconStack from '../../images/baconStack.jpg';
 import sandwich5 from '../../images/5.jpg';
 import goudaMeal from '../../images/gouda.png';
 import macNChicken from '../../images/macnChicken.png';
-import macNBurger from '../../images/macburger.png';
+import macNBurger from '../../images/macburger.jpg';
 
 export default function Grid(props) {
   const [gridData, setGridData] = useState('');

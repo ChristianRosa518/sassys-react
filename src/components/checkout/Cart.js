@@ -8,6 +8,7 @@ import './cart.css';
 import './Checkout.css';
 import Checkout from './Checkout';
 import emailjs from 'emailjs-com';
+import Blank from '../../images/Blank.PNG';
 
 const API_KEY = process.env.REACT_APP_GEOCODE;
 
@@ -230,6 +231,19 @@ class Product extends React.Component {
             <h4>{this.formatPrice(this.props.item.price)}</h4>
           </div>
           <div className="productDes">
+            {this.props.item.picture === Blank ? (
+              <div className={'productDes_Blank'}>
+                <span
+                  className="closeButtonCartItem_Blank"
+                  onClick={this.removeItem}
+                >
+                  &times;
+                </span>
+              </div>
+            ) : (
+              ''
+            )}
+
             <p className="productTraits">
               - {this.props.item.bread === '' ? '' : this.props.item.bread}
             </p>
@@ -244,16 +258,20 @@ class Product extends React.Component {
             <p className="productInfo">{this.props.item.description}</p>
           </div>
         </div>
-        <div className="productImageContainer">
-          <img
-            className="productImage"
-            src={this.props.item.picture}
-            alt="sandwichImage"
-          />
-          <span className="closeButtonCartItem" onClick={this.removeItem}>
-            &times;
-          </span>
-        </div>
+        {this.props.item.picture === Blank ? (
+          ''
+        ) : (
+          <div className="productImageContainer">
+            <img
+              className="productImage"
+              src={this.props.item.picture}
+              alt="sandwichImage"
+            />
+            <span className="closeButtonCartItem" onClick={this.removeItem}>
+              &times;
+            </span>
+          </div>
+        )}
       </div>
     );
   }
