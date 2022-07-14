@@ -185,6 +185,7 @@ function Payment(props) {
 
     if (props.delivery === 'delivery') {
       props.geocode(e);
+      setIsLoading(true);
     } else if (props.delivery === 'pickup') {
       setIsLoading(true);
 
