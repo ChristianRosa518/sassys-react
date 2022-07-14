@@ -10,6 +10,9 @@ import Blank from '../../images/Blank.PNG';
 export default function Sandwiches(props) {
   const [open, setOpen] = useState(false);
   const [modalData, setModalData] = useState('');
+  //
+  const [burgerOpen, setBurgerOpen] = useState(false);
+  const [burgerModalData, setBurgerModalData] = useState('');
 
   return (
     <div className="sandContainer">
@@ -39,17 +42,29 @@ export default function Sandwiches(props) {
         ContainerTitle={'Specialty Sandwiches'}
         ContainerDescription={"The customer's favorites!"}
       >
-        {data.Specialty.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
+        {data.Specialty.map((sandwich) =>
+          sandwich.tag === 'Burger' ? (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setBurgerModalData}
+              setOpen={setBurgerOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          ) : (
+            <SandwichCard
+              key={sandwich.name}
+              setModalData={setModalData}
+              setOpen={setOpen}
+              SandwichPicture={sandwich.image}
+              SandwichName={sandwich.name}
+              Price={sandwich.price}
+              Description={sandwich.description}
+            />
+          )
+        )}
       </SandCardContainer>
       <SandCardContainer
         State={true}
@@ -59,8 +74,8 @@ export default function Sandwiches(props) {
         {data.Burgers.map((sandwich) => (
           <SandwichCard
             key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
+            setModalData={setBurgerModalData}
+            setOpen={setBurgerOpen}
             SandwichPicture={sandwich.image}
             SandwichName={sandwich.name}
             Price={sandwich.price}
@@ -294,6 +309,16 @@ export default function Sandwiches(props) {
         modalData={modalData}
         open={open}
         setOpen={setOpen}
+        price={props.price}
+        SetPrice={props.SetPrice}
+        SetProduct={props.SetProduct}
+        product={props.product}
+        SetShowCart={props.SetShowCart}
+      />
+      <BurgerSandwichModal
+        modalData={burgerModalData}
+        open={burgerOpen}
+        setOpen={setBurgerOpen}
         price={props.price}
         SetPrice={props.SetPrice}
         SetProduct={props.SetProduct}
@@ -672,6 +697,282 @@ export class SandwichModal extends React.Component {
                               name={name}
                               value={price}
                               checked={this.state.bread[index]}
+                              onChange={() => this.onCheckChange(index)}
+                            />
+                            <label htmlFor={name}>{name}</label>
+                          </div>
+                          <div>{this.formatPrice(price)}</div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <h3>Extras</h3>
+                  <ul className="modalToppings">
+                    {toppings.Extras.map(({ name, price }, index) => {
+                      return (
+                        <li
+                          key={index}
+                          onClick={() => this.onCheckChangeMultiple(index)}
+                        >
+                          <div className="modalInput">
+                            <input
+                              type="checkbox"
+                              name={name}
+                              value={price}
+                              checked={this.state.extra[index]}
+                              onChange={() => this.onCheckChangeMultiple(index)}
+                            />
+                            <label htmlFor={name}>{name}</label>
+                          </div>
+                          <div>{this.formatPrice(price)}</div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <div>
+                    <h3>Extra instructions</h3>
+                    <textarea
+                      className="modalExtraInstructions"
+                      value={this.state.Instructions}
+                      onChange={(e) =>
+                        this.setState({ Instructions: e.target.value })
+                      }
+                    ></textarea>
+                  </div>
+                  <br />
+                </div>
+
+                <div className="orderFlex">
+                  <h2>
+                    {this.state.amount > this.props.modalData.price
+                      ? this.formatPrice(this.state.amount)
+                      : this.formatPrice(this.props.modalData.price)}
+                  </h2>
+                  <button className="orderNow" onClick={this.addProduct}>
+                    Add to Cart
+                  </button>
+                </div>
+                <span className="closeButton" onClick={this.closeModal}>
+                  &times;
+                </span>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
+    );
+  }
+}
+export class BurgerSandwichModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+    this.dummyfunction = this.dummyfunction.bind(this);
+    this.addProduct = this.addProduct.bind(this);
+    this.onCheckChange = this.onCheckChange.bind(this);
+    this.onCheckChangeMultiple = this.onCheckChangeMultiple.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
+    this.ModalBgAnimate = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1, transition: { duration: 0.3 } },
+      exit: { opacity: 0, transition: { delay: 0.1 } },
+    };
+    this.ModalContentAnimate = {
+      initial: { y: '150%' },
+      animate: { y: 0, transition: { duration: 0.4 } },
+      exit: { y: '150%', transition: { duration: 0.4 } },
+    };
+    this.state = {
+      amount: this.props.modalData.price,
+      burger: new Array(toppings.Burgers.length).fill(false),
+      extra: new Array(toppings.Extras.length).fill(false),
+      burgerCost: 0,
+      extrasCost: 0,
+      Burger: 'Single',
+      Toppings: '',
+      Instructions: '',
+    };
+  }
+
+  addProduct(e) {
+    if (this.props.product.length >= 10) {
+      alert('no more than 10 items');
+    } else {
+      let amount =
+        this.props.modalData.price +
+        this.state.burgerCost +
+        this.state.extrasCost;
+
+      let tops = this.state.Burger + '\n' + this.state.Toppings;
+      const data = {
+        id: this.props.product.length + 1,
+        title: this.props.modalData.title,
+        description: this.props.modalData.description,
+        price: amount,
+        picture: this.props.modalData.picture,
+        toppings: tops,
+        bread: this.state.Burger,
+        adds: this.state.Toppings,
+        instructions: this.state.Instructions,
+      };
+      const newData = [...this.props.product];
+      newData.push(data);
+      this.props.SetProduct(newData);
+      const sum = newData.reduce(function (a, b) {
+        return a + b.price;
+      }, 0);
+      let dollarUS = Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+      let price = dollarUS.format(sum);
+      this.props.SetPrice(price);
+      this.closeModal();
+      this.props.SetShowCart(true);
+    }
+  }
+
+  closeModal() {
+    this.props.setOpen(false);
+    this.setState({
+      amount: this.props.modalData.price,
+      burger: new Array(toppings.Burgers.length).fill(false),
+      extra: new Array(toppings.Extras.length).fill(false),
+      burgerCost: 0,
+      extrasCost: 0,
+      Burger: 'Single',
+      Toppings: '',
+      Instructions: '',
+    });
+  }
+  dummyfunction(e) {
+    e.stopPropagation();
+  }
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
+  }
+  onCheckChange(position) {
+    const updateCheckedState = this.state.burger.map(
+      (item, index) => (index === position ? true : false)
+      //  ? !item : item for multiple options
+    );
+
+    this.setState({ burger: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        this.setState({ Burger: toppings.Burgers[index].name });
+        return sum + toppings.Burgers[index].price;
+      }
+      return sum;
+    }, 0);
+
+    this.setState({ burgerCost: totalPrice });
+    var extras = this.state.extrasCost;
+    var base = this.props.modalData.price + totalPrice + extras;
+
+    this.setState({ amount: base });
+  }
+  onCheckChangeMultiple(position) {
+    const updateCheckedState = this.state.extra.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    this.setState({ extra: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        return sum + toppings.Extras[index].price;
+      }
+      return sum;
+    }, 0);
+
+    const totalNames = updateCheckedState.reduce((name, current, index) => {
+      if (current === true) {
+        return name + toppings.Extras[index].name + ',\n';
+      }
+      return name;
+    }, '');
+
+    this.setState({ Toppings: totalNames });
+
+    this.setState({ extrasCost: totalPrice });
+    var extras = this.state.burgerCost;
+    var base = this.props.modalData.price + extras + totalPrice;
+    this.setState({
+      amount: base,
+    });
+  }
+
+  render() {
+    // if (!this.props.open) return null;
+    return (
+      <>
+        <AnimatePresence>
+          {this.props.open && (
+            <motion.div
+              key={'modalBG'}
+              className="modal"
+              onClick={this.closeModal}
+              variants={this.ModalBgAnimate}
+              initial={'initial'}
+              animate={'animate'}
+              exit={'exit'}
+            >
+              <motion.div
+                className="modalContent"
+                onClick={this.dummyfunction}
+                key={'modalContent'}
+                variants={this.ModalContentAnimate}
+                initial={'initial'}
+                animate={'animate'}
+                exit={'exit'}
+              >
+                <div className="modalInformation sectionModal">
+                  <h1>{this.props.modalData.title}</h1>
+                  <p>{this.props.modalData.description}</p>
+                  <div className="mobileOrderFlex">
+                    <h2>
+                      {this.state.amount > this.props.modalData.price
+                        ? this.formatPrice(this.state.amount)
+                        : this.formatPrice(this.props.modalData.price)}
+                    </h2>
+                    <button className="orderNow" onClick={this.addProduct}>
+                      Order
+                    </button>
+                  </div>
+                </div>
+                <div className="modalImageContainer">
+                  {this.props.modalData.picture === Blank ? (
+                    ''
+                  ) : (
+                    <img
+                      src={this.props.modalData.picture}
+                      alt=""
+                      className="modalImage"
+                    />
+                  )}
+
+                  {/* Toppings */}
+                  <h3>Bread Option</h3>
+                  <ul className="modalToppings">
+                    {toppings.Burgers.map(({ name, price }, index) => {
+                      return (
+                        <li
+                          key={index}
+                          onClick={() => this.onCheckChange(index)}
+                        >
+                          <div className="modalInput">
+                            <input
+                              type="radio"
+                              name={name}
+                              value={price}
+                              checked={this.state.burger[index]}
                               onChange={() => this.onCheckChange(index)}
                             />
                             <label htmlFor={name}>{name}</label>

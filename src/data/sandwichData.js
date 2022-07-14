@@ -63,7 +63,7 @@ export const data = {
         'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.',
     },
     {
-      tag: 'Specialty',
+      tag: 'Burger',
       name: `The "Sassinator`,
       price: 13.95,
       image: Sassinator,
@@ -71,7 +71,7 @@ export const data = {
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`,
     },
     {
-      tag: 'Specialty',
+      tag: 'Burger',
       name: `Bacon Stack`,
       price: 13.95,
       image: BaconStack,
@@ -95,7 +95,7 @@ export const data = {
       description: `Bacon, Romaine Lettuce, Tomato & Mayo! Served on Toasted Bread!`,
     },
     {
-      tag: 'Specialty',
+      tag: 'Burger',
       name: `Sassy's Mad Burger`,
       price: 13.95,
       image: MadBurger,
@@ -466,7 +466,7 @@ export const data = {
     {
       price: 10.95,
       image: Blank,
-      name: `Toasted Beef Meatball Parmigiana
+      name: `Toasted Reuben Sandwich
       `,
       description: `Homemade Marinara Sauce, Melted Mozzarella Cheese, Basil, Grated Parmigiana, and Sassy's Homemade Meatballs`,
     },
@@ -475,7 +475,7 @@ export const data = {
       image: beef33,
       name: `Toasted “Big Brooklyn” Pastrami Sandwich
       `,
-      description: `Pastrami Topped With Melted Swiss Cheese, Leafy Lettuce, Sliced Tomato, Pickles, Spicy Deli Mustard`,
+      description: `First Cut Corned Beef, Melted Swiss Cheese, Sauerkraut, Pickles, Creamy Russian Dressing`,
     },
   ],
   //
@@ -975,6 +975,22 @@ export const toppings = {
     {
       name: 'Mushrooms',
       price: 0.75,
+    },
+  ],
+  //
+  //
+  //
+  Burgers: [
+    //
+    //
+    //
+    {
+      name: 'Single',
+      price: 0.0,
+    },
+    {
+      name: 'Double',
+      price: 3.0,
     },
   ],
 };
