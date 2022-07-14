@@ -907,15 +907,15 @@ export const toppings = {
       price: 1.0,
     },
     {
-      name: 'garlicherb',
+      name: 'Garlic & Herb',
       price: 1.0,
     },
     {
-      name: 'tomatobasil',
+      name: 'Tomato Basil',
       price: 1.0,
     },
     {
-      name: 'wholewheat',
+      name: 'Whole Wheat',
       price: 1.0,
     },
   ],
@@ -987,6 +987,46 @@ export const toppings = {
     {
       name: 'Double',
       price: 3.0,
+    },
+  ],
+  //
+  //
+  //
+  Wings: [
+    //
+    //
+    //
+    {
+      name: '6pcs',
+      price: 0.0,
+    },
+    {
+      name: '8pcs',
+      price: 3.0,
+    },
+    {
+      name: '10pcs',
+      price: 6.0,
+    },
+    {
+      name: '12pcs',
+      price: 9.0,
+    },
+  ],
+  //
+  //
+  //
+  WingsType: [
+    //
+    //
+    //
+    {
+      name: 'Bone',
+      price: 0,
+    },
+    {
+      name: 'Boneless',
+      price: 0.5,
     },
   ],
 };

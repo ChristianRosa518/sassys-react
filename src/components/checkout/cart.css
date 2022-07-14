@@ -74,11 +74,12 @@
 .closeButtonCartItem_Blank {
   color: black;
   position: relative;
+  float: right;
   right: 0;
   top: 0;
   font-size: 50px;
   line-height: 20px;
-  padding: 7px;
+  padding-right: 17px;
   cursor: pointer;
 
   transition: 0.3s;

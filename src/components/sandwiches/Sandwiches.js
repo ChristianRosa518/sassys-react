@@ -16,6 +16,9 @@ export default function Sandwiches(props) {
   //
   const [defaultOpen, setDefaultOpen] = useState(false);
   const [defaultModalData, setDefaultModalData] = useState('');
+  //
+  const [wingOpen, setWingOpen] = useState(false);
+  const [wingModalData, setWingModalData] = useState('');
 
   return (
     <div className="sandContainer">
@@ -128,8 +131,8 @@ export default function Sandwiches(props) {
         {data.Wings.map((sandwich) => (
           <SandwichCard
             key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
+            setModalData={setWingModalData}
+            setOpen={setWingOpen}
             SandwichPicture={sandwich.image}
             SandwichName={sandwich.name}
             Price={sandwich.price}
@@ -332,6 +335,16 @@ export default function Sandwiches(props) {
         modalData={defaultModalData}
         open={defaultOpen}
         setOpen={setDefaultOpen}
+        price={props.price}
+        SetPrice={props.SetPrice}
+        SetProduct={props.SetProduct}
+        product={props.product}
+        SetShowCart={props.SetShowCart}
+      />
+      <WingSandwichModal
+        modalData={wingModalData}
+        open={wingOpen}
+        setOpen={setWingOpen}
         price={props.price}
         SetPrice={props.SetPrice}
         SetProduct={props.SetProduct}
@@ -972,7 +985,7 @@ export class BurgerSandwichModal extends React.Component {
                   )}
 
                   {/* Toppings */}
-                  <h3>Bread Option</h3>
+                  <h3>Single or Double?</h3>
                   <ul className="modalToppings">
                     {toppings.Burgers.map(({ name, price }, index) => {
                       return (
@@ -1009,6 +1022,283 @@ export class BurgerSandwichModal extends React.Component {
                               name={name}
                               value={price}
                               checked={this.state.extra[index]}
+                              onChange={() => this.onCheckChangeMultiple(index)}
+                            />
+                            <label htmlFor={name}>{name}</label>
+                          </div>
+                          <div>{this.formatPrice(price)}</div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <div>
+                    <h3>Extra instructions</h3>
+                    <textarea
+                      className="modalExtraInstructions"
+                      value={this.state.Instructions}
+                      onChange={(e) =>
+                        this.setState({ Instructions: e.target.value })
+                      }
+                    ></textarea>
+                  </div>
+                  <br />
+                </div>
+
+                <div className="orderFlex">
+                  <h2>
+                    {this.state.amount > this.props.modalData.price
+                      ? this.formatPrice(this.state.amount)
+                      : this.formatPrice(this.props.modalData.price)}
+                  </h2>
+                  <button className="orderNow" onClick={this.addProduct}>
+                    Add to Cart
+                  </button>
+                </div>
+                <span className="closeButton" onClick={this.closeModal}>
+                  &times;
+                </span>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
+    );
+  }
+}
+export class WingSandwichModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+    this.dummyfunction = this.dummyfunction.bind(this);
+    this.addProduct = this.addProduct.bind(this);
+    this.onCheckChange = this.onCheckChange.bind(this);
+    this.onCheckChangeMultiple = this.onCheckChangeMultiple.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
+    this.ModalBgAnimate = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1, transition: { duration: 0.3 } },
+      exit: { opacity: 0, transition: { delay: 0.1 } },
+    };
+    this.ModalContentAnimate = {
+      initial: { y: '150%' },
+      animate: { y: 0, transition: { duration: 0.4 } },
+      exit: { y: '150%', transition: { duration: 0.4 } },
+    };
+    this.state = {
+      amount: this.props.modalData.price,
+      wingsAmount: new Array(toppings.Wings.length).fill(false),
+      wingsType: new Array(toppings.WingsType.length).fill(false),
+      wingsAmountCost: 0,
+      wingsTypeCost: 0,
+      Burger: '6Pcs',
+      Toppings: '',
+      Instructions: '',
+    };
+  }
+
+  addProduct(e) {
+    if (this.props.product.length >= 10) {
+      alert('no more than 10 items');
+    } else {
+      let amount =
+        this.props.modalData.price +
+        this.state.wingsAmountCost +
+        this.state.wingsTypeCost;
+
+      let tops = this.state.Burger + '\n' + this.state.Toppings;
+      const data = {
+        id: this.props.product.length + 1,
+        title: this.props.modalData.title,
+        description: this.props.modalData.description,
+        price: amount,
+        picture: this.props.modalData.picture,
+        toppings: tops,
+        bread: this.state.Burger,
+        adds: this.state.Toppings,
+        instructions: this.state.Instructions,
+      };
+      const newData = [...this.props.product];
+      newData.push(data);
+      this.props.SetProduct(newData);
+      const sum = newData.reduce(function (a, b) {
+        return a + b.price;
+      }, 0);
+      let dollarUS = Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+      let price = dollarUS.format(sum);
+      this.props.SetPrice(price);
+      this.closeModal();
+      this.props.SetShowCart(true);
+    }
+  }
+
+  closeModal() {
+    this.props.setOpen(false);
+    this.setState({
+      amount: this.props.modalData.price,
+      wingsAmount: new Array(toppings.Wings.length).fill(false),
+      wingsType: new Array(toppings.WingsType.length).fill(false),
+      wingsAmountCost: 0,
+      wingsTypeCost: 0,
+      Burger: '6Pcs',
+      Toppings: '',
+      Instructions: '',
+    });
+  }
+  dummyfunction(e) {
+    e.stopPropagation();
+  }
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
+  }
+  onCheckChange(position) {
+    const updateCheckedState = this.state.wingsType.map(
+      (item, index) => (index === position ? true : false)
+      //  ? !item : item for multiple options
+    );
+
+    this.setState({ wingsType: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        this.setState({ Burger: toppings.WingsType[index].name });
+        return sum + toppings.WingsType[index].price;
+      }
+      return sum;
+    }, 0);
+
+    this.setState({ wingsTypeCost: totalPrice });
+    var extras = this.state.wingsAmountCost;
+    var base = this.props.modalData.price + totalPrice + extras;
+
+    this.setState({ amount: base });
+  }
+  onCheckChangeMultiple(position) {
+    const updateCheckedState = this.state.wingsAmount.map(
+      (item, index) => index === position
+      //  ? !item : item
+    );
+
+    this.setState({ wingsAmount: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        return sum + toppings.Wings[index].price;
+      }
+      return sum;
+    }, 0);
+
+    const totalNames = updateCheckedState.reduce((name, current, index) => {
+      if (current === true) {
+        return name + toppings.Wings[index].name + ',\n';
+      }
+      return name;
+    }, '');
+
+    this.setState({ Toppings: totalNames });
+
+    this.setState({ wingsAmountCost: totalPrice });
+    var extras = this.state.wingsTypeCost;
+    var base = this.props.modalData.price + extras + totalPrice;
+    this.setState({
+      amount: base,
+    });
+  }
+
+  render() {
+    // if (!this.props.open) return null;
+    return (
+      <>
+        <AnimatePresence>
+          {this.props.open && (
+            <motion.div
+              key={'modalBG'}
+              className="modal"
+              onClick={this.closeModal}
+              variants={this.ModalBgAnimate}
+              initial={'initial'}
+              animate={'animate'}
+              exit={'exit'}
+            >
+              <motion.div
+                className="modalContent"
+                onClick={this.dummyfunction}
+                key={'modalContent'}
+                variants={this.ModalContentAnimate}
+                initial={'initial'}
+                animate={'animate'}
+                exit={'exit'}
+              >
+                <div className="modalInformation sectionModal">
+                  <h1>{this.props.modalData.title}</h1>
+                  <p>{this.props.modalData.description}</p>
+                  <div className="mobileOrderFlex">
+                    <h2>
+                      {this.state.amount > this.props.modalData.price
+                        ? this.formatPrice(this.state.amount)
+                        : this.formatPrice(this.props.modalData.price)}
+                    </h2>
+                    <button className="orderNow" onClick={this.addProduct}>
+                      Order
+                    </button>
+                  </div>
+                </div>
+                <div className="modalImageContainer">
+                  {this.props.modalData.picture === Blank ? (
+                    ''
+                  ) : (
+                    <img
+                      src={this.props.modalData.picture}
+                      alt=""
+                      className="modalImage"
+                    />
+                  )}
+
+                  {/* Toppings */}
+                  <h3>Wing Type</h3>
+                  <ul className="modalToppings">
+                    {toppings.WingsType.map(({ name, price }, index) => {
+                      return (
+                        <li
+                          key={index}
+                          onClick={() => this.onCheckChange(index)}
+                        >
+                          <div className="modalInput">
+                            <input
+                              type="checkbox"
+                              name={name}
+                              value={price}
+                              checked={this.state.wingsType[index]}
+                              onChange={() => this.onCheckChange(index)}
+                            />
+                            <label htmlFor={name}>{name}</label>
+                          </div>
+                          <div>{this.formatPrice(price)}</div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <h3>Wing Amount</h3>
+                  <ul className="modalToppings">
+                    {toppings.Wings.map(({ name, price }, index) => {
+                      return (
+                        <li
+                          key={index}
+                          onClick={() => this.onCheckChangeMultiple(index)}
+                        >
+                          <div className="modalInput">
+                            <input
+                              type="checkbox"
+                              name={name}
+                              value={price}
+                              checked={this.state.wingsAmount[index]}
                               onChange={() => this.onCheckChangeMultiple(index)}
                             />
                             <label htmlFor={name}>{name}</label>

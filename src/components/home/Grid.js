@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SandwichModal } from '../sandwiches/Sandwiches';
+import { SandwichModal, BurgerSandwichModal } from '../sandwiches/Sandwiches';
 
 import Sassinator from '../../images/Sassinator.jpg';
 import Container3 from '../../images/BrooklynChop.jpg';
@@ -12,6 +12,8 @@ import macNBurger from '../../images/macburger.jpg';
 export default function Grid(props) {
   const [gridData, setGridData] = useState('');
   const [gridOpen, setGridOpen] = useState(false);
+  const [gridBurgerData, setGridBurgerData] = useState('');
+  const [gridBurgerOpen, setGridBurgerOpen] = useState(false);
 
   return (
     <>
@@ -24,6 +26,16 @@ export default function Grid(props) {
         modalData={gridData}
         open={gridOpen}
         setOpen={setGridOpen}
+      />
+      <BurgerSandwichModal
+        price={props.price}
+        SetPrice={props.SetPrice}
+        SetProduct={props.SetProduct}
+        product={props.product}
+        SetShowCart={props.SetShowCart}
+        modalData={gridBurgerData}
+        open={gridBurgerOpen}
+        setOpen={setGridBurgerOpen}
       />
       <div className="grid_container">
         <div className="signature_sandwiches">
@@ -47,8 +59,8 @@ export default function Grid(props) {
             picture={Sassinator}
             title={'The Sassinator'}
             item={'item_2'}
-            setGridData={setGridData}
-            setGridOpen={setGridOpen}
+            setGridData={setGridBurgerData}
+            setGridOpen={setGridBurgerOpen}
             SandwichPicture={Sassinator}
             SandwichName={`The "Sassinator`}
             Price={13.95}
@@ -59,8 +71,8 @@ export default function Grid(props) {
             picture={baconStack}
             title={'Bacon Stack'}
             item={'item_3'}
-            setGridData={setGridData}
-            setGridOpen={setGridOpen}
+            setGridData={setGridBurgerData}
+            setGridOpen={setGridBurgerOpen}
             SandwichPicture={baconStack}
             SandwichName={'Bacon Stack'}
             Price={13.95}
@@ -108,8 +120,8 @@ export default function Grid(props) {
             picture={macNBurger}
             title={'Mac N Cheese Beef Burger'}
             item={'item_7'}
-            setGridData={setGridData}
-            setGridOpen={setGridOpen}
+            setGridData={setGridBurgerData}
+            setGridOpen={setGridBurgerOpen}
             SandwichPicture={macNBurger}
             SandwichName={'Mac N Cheese Beef Burger'}
             Price={12.95}
