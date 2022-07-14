@@ -915,10 +915,6 @@ export const toppings = {
       price: 1.0,
     },
     {
-      name: 'habanerosalsa',
-      price: 1.0,
-    },
-    {
       name: 'wholewheat',
       price: 1.0,
     },

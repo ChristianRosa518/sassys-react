@@ -13,6 +13,9 @@ export default function Sandwiches(props) {
   //
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [burgerModalData, setBurgerModalData] = useState('');
+  //
+  const [defaultOpen, setDefaultOpen] = useState(false);
+  const [defaultModalData, setDefaultModalData] = useState('');
 
   return (
     <div className="sandContainer">
@@ -244,8 +247,8 @@ export default function Sandwiches(props) {
         {data.Sides.map((sandwich) => (
           <SandwichCardSmall
             key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
+            setModalData={setDefaultModalData}
+            setOpen={setDefaultOpen}
             SandwichPicture={sandwich.image}
             SandwichName={sandwich.name}
             Price={sandwich.price}
@@ -261,8 +264,8 @@ export default function Sandwiches(props) {
         {data.MilkShakes.map((sandwich) => (
           <SandwichCardSmall
             key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
+            setModalData={setDefaultModalData}
+            setOpen={setDefaultOpen}
             SandwichPicture={sandwich.image}
             SandwichName={sandwich.name}
             Price={sandwich.price}
@@ -278,8 +281,8 @@ export default function Sandwiches(props) {
         {data.Sauces.map((sandwich) => (
           <SandwichCardSmall
             key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
+            setModalData={setDefaultModalData}
+            setOpen={setDefaultOpen}
             SandwichPicture={sandwich.image}
             SandwichName={sandwich.name}
             Price={sandwich.price}
@@ -295,8 +298,8 @@ export default function Sandwiches(props) {
         {data.Drinks.map((sandwich) => (
           <SandwichCardSmall
             key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
+            setModalData={setDefaultModalData}
+            setOpen={setDefaultOpen}
             SandwichPicture={sandwich.image}
             SandwichName={sandwich.name}
             Price={sandwich.price}
@@ -319,6 +322,16 @@ export default function Sandwiches(props) {
         modalData={burgerModalData}
         open={burgerOpen}
         setOpen={setBurgerOpen}
+        price={props.price}
+        SetPrice={props.SetPrice}
+        SetProduct={props.SetProduct}
+        product={props.product}
+        SetShowCart={props.SetShowCart}
+      />
+      <DefaultSandwichModal
+        modalData={defaultModalData}
+        open={defaultOpen}
+        setOpen={setDefaultOpen}
         price={props.price}
         SetPrice={props.SetPrice}
         SetProduct={props.SetProduct}
@@ -1005,6 +1018,218 @@ export class BurgerSandwichModal extends React.Component {
                       );
                     })}
                   </ul>
+                  <div>
+                    <h3>Extra instructions</h3>
+                    <textarea
+                      className="modalExtraInstructions"
+                      value={this.state.Instructions}
+                      onChange={(e) =>
+                        this.setState({ Instructions: e.target.value })
+                      }
+                    ></textarea>
+                  </div>
+                  <br />
+                </div>
+
+                <div className="orderFlex">
+                  <h2>
+                    {this.state.amount > this.props.modalData.price
+                      ? this.formatPrice(this.state.amount)
+                      : this.formatPrice(this.props.modalData.price)}
+                  </h2>
+                  <button className="orderNow" onClick={this.addProduct}>
+                    Add to Cart
+                  </button>
+                </div>
+                <span className="closeButton" onClick={this.closeModal}>
+                  &times;
+                </span>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
+    );
+  }
+}
+export class DefaultSandwichModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+    this.dummyfunction = this.dummyfunction.bind(this);
+    this.addProduct = this.addProduct.bind(this);
+    this.onCheckChange = this.onCheckChange.bind(this);
+    this.onCheckChangeMultiple = this.onCheckChangeMultiple.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
+    this.ModalBgAnimate = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1, transition: { duration: 0.3 } },
+      exit: { opacity: 0, transition: { delay: 0.1 } },
+    };
+    this.ModalContentAnimate = {
+      initial: { y: '150%' },
+      animate: { y: 0, transition: { duration: 0.4 } },
+      exit: { y: '150%', transition: { duration: 0.4 } },
+    };
+    this.state = {
+      amount: this.props.modalData.price,
+      Instructions: '',
+    };
+  }
+
+  addProduct(e) {
+    if (this.props.product.length >= 10) {
+      alert('no more than 10 items');
+    } else {
+      let amount = this.props.modalData.price;
+
+      const data = {
+        id: this.props.product.length + 1,
+        title: this.props.modalData.title,
+        description: this.props.modalData.description,
+        price: amount,
+        picture: this.props.modalData.picture,
+        toppings: '',
+        bread: '',
+        adds: '',
+        instructions: this.state.Instructions,
+      };
+      const newData = [...this.props.product];
+      newData.push(data);
+      this.props.SetProduct(newData);
+      const sum = newData.reduce(function (a, b) {
+        return a + b.price;
+      }, 0);
+      let dollarUS = Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+      let price = dollarUS.format(sum);
+      this.props.SetPrice(price);
+      this.closeModal();
+      this.props.SetShowCart(true);
+    }
+  }
+
+  closeModal() {
+    this.props.setOpen(false);
+    this.setState({
+      amount: this.props.modalData.price,
+      Instructions: '',
+    });
+  }
+  dummyfunction(e) {
+    e.stopPropagation();
+  }
+  formatPrice(price) {
+    let dollarUS = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    let amount = dollarUS.format(price);
+    return amount;
+  }
+  onCheckChange(position) {
+    const updateCheckedState = this.state.burger.map(
+      (item, index) => (index === position ? true : false)
+      //  ? !item : item for multiple options
+    );
+
+    this.setState({ burger: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        this.setState({ Burger: toppings.Burgers[index].name });
+        return sum + toppings.Burgers[index].price;
+      }
+      return sum;
+    }, 0);
+
+    this.setState({ burgerCost: totalPrice });
+    var extras = this.state.extrasCost;
+    var base = this.props.modalData.price + totalPrice + extras;
+
+    this.setState({ amount: base });
+  }
+  onCheckChangeMultiple(position) {
+    const updateCheckedState = this.state.extra.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    this.setState({ extra: updateCheckedState });
+
+    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        return sum + toppings.Extras[index].price;
+      }
+      return sum;
+    }, 0);
+
+    const totalNames = updateCheckedState.reduce((name, current, index) => {
+      if (current === true) {
+        return name + toppings.Extras[index].name + ',\n';
+      }
+      return name;
+    }, '');
+
+    this.setState({ Toppings: totalNames });
+
+    this.setState({ extrasCost: totalPrice });
+    var extras = this.state.burgerCost;
+    var base = this.props.modalData.price + extras + totalPrice;
+    this.setState({
+      amount: base,
+    });
+  }
+
+  render() {
+    // if (!this.props.open) return null;
+    return (
+      <>
+        <AnimatePresence>
+          {this.props.open && (
+            <motion.div
+              key={'modalBG'}
+              className="modal"
+              onClick={this.closeModal}
+              variants={this.ModalBgAnimate}
+              initial={'initial'}
+              animate={'animate'}
+              exit={'exit'}
+            >
+              <motion.div
+                className="modalContent"
+                onClick={this.dummyfunction}
+                key={'modalContent'}
+                variants={this.ModalContentAnimate}
+                initial={'initial'}
+                animate={'animate'}
+                exit={'exit'}
+              >
+                <div className="modalInformation sectionModal">
+                  <h1>{this.props.modalData.title}</h1>
+                  <p>{this.props.modalData.description}</p>
+                  <div className="mobileOrderFlex">
+                    <h2>
+                      {this.state.amount > this.props.modalData.price
+                        ? this.formatPrice(this.state.amount)
+                        : this.formatPrice(this.props.modalData.price)}
+                    </h2>
+                    <button className="orderNow" onClick={this.addProduct}>
+                      Order
+                    </button>
+                  </div>
+                </div>
+                <div className="modalImageContainer">
+                  {this.props.modalData.picture === Blank ? (
+                    ''
+                  ) : (
+                    <img
+                      src={this.props.modalData.picture}
+                      alt=""
+                      className="modalImage"
+                    />
+                  )}
                   <div>
                     <h3>Extra instructions</h3>
                     <textarea
