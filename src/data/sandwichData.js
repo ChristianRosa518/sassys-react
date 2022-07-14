@@ -44,6 +44,13 @@ import meat24 from '../images/24.jpg';
 import avoDel from '../images/avocadoDelight.jpg';
 import mac from '../images/mac.jpg';
 import shoefries from '../images/shoeFries.jpg';
+import itaCombo from '../images/italianCombo.JPG';
+import spicyinlaw from '../images/spicyinlaw.JPG';
+import americancombo from '../images/americancombo.JPG';
+import eggcaprise from '../images/eggcaprise.JPG';
+import crispyMozza from '../images/crispymozzarella.JPG';
+import chickenblue from '../images/chickenbleu.JPG';
+import heartstopper from '../images/heartstopper.JPG';
 
 export const data = {
   Specialty: [
@@ -759,6 +766,124 @@ export const data = {
       image: Blank,
       name: `Balsamic Vinaigrette`,
       description: ``,
+    },
+  ],
+  //
+  //
+  //
+  Drinks: [
+    //
+    //
+    //
+    {
+      price: 2.5,
+      image: Blank,
+      name: `Sweet Miss Hot Chocolate`,
+      description: ``,
+    },
+    {
+      price: 1.75,
+      image: Blank,
+      name: `Snapple`,
+      description: ``,
+    },
+    {
+      price: 1.25,
+      image: Blank,
+      name: `Can Soda`,
+      description: ``,
+    },
+    {
+      price: 1.0,
+      image: Blank,
+      name: `Poland Spring`,
+      description: ``,
+    },
+    {
+      price: 3.0,
+      image: Blank,
+      name: `Vita Coco Coconut Water`,
+      description: ``,
+    },
+    {
+      price: 2.25,
+      image: Blank,
+      name: `San Pellegrino`,
+      description: ``,
+    },
+    {
+      price: 2.5,
+      image: Blank,
+      name: `Gatorade`,
+      description: ``,
+    },
+    {
+      price: 3.0,
+      image: Blank,
+      name: `Nantucket Nectars`,
+      description: ``,
+    },
+    {
+      price: 3.0,
+      image: Blank,
+      name: `Red Bull`,
+      description: ``,
+    },
+  ],
+  //
+  //
+  //
+  Combos: [
+    //
+    //
+    //
+    {
+      price: 15.95,
+      image: itaCombo,
+      name: `Italian Combo`,
+      description: `Prosciutto, Salami, Sopressata, Provolone cheese, shredded lettuce, tomato, roasted peppers, oil+vinegar, salt+pepper served cold or hot, hero bread or Panini Pressed.`,
+    },
+    {
+      price: 15.95,
+      image: spicyinlaw,
+      name: `Spicy in-Laws Combo`,
+      description: `Salsolito Turkey, Hot Chipotle chicken, Chorizo, Pepperjack cheese, Shredded lettuce, tomato, hot cherry peppers, jalapenos, chipotle aioli, jalapenos aioli + + Served cold or hot on a hero or panini pressed. `,
+    },
+    {
+      price: 15.95,
+      image: americancombo,
+      name: `American Combo`,
+      description: `Ham, Turkey, Roast Beef, American cheese, Shredded lettuce, tomato, onions, oil+vinegar, salt+pepper + Served cold or hot on a hero or panini pressed. `,
+    },
+    {
+      price: 15.95,
+      image: eggcaprise,
+      name: `Eggplant Cutlet Caprese`,
+      description: `Eggplant Cutlet, Fresh mozzarella, Parmesan, Fresh Basil, tomato, roasted peppers, balsamic+ pesto + Served cold or hot on a hero or panini pressed. `,
+    },
+    {
+      price: 12.95,
+      image: Blank,
+      name: `Caprese`,
+      description: `Fresh Mozzarella, fresh basil, tomato, balsamic + pesto + Served cold or hot on a hero or panini pressed. `,
+    },
+    {
+      price: 15.95,
+      image: crispyMozza,
+      name: `Crispy Chicken w/ Fresh Mozzarella and Pesto`,
+      description: `Crispy Chicken cutlet, Prosciutto, fresh mozzarella, basil, tomato, roasted peppers, balsamic + pesto + Served cold or hot on a hero or panini pressed. `,
+    },
+    {
+      price: 15.95,
+      image: chickenblue,
+      name: `Chicken Cordon Bleu`,
+      description: `Crispy chicken cutlet, Ham, Swiss cheese, Honey dijon mustard. Served cold or hot on a hero or panini pressed`,
+    },
+    {
+      price: 15.95,
+      image: heartstopper,
+      name: `Sassy's Heart Stopper`,
+      description: `Crispy chicken cutlet topped with Mozzarella sticks, Fries, Mac bites, American cheese, Chipotle+BBQ. Served hot on a hero or panini pressed.`,
     },
   ],
 };

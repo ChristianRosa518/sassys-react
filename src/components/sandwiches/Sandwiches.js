@@ -19,6 +19,23 @@ export default function Sandwiches(props) {
       </section>
       <SandCardContainer
         State={true}
+        ContainerTitle={'Sandwich Combos'}
+        ContainerDescription={'Meat Combos!'}
+      >
+        {data.Combos.map((sandwich) => (
+          <SandwichCard
+            key={sandwich.name}
+            setModalData={setModalData}
+            setOpen={setOpen}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
+          />
+        ))}
+      </SandCardContainer>
+      <SandCardContainer
+        State={true}
         ContainerTitle={'Specialty Sandwiches'}
         ContainerDescription={"The customer's favorites!"}
       >
@@ -260,99 +277,17 @@ export default function Sandwiches(props) {
         ContainerTitle={'Drinks'}
         ContainerDescription={`Add a drink! we absolutely have a soda for you, unless we don't!`}
       >
-        <>
+        {data.Drinks.map((sandwich) => (
           <SandwichCardSmall
+            key={sandwich.name}
             setModalData={setModalData}
             setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Swiss Miss Hot Chocolate`}
-            Description={``}
+            SandwichPicture={sandwich.image}
+            SandwichName={sandwich.name}
+            Price={sandwich.price}
+            Description={sandwich.description}
           />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Columbian Supremo`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Freshly Brewed Iced Coffee`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Nantucket Nectars`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Snapple`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Vita Coco Coconut Water`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Can Soda`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Poland Spring`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Stewart's Fountain Classics 12oz`}
-            Description={`Glass bottled classic fountain favorites`}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Tea`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Snapple 20oz`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`San pellegrino 16oz Bottle`}
-            Description={``}
-          />
-          <SandwichCardSmall
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={Blank}
-            SandwichName={`Gatorade`}
-            Description={``}
-          />
-        </>
+        ))}
       </SandCardContainer>
 
       <SandwichModal
