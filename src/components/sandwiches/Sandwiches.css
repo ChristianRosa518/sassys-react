@@ -118,12 +118,13 @@ h2:hover {
 }
 
 .cardHeader h3 {
-  width: 80%;
+  width: 70%;
   height: 100%;
 }
 
 .cardHeader p {
-  width: 20%;
+  /* background-color: yellow; */
+  width: 30%;
   height: 100%;
   text-align: right;
   color: black !important;
