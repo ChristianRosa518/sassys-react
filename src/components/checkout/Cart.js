@@ -115,7 +115,7 @@ export default function Cart(props) {
               initial={'initial'}
               animate={'animate'}
               exit={'exit'}
-              className="cart"
+              className={'cart'}
               onClick={dummyfunction}
             >
               {props.product.length === 0 && (
