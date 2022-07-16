@@ -470,6 +470,7 @@ class SandwichCardSmall extends React.Component {
     let dollarUS = Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
+      // Lol
     });
     let amount = dollarUS.format(price);
     return amount;
@@ -503,7 +504,7 @@ class SandwichCardSmall extends React.Component {
             <div className="cardImgCon">
               <img
                 src={this.props.SandwichPicture}
-                alt="Sandwich Card Img"
+                alt="Sandwich Card Img "
                 className="cardImg"
               />
             </div>
