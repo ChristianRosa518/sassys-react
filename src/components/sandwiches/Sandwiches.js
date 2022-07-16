@@ -1080,7 +1080,7 @@ export class WingSandwichModal extends React.Component {
       exit: { opacity: 0, transition: { delay: 0.1 } },
     };
     this.ModalContentAnimate = {
-      initial: { y: '150%' },
+      initial: { y: '155%' },
       animate: { y: 0, transition: { duration: 0.4 } },
       exit: { y: '150%', transition: { duration: 0.4 } },
     };
