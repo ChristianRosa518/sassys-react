@@ -1098,7 +1098,7 @@ export class WingSandwichModal extends React.Component {
 
   addProduct(e) {
     if (this.props.product.length >= 10) {
-      alert('no more than 10 items');
+      alert('No more than 10 items');
     } else {
       let amount =
         this.props.modalData.price +
