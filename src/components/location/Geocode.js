@@ -5,6 +5,7 @@ import '../checkout/Checkout.css';
 const API_KEY = process.env.REACT_APP_GEOCODE;
 
 class GoogleGeocode extends React.Component {
+  // How it works
   constructor(props) {
     super(props);
     this.state = {
@@ -24,6 +25,7 @@ class GoogleGeocode extends React.Component {
 
   geocode(e) {
     e.preventDefault();
+    // Takes the values from form and makes a get request
     axios
       .get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
@@ -32,6 +34,7 @@ class GoogleGeocode extends React.Component {
         },
       })
       .then((response) => {
+        // I then take the lat lng data and run another function
         var local = response.data.results[0].geometry.location;
         this.CheckLocation(local);
       })
@@ -41,8 +44,10 @@ class GoogleGeocode extends React.Component {
       });
   }
   CheckLocation(local) {
+    // local data converted to google maps latlng values
     const position = new google.maps.LatLng(local.lat, local.lng);
 
+    // I create a google maps polygon
     const coordsMap: google.maps.LatLngLiteral[] = [
       { lat: 40.698368338470225, lng: -73.98564910894787 },
       { lat: 40.69866554506028, lng: -73.9568281173706 },
@@ -55,6 +60,7 @@ class GoogleGeocode extends React.Component {
     const deliveryRadius = new google.maps.Polygon({
       paths: coordsMap,
     });
+    // I then check if our value is within the polygon
     if (google.maps.geometry.poly.containsLocation(position, deliveryRadius)) {
       alert('check!');
     } else {
