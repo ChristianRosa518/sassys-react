@@ -17,6 +17,7 @@ export default function Cart(props) {
   const [viewItems, SetViewItems] = useState(true);
   // const [showCheckout, SetShowCheckout] = useState(false);
   //   if (!props.showCart) return null;
+  // comments
 
   function changeCartState() {
     const current = props.showCart;
