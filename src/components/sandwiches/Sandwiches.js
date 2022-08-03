@@ -23,7 +23,7 @@ export default function Sandwiches(props) {
   return (
     <div className="sandContainer">
       <section className="signature_sandwiches">
-        <h1>Sassy's Sandwiches</h1>
+        <h2>Sassy's Sandwiches</h2>
         <p className="center">Click to view</p>
       </section>
       <SandCardContainer
@@ -410,6 +410,7 @@ class SandwichCard extends React.Component {
     super(props);
     this.sendModalData = this.sendModalData.bind(this);
     this.formatPrice = this.formatPrice.bind(this);
+    this.state = { color: false };
   }
 
   formatPrice(price) {
@@ -434,27 +435,34 @@ class SandwichCard extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className={'itemCard'} onClick={this.sendModalData}>
-          <div className="cardDes">
-            <div className={`cardHeader`}>
-              <h3>- {this.props.SandwichName} -</h3>
-              <p>{this.formatPrice(this.props.Price)}</p>
-            </div>
-            <p>{this.props.Description}</p>
+      <div
+        className={`itemCard `}
+        onClick={this.sendModalData}
+        onMouseEnter={() => this.setState({ color: !this.state.color })}
+        onMouseLeave={() => this.setState({ color: !this.state.color })}
+      >
+        <div className="cardDes">
+          <div
+            className={`cardHeader ${
+              this.state.color ? 'cardHeaderColorChange' : ''
+            }`}
+          >
+            <h3>- {this.props.SandwichName} -</h3>
+            <p>{this.formatPrice(this.props.Price)}</p>
           </div>
-          {this.props.SandwichPicture === Blank ? (
-            ''
-          ) : (
-            <div className="cardImgCon">
-              <img
-                src={this.props.SandwichPicture}
-                alt="Sandwich Card Img"
-                className="cardImg"
-              />
-            </div>
-          )}
+          <p>{this.props.Description}</p>
         </div>
+        {this.props.SandwichPicture === Blank ? (
+          ''
+        ) : (
+          <div className="cardImgCon">
+            <img
+              src={this.props.SandwichPicture}
+              alt="Sandwich Card Img"
+              className="cardImg"
+            />
+          </div>
+        )}
       </div>
     );
   }
@@ -489,27 +497,25 @@ class SandwichCardSmall extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className={'itemCardSmall'} onClick={this.sendModalData}>
-          <div className="cardDes">
-            <div className="cardHeader">
-              <h3>- {this.props.SandwichName} -</h3>
-              <p>{this.formatPrice(this.props.Price)}</p>
-            </div>
-            <p>{this.props.Description}</p>
+      <div className={'itemCardSmall'} onClick={this.sendModalData}>
+        <div className="cardDes">
+          <div className="cardHeader">
+            <h3>- {this.props.SandwichName} -</h3>
+            <p>{this.formatPrice(this.props.Price)}</p>
           </div>
-          {this.props.SandwichPicture === Blank ? (
-            ''
-          ) : (
-            <div className="cardImgCon">
-              <img
-                src={this.props.SandwichPicture}
-                alt="Sandwich Card Img "
-                className="cardImg"
-              />
-            </div>
-          )}
+          <p>{this.props.Description}</p>
         </div>
+        {this.props.SandwichPicture === Blank ? (
+          ''
+        ) : (
+          <div className="cardImgCon">
+            <img
+              src={this.props.SandwichPicture}
+              alt="Sandwich Card Img "
+              className="cardImg"
+            />
+          </div>
+        )}
       </div>
     );
   }
@@ -535,7 +541,7 @@ export class SandwichModal extends React.Component {
     };
     this.state = {
       amount: this.props.modalData.price,
-      bread: new Array(toppings.Bread.length).fill(false),
+      bread: new Array(toppings.Bread.length).fill(true, 0, 1, false),
       extra: new Array(toppings.Extras.length).fill(false),
       breadCost: 0,
       extrasCost: 0,
@@ -586,7 +592,7 @@ export class SandwichModal extends React.Component {
   closeModal() {
     this.props.setOpen(false);
     this.setState({
-      bread: new Array(toppings.Bread.length).fill(false),
+      bread: new Array(toppings.Bread.length).fill(true, 0, 1, false),
       extra: new Array(toppings.Extras.length).fill(false),
       amount: this.props.modalData.price,
       breadCost: 0,
@@ -811,7 +817,7 @@ export class BurgerSandwichModal extends React.Component {
     };
     this.state = {
       amount: this.props.modalData.price,
-      burger: new Array(toppings.Burgers.length).fill(false),
+      burger: new Array(toppings.Burgers.length).fill(true, 0, 1, false),
       extra: new Array(toppings.Extras.length).fill(false),
       burgerCost: 0,
       extrasCost: 0,
@@ -863,7 +869,7 @@ export class BurgerSandwichModal extends React.Component {
     this.props.setOpen(false);
     this.setState({
       amount: this.props.modalData.price,
-      burger: new Array(toppings.Burgers.length).fill(false),
+      burger: new Array(toppings.Burgers.length).fill(true, 0, 1, false),
       extra: new Array(toppings.Extras.length).fill(false),
       burgerCost: 0,
       extrasCost: 0,
@@ -1140,7 +1146,7 @@ export class WingSandwichModal extends React.Component {
     this.setState({
       amount: this.props.modalData.price,
       wingsAmount: new Array(toppings.Wings.length).fill(false),
-      wingsType: new Array(toppings.WingsType.length).fill(false),
+      wingsType: new Array(toppings.WingsType.length).fill(true, 0, 1, false),
       wingsAmountCost: 0,
       wingsTypeCost: 0,
       Burger: '6Pcs',
@@ -1273,7 +1279,7 @@ export class WingSandwichModal extends React.Component {
                         >
                           <div className="modalInput">
                             <input
-                              type="checkbox"
+                              type="radio"
                               name={name}
                               value={price}
                               checked={this.state.wingsType[index]}

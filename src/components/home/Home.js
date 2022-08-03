@@ -7,13 +7,6 @@ import './css/container.css';
 import './css/grid.css';
 import './css/grid_items.css';
 
-// Images
-import Container1 from '../../images/3.jpg';
-import Container2 from '../../images/2.jpg';
-import Container3 from '../../images/BrooklynChop.jpg';
-import Container4 from '../../images/4.jpg';
-//
-
 export default function Home(props) {
   const [HeroOne, setHeroOne] = useState(true);
   const [HeroTwo, setHeroTwo] = useState(false);
@@ -25,70 +18,77 @@ export default function Home(props) {
       <div className="homeContainer">
         <div className="img_container" id="container_1">
           <img
-            src={Container1}
+            src={process.env.PUBLIC_URL + 'images/Home1.jpg'}
             alt="Sandwich"
             className={`main_img_block ${HeroOne ? 'active' : ''}`}
           />
         </div>
         <div className="img_container">
           <img
-            src={Container2}
+            src={process.env.PUBLIC_URL + 'images/Home2.jpg'}
             alt="Sandwich"
             className={`img_block ${HeroTwo ? 'active' : ''}`}
           />
         </div>
         <div className="img_container">
           <img
-            src={Container3}
+            src={process.env.PUBLIC_URL + 'images/Home3.jpg'}
             alt="Sandwich"
             className={`img_block ${HeroThree ? 'active' : ''}`}
           />
         </div>
         <div className="img_container">
           <img
-            src={Container4}
+            src={process.env.PUBLIC_URL + 'images/Home4.jpg'}
             alt="Sandwich"
             className={`img_block ${HeroFour ? 'active' : ''}`}
           />
         </div>
         <div className="nav">
           <div className="nav_container">
-            <div
-              onMouseEnter={() => {
-                setHeroOne(!HeroOne);
-                setHeroTwo(!HeroTwo);
-              }}
-              onMouseLeave={() => {
-                setHeroOne(true);
-                setHeroTwo(!HeroTwo);
-              }}
-            >
-              <p className="homeTitle">Sassy's</p>
-            </div>
-            <div
-              onMouseEnter={() => {
-                setHeroOne(!HeroOne);
-                setHeroThree(!HeroThree);
-              }}
-              onMouseLeave={() => {
-                setHeroOne(true);
-                setHeroThree(!HeroThree);
-              }}
-            >
-              <p className="homeTitle">Specialty</p>
-            </div>
-            <div
-              onMouseEnter={() => {
-                setHeroOne(!HeroOne);
-                setHeroFour(!HeroFour);
-              }}
-              onMouseLeave={() => {
-                setHeroOne(true);
-                setHeroFour(!HeroFour);
-              }}
-            >
-              <p className="homeTitle">Sandwiches</p>
-            </div>
+            <h1>
+              <span
+                className="homeTitle"
+                onMouseEnter={() => {
+                  setHeroOne(!HeroOne);
+                  setHeroTwo(!HeroTwo);
+                }}
+                onMouseLeave={() => {
+                  setHeroOne(true);
+                  setHeroTwo(!HeroTwo);
+                }}
+              >
+                Sassy's
+              </span>
+
+              <span
+                className="homeTitle"
+                onMouseEnter={() => {
+                  setHeroOne(!HeroOne);
+                  setHeroThree(!HeroThree);
+                }}
+                onMouseLeave={() => {
+                  setHeroOne(true);
+                  setHeroThree(!HeroThree);
+                }}
+              >
+                Specialty
+              </span>
+
+              <span
+                className="homeTitle"
+                onMouseEnter={() => {
+                  setHeroOne(!HeroOne);
+                  setHeroFour(!HeroFour);
+                }}
+                onMouseLeave={() => {
+                  setHeroOne(true);
+                  setHeroFour(!HeroFour);
+                }}
+              >
+                Sandwiches
+              </span>
+            </h1>
           </div>
         </div>
       </div>

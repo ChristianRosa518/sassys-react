@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
-
 .homeContainer {
   height: 85vh;
   width: 100%;
@@ -16,6 +14,7 @@
   position: absolute;
 }
 .main_img_block {
+  object-fit: contain;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -26,6 +25,7 @@
 .img_block {
   z-index: 1;
   opacity: 0;
+  /* object-fit: contain; */
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -53,13 +53,24 @@
   width: 80%;
 }
 
+.nav_container h1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-flow: row wrap;
+
+  height: 100%;
+  width: 100%;
+}
+
 .homeTitle {
   padding: 0px 20px;
   font-weight: bold;
-  font-size: calc(2em + 13vmin);
+  font-size: calc(1em + 12vmin);
   color: white;
   cursor: pointer;
-  font-family: 'Shadows Into Light Two';
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
@@ -72,7 +83,7 @@
 @media only screen and (max-width: 768px) {
   .homeTitle {
     font-weight: 1000;
-    font-size: calc(2em + 9vmin);
+    font-size: calc(1em + 9vmin);
     color: white;
     cursor: pointer;
 

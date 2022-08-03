@@ -40,29 +40,9 @@
   grid-column-end: 4;
 }
 
-.signature_sandwiches {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
-
-.signature_sandwiches h1 {
-  text-align: center;
-  font-size: 4vw;
-  color: #000000;
-  font-family: 'Shadows Into Light Two', cursive;
-  font-weight: 600;
-  letter-spacing: 5px;
-}
-
 @media only screen and (max-width: 768px) {
-  .signature_sandwiches h1 {
-    font-size: 7vw;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .signature_sandwiches h2 {
+    font-size: calc(0.75em + 4vmin);
   }
 
   .grid {
