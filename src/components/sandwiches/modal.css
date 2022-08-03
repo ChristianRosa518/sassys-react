@@ -295,6 +295,43 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .modalToppings > li {
+    /* background-color: blue; */
+    height: 4vh;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  .modalInput {
+    height: 100%;
+    width: 100%;
+  }
+
+  .modalInput label {
+    height: 100%;
+    width: 100%;
+    font-size: calc(0.45em + 1.6vmin);
+  }
+
+  .modalInput > label > input {
+    height: 100%;
+    width: 24px;
+    margin-right: 10px;
+  }
+
+  .modalInput p {
+    font-size: calc(0.45em + 1.6vmin);
+  }
+}
 @media only screen and (max-width: 600px) {
   .modalContent {
     margin: 0;
