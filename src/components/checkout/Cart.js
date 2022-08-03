@@ -228,7 +228,7 @@ class Product extends React.Component {
       <div className={'productContainer'}>
         <div className="productDesContainer">
           <div className="productTitleCon">
-            <h3>-{this.props.item.title}-</h3>
+            <h3>{this.props.item.title}</h3>
             <h4>{this.formatPrice(this.props.item.price)}</h4>
           </div>
           <div className="productDes">

@@ -6,10 +6,10 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap');
 
 .sandContainer {
-  width: 85%;
+  width: 70%;
   height: auto;
 
   margin: 0 auto;
@@ -44,6 +44,7 @@ body {
   font-weight: 600;
   font-size: calc(0.75em + 1vmin);
   opacity: 0.7;
+  font-style: italic;
 }
 
 .section {
@@ -90,7 +91,7 @@ body {
 
   /*  */
   width: 49.75%;
-  height: 14vh;
+  height: 15vh;
   margin-top: 0.25%;
   margin-bottom: 0.25%;
 
@@ -106,6 +107,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .itemCard:nth-child(odd) {
@@ -135,6 +137,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .itemCard:hover,
@@ -149,22 +152,25 @@ body {
   /* background-color: red; */
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .cardHeader {
   /* #cded5c */
+  height: auto;
+  width: 100%;
   background-color: #4f535c;
   display: flex;
-  align-items: center;
-  width: 100%;
-  height: auto;
+  justify-content: center;
   transition: all 0.3s;
   color: white;
 }
 .cardDes > p {
+  height: 100%;
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-style: italic;
   color: rgb(102, 102, 102);
   padding: 4px;
   font-size: calc(0.35em + 1.2vmin);
@@ -191,6 +197,7 @@ body {
 }
 
 .cardHeader h3 {
+  margin: 5px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-style: italic;
@@ -201,7 +208,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 5px;
 
   font-size: calc(0.55em + 1.3vmin);
 
@@ -209,6 +215,7 @@ body {
 }
 
 .cardHeader p {
+  margin: 5px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   /* background-color: yellow; */

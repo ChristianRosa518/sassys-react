@@ -240,7 +240,6 @@
 .productTraits {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-style: italic;
 
   font-size: calc(0.5em + 0.9vmin);
   color: rgb(102, 102, 102);
@@ -252,7 +251,6 @@
   padding-top: 5px;
   font-size: calc(0.4em + 0.9vmin);
   font-weight: 500;
-  font-style: italic;
 }
 
 @media only screen and (max-width: 1000px) {

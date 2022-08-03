@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import './Sandwiches.css';
 import './modal.css';
 import { data, toppings } from '../../data/sandwichData.js';
+import './filter.css';
 
 import Blank from '../../images/Blank.PNG';
 
@@ -24,292 +25,297 @@ export default function Sandwiches(props) {
     <div className="sandContainer">
       <section className="signature_sandwiches">
         <h2>Sassy's Sandwiches</h2>
-        <p className="center">Click to view</p>
+        <p className="center">Click on Items to view</p>
       </section>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Sandwich Combos'}
-        ContainerDescription={'Meat Combos!'}
-      >
-        {data.Combos.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Specialty Sandwiches'}
-        ContainerDescription={"The customer's favorites!"}
-      >
-        {data.Specialty.map((sandwich) =>
-          sandwich.tag === 'Burger' ? (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setBurgerModalData}
-              setOpen={setBurgerOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          ) : (
-            <SandwichCard
-              key={sandwich.name}
-              setModalData={setModalData}
-              setOpen={setOpen}
-              SandwichPicture={sandwich.image}
-              SandwichName={sandwich.name}
-              Price={sandwich.price}
-              Description={sandwich.description}
-            />
-          )
-        )}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Burgers'}
-        ContainerDescription={'Premium angus Beef!'}
-      >
-        {data.Burgers.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setBurgerModalData}
-            setOpen={setBurgerOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={`Breakfast Sandwiches`}
-        ContainerDescription={`Morning Starters, even an afternoon starter!`}
-      >
-        {data.Breakfast.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Chicken Sandwiches'}
-        ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
-      >
-        {data.Chicken.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Chicken Wings'}
-        ContainerDescription={`We left the bone in these options`}
-      >
-        {data.Wings.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setWingModalData}
-            setOpen={setWingOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Signature Turkey Sandwiches'}
-        ContainerDescription={`gobble gobble gobble`}
-      >
-        {data.Turkey.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Signature Beef and Toasted Sandwiches'}
-        ContainerDescription={`Nothing but beef, except for #28, there's some turkey in there too.`}
-      >
-        {data.Beef.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Signature Salad Sandwiches'}
-        ContainerDescription={`Albacore tuna sandwich, we need more salad options`}
-      >
-        {data.Salad.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Signature Ham Sandwiches'}
-        ContainerDescription={`Black forest, Honey maple, Bourbon ham, you name it`}
-      >
-        {data.Ham.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Signature Cured Meats and Salami Sandwiches'}
-        ContainerDescription={`Sassy's Cured Meats and Salami Sandwiches`}
-      >
-        {data.Salami.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Vegetarian Sandwiches'}
-        ContainerDescription={`Vegetarian options`}
-      >
-        {data.Vegan.map((sandwich) => (
-          <SandwichCard
-            key={sandwich.name}
-            setModalData={setModalData}
-            setOpen={setOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Sides'}
-        ContainerDescription={`Add fries, Mac-N-Cheese or a variety of options. To your order`}
-      >
-        {data.Sides.map((sandwich) => (
-          <SandwichCardSmall
-            key={sandwich.name}
-            setModalData={setDefaultModalData}
-            setOpen={setDefaultOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Milkshakes'}
-        ContainerDescription={`Cool off your day`}
-      >
-        {data.MilkShakes.map((sandwich) => (
-          <SandwichCardSmall
-            key={sandwich.name}
-            setModalData={setDefaultModalData}
-            setOpen={setDefaultOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Side Sauces'}
-        ContainerDescription={`All available Sauces`}
-      >
-        {data.Sauces.map((sandwich) => (
-          <SandwichCardSmall
-            key={sandwich.name}
-            setModalData={setDefaultModalData}
-            setOpen={setDefaultOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
-      <SandCardContainer
-        State={true}
-        ContainerTitle={'Drinks'}
-        ContainerDescription={`Add a drink! we absolutely have a soda for you, unless we don't!`}
-      >
-        {data.Drinks.map((sandwich) => (
-          <SandwichCardSmall
-            key={sandwich.name}
-            setModalData={setDefaultModalData}
-            setOpen={setDefaultOpen}
-            SandwichPicture={sandwich.image}
-            SandwichName={sandwich.name}
-            Price={sandwich.price}
-            Description={sandwich.description}
-          />
-        ))}
-      </SandCardContainer>
+      <div>
+        <div className="filter"></div>
+        <div className="sandwichContainerFilter">
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Sandwich Combos'}
+            ContainerDescription={'Meat Combos!'}
+          >
+            {data.Combos.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Specialty Sandwiches'}
+            ContainerDescription={"The customer's favorites!"}
+          >
+            {data.Specialty.map((sandwich) =>
+              sandwich.tag === 'Burger' ? (
+                <SandwichCard
+                  key={sandwich.name}
+                  setModalData={setBurgerModalData}
+                  setOpen={setBurgerOpen}
+                  SandwichPicture={sandwich.image}
+                  SandwichName={sandwich.name}
+                  Price={sandwich.price}
+                  Description={sandwich.description}
+                />
+              ) : (
+                <SandwichCard
+                  key={sandwich.name}
+                  setModalData={setModalData}
+                  setOpen={setOpen}
+                  SandwichPicture={sandwich.image}
+                  SandwichName={sandwich.name}
+                  Price={sandwich.price}
+                  Description={sandwich.description}
+                />
+              )
+            )}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Burgers'}
+            ContainerDescription={'Premium angus Beef!'}
+          >
+            {data.Burgers.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setBurgerModalData}
+                setOpen={setBurgerOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={`Breakfast Sandwiches`}
+            ContainerDescription={`Morning Starters, even an afternoon starter!`}
+          >
+            {data.Breakfast.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Chicken Sandwiches'}
+            ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
+          >
+            {data.Chicken.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Chicken Wings'}
+            ContainerDescription={`We left the bone in these options`}
+          >
+            {data.Wings.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setWingModalData}
+                setOpen={setWingOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Signature Turkey Sandwiches'}
+            ContainerDescription={`gobble gobble gobble`}
+          >
+            {data.Turkey.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Signature Beef and Toasted Sandwiches'}
+            ContainerDescription={`Nothing but beef, except for #28, there's some turkey in there too.`}
+          >
+            {data.Beef.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Signature Salad Sandwiches'}
+            ContainerDescription={`Albacore tuna sandwich, we need more salad options`}
+          >
+            {data.Salad.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Signature Ham Sandwiches'}
+            ContainerDescription={`Black forest, Honey maple, Bourbon ham, you name it`}
+          >
+            {data.Ham.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Signature Cured Meats and Salami Sandwiches'}
+            ContainerDescription={`Sassy's Cured Meats and Salami Sandwiches`}
+          >
+            {data.Salami.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Vegetarian Sandwiches'}
+            ContainerDescription={`Vegetarian options`}
+          >
+            {data.Vegan.map((sandwich) => (
+              <SandwichCard
+                key={sandwich.name}
+                setModalData={setModalData}
+                setOpen={setOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Sides'}
+            ContainerDescription={`Add fries, Mac-N-Cheese or a variety of options. To your order`}
+          >
+            {data.Sides.map((sandwich) => (
+              <SandwichCardSmall
+                key={sandwich.name}
+                setModalData={setDefaultModalData}
+                setOpen={setDefaultOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Milkshakes'}
+            ContainerDescription={`Cool off your day`}
+          >
+            {data.MilkShakes.map((sandwich) => (
+              <SandwichCardSmall
+                key={sandwich.name}
+                setModalData={setDefaultModalData}
+                setOpen={setDefaultOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Side Sauces'}
+            ContainerDescription={`All available Sauces`}
+          >
+            {data.Sauces.map((sandwich) => (
+              <SandwichCardSmall
+                key={sandwich.name}
+                setModalData={setDefaultModalData}
+                setOpen={setDefaultOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+          <SandCardContainer
+            State={true}
+            ContainerTitle={'Drinks'}
+            ContainerDescription={`Add a drink! we absolutely have a soda for you, unless we don't!`}
+          >
+            {data.Drinks.map((sandwich) => (
+              <SandwichCardSmall
+                key={sandwich.name}
+                setModalData={setDefaultModalData}
+                setOpen={setDefaultOpen}
+                SandwichPicture={sandwich.image}
+                SandwichName={sandwich.name}
+                Price={sandwich.price}
+                Description={sandwich.description}
+              />
+            ))}
+          </SandCardContainer>
+        </div>
+      </div>
 
       <SandwichModal
         modalData={modalData}
@@ -384,7 +390,7 @@ class SandCardContainer extends React.Component {
   render() {
     return (
       <section className="section">
-        <h2 onClick={this.ShowSandwiches}>- {this.props.ContainerTitle} -</h2>
+        <h2 onClick={this.ShowSandwiches}> {this.props.ContainerTitle} </h2>
         <p>{this.props.ContainerDescription}</p>
         <AnimatePresence>
           {this.state.active && (
@@ -441,28 +447,28 @@ class SandwichCard extends React.Component {
         onMouseEnter={() => this.setState({ color: !this.state.color })}
         onMouseLeave={() => this.setState({ color: !this.state.color })}
       >
+        <div
+          className={`cardHeader ${
+            this.state.color ? 'cardHeaderColorChange' : ''
+          }`}
+        >
+          <h3>{this.props.SandwichName}</h3>
+          <p>{this.formatPrice(this.props.Price)}</p>
+        </div>
         <div className="cardDes">
-          <div
-            className={`cardHeader ${
-              this.state.color ? 'cardHeaderColorChange' : ''
-            }`}
-          >
-            <h3>- {this.props.SandwichName} -</h3>
-            <p>{this.formatPrice(this.props.Price)}</p>
-          </div>
+          {this.props.SandwichPicture === Blank ? (
+            ''
+          ) : (
+            <div className="cardImgCon">
+              <img
+                src={this.props.SandwichPicture}
+                alt="Sandwich Card Img"
+                className="cardImg"
+              />
+            </div>
+          )}
           <p>{this.props.Description}</p>
         </div>
-        {this.props.SandwichPicture === Blank ? (
-          ''
-        ) : (
-          <div className="cardImgCon">
-            <img
-              src={this.props.SandwichPicture}
-              alt="Sandwich Card Img"
-              className="cardImg"
-            />
-          </div>
-        )}
       </button>
     );
   }
@@ -504,28 +510,28 @@ class SandwichCardSmall extends React.Component {
         onMouseEnter={() => this.setState({ color: !this.state.color })}
         onMouseLeave={() => this.setState({ color: !this.state.color })}
       >
+        <div
+          className={`cardHeader ${
+            this.state.color ? 'cardHeaderColorChange' : ''
+          }`}
+        >
+          <h3>- {this.props.SandwichName} -</h3>
+          <p>{this.formatPrice(this.props.Price)}</p>
+        </div>
         <div className="cardDes">
-          <div
-            className={`cardHeader ${
-              this.state.color ? 'cardHeaderColorChange' : ''
-            }`}
-          >
-            <h3>- {this.props.SandwichName} -</h3>
-            <p>{this.formatPrice(this.props.Price)}</p>
-          </div>
+          {this.props.SandwichPicture === Blank ? (
+            ''
+          ) : (
+            <div className="cardImgCon">
+              <img
+                src={this.props.SandwichPicture}
+                alt="Sandwich Card Img "
+                className="cardImg"
+              />
+            </div>
+          )}
           <p>{this.props.Description}</p>
         </div>
-        {this.props.SandwichPicture === Blank ? (
-          ''
-        ) : (
-          <div className="cardImgCon">
-            <img
-              src={this.props.SandwichPicture}
-              alt="Sandwich Card Img "
-              className="cardImg"
-            />
-          </div>
-        )}
       </button>
     );
   }

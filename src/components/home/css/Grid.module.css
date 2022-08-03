@@ -29,6 +29,7 @@
 }
 
 .title p {
+  font-style: italic;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: calc(0.75em + 1vmin);
@@ -37,7 +38,7 @@
 
 .gridContainerDesktop {
   height: 125vh;
-  width: 85%;
+  width: 70%;
   margin: 0 auto;
 
   display: grid;

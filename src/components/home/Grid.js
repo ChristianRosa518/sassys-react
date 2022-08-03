@@ -44,7 +44,7 @@ export default function Grid(props) {
       <div className={styles.container}>
         <div className={styles.title}>
           <h2>Signature Sandwiches</h2>
-          <p>Click to View</p>
+          <p>Click on Items to View</p>
         </div>
         <div className={styles.gridContainerDesktop}>
           <LargeGrid
@@ -230,7 +230,7 @@ export default function Grid(props) {
 }
 
 function LargeGrid(props) {
-  const [open, setOpen] = useState(props.open);
+  const [open, setOpen] = useState(true);
 
   function sendModalData() {
     const modal = {
@@ -247,8 +247,8 @@ function LargeGrid(props) {
     <button
       className={`${styles.large} ${props.item}`}
       onClick={sendModalData}
-      onMouseEnter={() => setOpen(!open)}
-      onMouseLeave={() => setOpen(!open)}
+      // onMouseEnter={() => setOpen(!open)}
+      // onMouseLeave={() => setOpen(!open)}
     >
       <div className={styles.imageContainer}>
         <img src={props.picture} className={styles.image} alt={'Sandwich'} />
