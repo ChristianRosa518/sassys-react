@@ -29,8 +29,8 @@ body {
   padding-bottom: 3%;
 }
 
-.signature_sandwiches h2 {
-  width: 100%;
+.signature_sandwiches > h2 {
+  width: 80%;
   text-align: center;
   font-size: calc(0.75em + 6vmin);
   color: #000000;
@@ -151,7 +151,17 @@ body {
   height: 100%;
 }
 
-.cardDes p {
+.cardHeader {
+  /* #cded5c */
+  background-color: #4f535c;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s;
+  color: white;
+}
+.cardDes > p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-style: italic;
@@ -161,14 +171,11 @@ body {
   overflow: hidden;
 }
 
-.cardHeader {
-  /* #cded5c */
-  background-color: #4f535c;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  transition: all 0.3s;
+.cardHeader:hover,
+.cardheader:active {
+  transition: all 0.2s;
+  background-color: #cded5c;
+  color: black;
 }
 
 .cardHeaderColorChange {
@@ -194,24 +201,24 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: white;
   margin: 5px;
 
   font-size: calc(0.55em + 1.3vmin);
 
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .cardHeader p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   /* background-color: yellow; */
+  font-style: italic;
   width: 30%;
   height: 100%;
   text-align: right;
-  color: white;
   margin-right: 7px;
-  transition: all 0.3s;
+  transition: all 0.2s;
+  font-size: calc(0.35em + 1.2vmin);
 }
 
 .cardImgCon {
@@ -259,6 +266,10 @@ body {
 
   .container h2 {
     font-size: 7.5vw;
+  }
+
+  .signature_sandwiches h2 {
+    font-size: calc(0.75em + 4vmin);
   }
 }
 @media only screen and (max-width: 450px) {

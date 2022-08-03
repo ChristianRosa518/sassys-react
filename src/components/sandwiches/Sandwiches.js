@@ -624,7 +624,8 @@ export class SandwichModal extends React.Component {
     return amount;
   }
   onCheckChange(position) {
-    const updateCheckedState = this.state.bread.map(
+    const check = new Array(toppings.Bread.length).fill(false);
+    const updateCheckedState = check.map(
       (item, index) => (index === position ? true : false)
       //  ? !item : item for multiple options
     );
@@ -701,7 +702,7 @@ export class SandwichModal extends React.Component {
                 exit={'exit'}
               >
                 <div className="modalInformation sectionModal">
-                  <h1>{this.props.modalData.title}</h1>
+                  <h2>{this.props.modalData.title}</h2>
                   <p>{this.props.modalData.description}</p>
                   <div className="mobileOrderFlex">
                     <h2>
@@ -735,16 +736,19 @@ export class SandwichModal extends React.Component {
                           onClick={() => this.onCheckChange(index)}
                         >
                           <div className="modalInput">
-                            <input
-                              type="radio"
-                              name={name}
-                              value={price}
-                              checked={this.state.bread[index]}
-                              onChange={() => this.onCheckChange(index)}
-                            />
-                            <label htmlFor={name}>{name}</label>
+                            <label htmlFor={name}>
+                              <input
+                                type="radio"
+                                name={name}
+                                value={price}
+                                checked={this.state.bread[index]}
+                                onChange={() => this.onCheckChange(index)}
+                              />
+
+                              {name}
+                            </label>
+                            <p>{this.formatPrice(price)}</p>
                           </div>
-                          <div>{this.formatPrice(price)}</div>
                         </li>
                       );
                     })}
@@ -758,16 +762,20 @@ export class SandwichModal extends React.Component {
                           onClick={() => this.onCheckChangeMultiple(index)}
                         >
                           <div className="modalInput">
-                            <input
-                              type="checkbox"
-                              name={name}
-                              value={price}
-                              checked={this.state.extra[index]}
-                              onChange={() => this.onCheckChangeMultiple(index)}
-                            />
-                            <label htmlFor={name}>{name}</label>
+                            <label htmlFor={name}>
+                              <input
+                                type="checkbox"
+                                name={name}
+                                value={price}
+                                checked={this.state.extra[index]}
+                                onChange={() =>
+                                  this.onCheckChangeMultiple(index)
+                                }
+                              />
+                              {name}
+                            </label>
+                            <p>{this.formatPrice(price)}</p>
                           </div>
-                          <div>{this.formatPrice(price)}</div>
                         </li>
                       );
                     })}

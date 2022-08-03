@@ -66,7 +66,8 @@
   object-fit: cover;
 }
 
-.modalContent h1 {
+.modalContent h2 {
+  font-family: 'Merriweather', serif;
   font-style: italic;
   font-size: calc(0.75em + 2.3vmin);
   text-overflow: clip;
@@ -75,6 +76,9 @@
 }
 
 .modalContent p {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 500;
   height: auto;
   text-align: center;
   font-size: calc(0.35em + 1.5vmin);
@@ -127,11 +131,13 @@
   margin-bottom: 7px;
   padding-bottom: 7px;
 }
+
 .mobileOrderFlex {
   display: none;
 }
 
 .modalImageContainer h3 {
+  font-family: 'Merriweather', serif;
   font-style: italic;
   font-size: calc(0.75em + 2vmin);
   text-overflow: clip;
@@ -141,15 +147,12 @@
 }
 
 .modalToppings {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
 }
 .modalToppings > li {
-  height: 25%;
-  width: 50%;
+  height: 3vh;
+  width: 100%;
   padding-left: 3%;
   padding-right: 3%;
   list-style: none;
@@ -159,25 +162,53 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: calc(0.45em + 1.1vmin);
   cursor: pointer;
 }
 
 .modalInput {
-  height: auto;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalInput label {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic;
   cursor: pointer;
+  font-size: calc(0.45em + 1.4vmin);
+  text-align: left;
+
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
 }
 
-.modalInput input {
-  cursor: pointer;
+.modalInput > label > input {
+  height: 100%;
+  width: 16px;
   margin-right: 10px;
 }
 
+.modalInput p {
+  font-size: calc(0.45em + 1.4vmin);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
 .modalExtraInstructions {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   height: 10vh;
   width: 100%;
   resize: none;
