@@ -231,6 +231,21 @@
   .orderNow {
     padding: 10px 30px;
   }
+
+  .modalToppings > li {
+    height: 9vh;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
 }
 @media only screen and (max-width: 1440px) and (max-height: 400px) {
   .modalContent {
@@ -298,7 +313,7 @@
 @media only screen and (max-width: 768px) {
   .modalToppings > li {
     /* background-color: blue; */
-    height: 8vh;
+    height: 5vh;
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;
@@ -364,6 +379,21 @@
   }
   .modalContent p {
     text-align: center;
+  }
+
+  .modalToppings > li {
+    height: 9vh;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
   }
 }
 @media only screen and (max-width: 600px) and (max-height: 200px) {
