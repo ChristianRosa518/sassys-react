@@ -144,6 +144,7 @@ body {
 }
 
 .cardDes {
+  text-align: left;
   overflow-y: auto;
   /* background-color: red; */
   width: 100%;
@@ -188,6 +189,7 @@ body {
   font-style: italic;
   width: 70%;
   height: 100%;
+  text-align: left;
 
   overflow: hidden;
   text-overflow: ellipsis;

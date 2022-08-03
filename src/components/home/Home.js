@@ -4,8 +4,6 @@ import Grid from './Grid';
 import Sandwiches from '../sandwiches/Sandwiches';
 
 import './css/container.css';
-import './css/grid.css';
-import './css/grid_items.css';
 
 export default function Home(props) {
   const [HeroOne, setHeroOne] = useState(true);

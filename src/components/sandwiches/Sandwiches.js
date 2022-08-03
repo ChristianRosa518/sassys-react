@@ -435,7 +435,7 @@ class SandwichCard extends React.Component {
 
   render() {
     return (
-      <div
+      <button
         className={`itemCard `}
         onClick={this.sendModalData}
         onMouseEnter={() => this.setState({ color: !this.state.color })}
@@ -463,7 +463,7 @@ class SandwichCard extends React.Component {
             />
           </div>
         )}
-      </div>
+      </button>
     );
   }
 }
@@ -472,6 +472,7 @@ class SandwichCardSmall extends React.Component {
     super(props);
     this.sendModalData = this.sendModalData.bind(this);
     this.formatPrice = this.formatPrice.bind(this);
+    this.state = { color: false };
   }
 
   formatPrice(price) {
@@ -497,9 +498,18 @@ class SandwichCardSmall extends React.Component {
 
   render() {
     return (
-      <div className={'itemCardSmall'} onClick={this.sendModalData}>
+      <button
+        className={'itemCardSmall'}
+        onClick={this.sendModalData}
+        onMouseEnter={() => this.setState({ color: !this.state.color })}
+        onMouseLeave={() => this.setState({ color: !this.state.color })}
+      >
         <div className="cardDes">
-          <div className="cardHeader">
+          <div
+            className={`cardHeader ${
+              this.state.color ? 'cardHeaderColorChange' : ''
+            }`}
+          >
             <h3>- {this.props.SandwichName} -</h3>
             <p>{this.formatPrice(this.props.Price)}</p>
           </div>
@@ -516,7 +526,7 @@ class SandwichCardSmall extends React.Component {
             />
           </div>
         )}
-      </div>
+      </button>
     );
   }
 }

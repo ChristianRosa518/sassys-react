@@ -2,7 +2,8 @@
 
 .container {
   position: relative;
-  background-color: rgb(251, 251, 253);
+  background-color: rgb(245, 245, 245);
+  padding-bottom: 8vh;
 
   width: 100%;
   height: auto;
@@ -13,7 +14,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 20vh;
+  height: 25vh;
   width: 100%;
 }
 
@@ -27,22 +28,91 @@
   font-style: italic;
 }
 
-.flexContainer {
-  height: 100vh;
-  width: 85%;
+.title p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(0.75em + 1vmin);
+  opacity: 0.7;
+}
 
+.gridContainer {
+  height: 125vh;
+  width: 85%;
   margin: 0 auto;
 
-  border: 5px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .large {
+  cursor: pointer;
+  border-radius: 25px;
+  border: transparent;
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
 }
 
 .small {
+  cursor: pointer;
+  border-radius: 25px;
+  border: transparent;
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.small:hover {
+  transition: all 0.3s;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.description {
+  position: absolute;
+  z-index: 2;
+
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description p {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(0.75em + 1.5vmin);
 }
 
 @media only screen and (max-width: 768px) {
+  .gridContainer {
+    height: 150vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
   .title h2 {
     font-size: calc(0.75em + 4vmin);
   }
