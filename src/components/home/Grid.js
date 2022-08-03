@@ -203,7 +203,7 @@ function SmallGrid(props) {
     <button
       className={`${styles.small} ${props.item}`}
       onClick={sendModalData}
-      onMouseOver={() => setOpen(!open)}
+      onMouseEnter={() => setOpen(!open)}
       onMouseLeave={() => setOpen(!open)}
     >
       <div className={styles.imageContainer}>

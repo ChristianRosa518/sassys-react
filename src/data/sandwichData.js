@@ -707,7 +707,7 @@ export const data = {
     },
     {
       price: 8.95,
-      image: Blank,
+      image: process.env.PUBLIC_URL + 'images/Dulce.JPG',
       name: `Dulce de Leche Shake`,
       description: ``,
     },
