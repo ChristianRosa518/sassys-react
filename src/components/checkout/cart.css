@@ -47,6 +47,8 @@
 }
 
 .cart_Empty {
+  font-family: 'Merriweather', serif;
+
   position: absolute;
   height: 70%;
   width: 100%;
@@ -125,12 +127,16 @@
 }
 
 .cartTotalInfo > h3 {
+  font-family: 'Merriweather', serif;
+
   color: white;
   height: 10%;
   width: 50%;
   font-size: 16px;
 }
 .cartTotalInfo > p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   color: white;
   height: 10%;
   width: 50%;
@@ -213,22 +219,40 @@
 }
 
 .productDesContainer h3 {
-  font-size: calc(0.8em + 0.9vmin);
+  font-family: 'Montserrat', sans-serif;
+
+  font-weight: 600;
+  font-style: italic;
+
+  font-size: calc(0.7em + 0.9vmin);
   color: #313131;
 }
 
 .productDesContainer h4 {
-  font-size: calc(0.8em + 0.9vmin);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+
+  font-size: calc(0.7em + 0.7vmin);
   color: #313131;
   text-align: center;
 }
 .productTraits {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+
   font-size: calc(0.5em + 0.9vmin);
+  color: rgb(102, 102, 102);
 }
 .productInfo {
+  color: rgb(102, 102, 102);
+  font-family: 'Montserrat', sans-serif;
+
   padding-top: 5px;
   font-size: calc(0.4em + 0.9vmin);
-  color: gray;
+  font-weight: 500;
+  font-style: italic;
 }
 
 @media only screen and (max-width: 1000px) {

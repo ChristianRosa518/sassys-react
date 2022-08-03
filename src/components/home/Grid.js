@@ -55,8 +55,8 @@ export default function Grid(props) {
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
       Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
             item={'gridOne'}
-            setGridData={setGridData}
-            setGridOpen={setGridOpen}
+            setGridData={setGridBurgerData}
+            setGridOpen={setGridBurgerOpen}
             open={false}
           />
           <LargeGrid
@@ -68,8 +68,8 @@ export default function Grid(props) {
               'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.'
             }
             item={'gridTwo'}
-            setGridData={setGridBurgerData}
-            setGridOpen={setGridBurgerOpen}
+            setGridData={setGridData}
+            setGridOpen={setGridOpen}
             open={false}
           />
           <LargeGrid
@@ -144,8 +144,8 @@ export default function Grid(props) {
             Description={`Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
             Onions, Swiss cheese, peppercorn aioli on a toasted Brioche Bun`}
             item={'gridOne'}
-            setGridData={setGridData}
-            setGridOpen={setGridOpen}
+            setGridData={setGridBurgerData}
+            setGridOpen={setGridBurgerOpen}
             open={true}
           />
           <SmallGrid
@@ -157,8 +157,8 @@ export default function Grid(props) {
               'Chopped Angus Beef, Applewood Smoked Bacon, Vermont Cheddar Cheese, American Cheese, Sauteed Onions, Shredded Lettuce, Sliced Ripe Tomato, honey BBQ, served on toasted Italian Hero.'
             }
             item={'gridTwo'}
-            setGridData={setGridBurgerData}
-            setGridOpen={setGridBurgerOpen}
+            setGridData={setGridData}
+            setGridOpen={setGridOpen}
             open={true}
           />
           <SmallGrid
