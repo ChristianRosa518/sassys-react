@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import './Sandwiches.css';
@@ -7,8 +7,37 @@ import { data, toppings } from '../../data/sandwichData.js';
 import './filter.css';
 
 import Blank from '../../images/Blank.PNG';
+import Filter from './Filter';
 
 export default function Sandwiches(props) {
+  const arr = [
+    { id: 1, name: 'Sandwich Combos' },
+    { id: 2, name: 'Specialty Sandwiches' },
+    { id: 3, name: 'Burgers' },
+    { id: 4, name: 'Breakfast Sandwiches' },
+    { id: 5, name: 'Chicken Sandwiches' },
+    { id: 6, name: 'Chicken Wings' },
+    { id: 7, name: 'Turkey Sandwiches' },
+    { id: 8, name: 'Beef and Toasted Sandwiches' },
+    { id: 9, name: 'Salad Sandwiches' },
+    { id: 10, name: 'Ham Sandwiches' },
+    { id: 11, name: 'Cured Meats and Salami Sandwiches' },
+    { id: 12, name: 'Vegetarian Sandwiches' },
+    { id: 13, name: 'Sides' },
+    { id: 14, name: 'Milkshakes' },
+    { id: 15, name: 'Side Sauces' },
+    { id: 16, name: 'Drinks' },
+  ];
+
+  const refs = useRef(null);
+
+  const scrollFun = (id) => {
+    document.querySelector(`#id${id}`)?.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+    });
+  };
+
   const [open, setOpen] = useState(false);
   const [modalData, setModalData] = useState('');
   //
@@ -27,10 +56,17 @@ export default function Sandwiches(props) {
         <h2>Sassy's Sandwiches</h2>
         <p className="center">Click on Items to view</p>
       </section>
-      <div>
-        <div className="filter"></div>
+      <div className="filterContainer">
+        <div className="filter" ref={refs}>
+          {arr.map((id) => (
+            <button key={id} onClick={() => scrollFun(id.id)}>
+              {id.name}
+            </button>
+          ))}
+        </div>
         <div className="sandwichContainerFilter">
           <SandCardContainer
+            id={1}
             State={true}
             ContainerTitle={'Sandwich Combos'}
             ContainerDescription={'Meat Combos!'}
@@ -48,6 +84,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={2}
             State={true}
             ContainerTitle={'Specialty Sandwiches'}
             ContainerDescription={"The customer's favorites!"}
@@ -77,6 +114,7 @@ export default function Sandwiches(props) {
             )}
           </SandCardContainer>
           <SandCardContainer
+            id={3}
             State={true}
             ContainerTitle={'Burgers'}
             ContainerDescription={'Premium angus Beef!'}
@@ -94,6 +132,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={4}
             State={true}
             ContainerTitle={`Breakfast Sandwiches`}
             ContainerDescription={`Morning Starters, even an afternoon starter!`}
@@ -111,6 +150,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={5}
             State={true}
             ContainerTitle={'Chicken Sandwiches'}
             ContainerDescription={`Sassy's Grilled and Cripsy Chicken sandwiches!`}
@@ -128,6 +168,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={6}
             State={true}
             ContainerTitle={'Chicken Wings'}
             ContainerDescription={`We left the bone in these options`}
@@ -145,6 +186,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={7}
             State={true}
             ContainerTitle={'Signature Turkey Sandwiches'}
             ContainerDescription={`gobble gobble gobble`}
@@ -162,6 +204,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={8}
             State={true}
             ContainerTitle={'Signature Beef and Toasted Sandwiches'}
             ContainerDescription={`Nothing but beef, except for #28, there's some turkey in there too.`}
@@ -179,6 +222,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={9}
             State={true}
             ContainerTitle={'Signature Salad Sandwiches'}
             ContainerDescription={`Albacore tuna sandwich, we need more salad options`}
@@ -196,6 +240,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={10}
             State={true}
             ContainerTitle={'Signature Ham Sandwiches'}
             ContainerDescription={`Black forest, Honey maple, Bourbon ham, you name it`}
@@ -213,6 +258,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={11}
             State={true}
             ContainerTitle={'Signature Cured Meats and Salami Sandwiches'}
             ContainerDescription={`Sassy's Cured Meats and Salami Sandwiches`}
@@ -230,6 +276,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={12}
             State={true}
             ContainerTitle={'Vegetarian Sandwiches'}
             ContainerDescription={`Vegetarian options`}
@@ -247,6 +294,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={13}
             State={true}
             ContainerTitle={'Sides'}
             ContainerDescription={`Add fries, Mac-N-Cheese or a variety of options. To your order`}
@@ -264,6 +312,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={14}
             State={true}
             ContainerTitle={'Milkshakes'}
             ContainerDescription={`Cool off your day`}
@@ -281,6 +330,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={15}
             State={true}
             ContainerTitle={'Side Sauces'}
             ContainerDescription={`All available Sauces`}
@@ -298,6 +348,7 @@ export default function Sandwiches(props) {
             ))}
           </SandCardContainer>
           <SandCardContainer
+            id={16}
             State={true}
             ContainerTitle={'Drinks'}
             ContainerDescription={`Add a drink! we absolutely have a soda for you, unless we don't!`}
@@ -389,8 +440,8 @@ class SandCardContainer extends React.Component {
 
   render() {
     return (
-      <section className="section">
-        <h2 onClick={this.ShowSandwiches}> {this.props.ContainerTitle} </h2>
+      <section className="section" id={`id${this.props.id}`}>
+        <h2 onClick={this.ShowSandwiches}> {this.props.ContainerTitle}</h2>
         <p>{this.props.ContainerDescription}</p>
         <AnimatePresence>
           {this.state.active && (

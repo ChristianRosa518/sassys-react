@@ -48,6 +48,7 @@ body {
 }
 
 .section {
+  scroll-margin: 10vh;
   height: auto;
   width: 100%;
   padding-bottom: 10px;

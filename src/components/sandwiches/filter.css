@@ -1,27 +1,26 @@
 .filterContainer {
   width: 100%;
-  height: 10vh;
+  height: auto;
   display: flex;
-  overflow-x: auto;
+  position: relative;
 }
 
 .filter {
+  position: sticky;
+  width: 15%;
+  height: 40vh;
+  top: 10vh;
+  /* background-color: red; */
+  overflow-y: auto;
+
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
-.filter > p {
-  opacity: 1;
-  height: 100%;
-  width: 8vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.sandwichContainerFilter {
+  height: auto;
+  width: 85%;
   /* background-color: blue; */
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: calc(0.75em + 1vmin);
-  font-style: italic;
-
-  text-align: center;
 }
