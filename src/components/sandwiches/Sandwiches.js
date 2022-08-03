@@ -1121,7 +1121,7 @@ export class WingSandwichModal extends React.Component {
     this.state = {
       amount: this.props.modalData.price,
       wingsAmount: new Array(toppings.Wings.length).fill(false),
-      wingsType: new Array(toppings.WingsType.length).fill(false),
+      wingsType: new Array(toppings.WingsType.length).fill(true, 0, 1, false),
       wingsAmountCost: 0,
       wingsTypeCost: 0,
       Burger: '6Pcs',
