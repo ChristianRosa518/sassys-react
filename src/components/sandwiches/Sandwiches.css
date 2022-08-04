@@ -280,6 +280,12 @@ body {
   .signature_sandwiches h2 {
     font-size: calc(0.75em + 4vmin);
   }
+  .section {
+    scroll-margin: 20vh;
+  }
+  .sandContainer {
+    width: 85%;
+  }
 }
 @media only screen and (max-width: 450px) {
   .cardImgCon {

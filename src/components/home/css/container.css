@@ -66,7 +66,7 @@
 .homeTitle {
   padding: 0px 40px;
   font-weight: bold;
-  font-size: calc(1em + 12vmin);
+  font-size: calc(1em + 10vmin);
   color: white;
   cursor: pointer;
   font-family: 'Merriweather', serif;
@@ -84,7 +84,7 @@
 @media only screen and (max-width: 768px) {
   .homeTitle {
     font-weight: 1000;
-    font-size: calc(1em + 9vmin);
+    font-size: calc(1em + 8vmin);
     color: white;
     cursor: pointer;
 
@@ -96,7 +96,7 @@
   .homeTitle {
     padding: 0px 10px;
     font-weight: 1000;
-    font-size: calc(1em + 9vmin);
+    font-size: calc(0.6em + 6vmin);
     color: white;
     cursor: pointer;
 

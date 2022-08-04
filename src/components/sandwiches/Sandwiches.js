@@ -44,12 +44,18 @@ export default function Sandwiches(props) {
   };
 
   function scrolly() {
-    if (document.querySelector('.filterActive') != null && scroll === true) {
-      var x = document.querySelector('.filterActive').offsetTop;
+    if (document.querySelector('.filterActive2') != null && scroll === true) {
+      var x = document.querySelector('.filterActive2').offsetTop;
       document.querySelector('.filter').scrollTo({
         top: x + -10,
         behavior: 'smooth',
       });
+    }
+  }
+  function scrollyLeft() {
+    if (document.querySelector('.filterActive') != null && scroll === true) {
+      var y = document.querySelector('.filterActive').offsetLeft;
+      document.querySelector('.filterMobile ul').scrollLeft = y - 10;
     }
   }
 
@@ -72,7 +78,7 @@ export default function Sandwiches(props) {
         <p className="center">Click on Items to view</p>
       </section>
       <div className="filterContainer">
-        <div className="filter" ref={refs}>
+        <div className="filterMobile" ref={refs}>
           <Scrollspy
             items={[
               'id1',
@@ -93,6 +99,43 @@ export default function Sandwiches(props) {
               'id16',
             ]}
             currentClassName={'filterActive'}
+            offset={-200}
+            onUpdate={scrollyLeft}
+          >
+            {arr.map((id) => (
+              <div>
+                <button
+                  key={id}
+                  onClick={() => scrollFun(id.id)}
+                  id={`button${id.id}`}
+                >
+                  {id.name}
+                </button>
+              </div>
+            ))}
+          </Scrollspy>
+        </div>
+        <div className="filter" ref={refs}>
+          <Scrollspy
+            items={[
+              'id1',
+              'id2',
+              'id3',
+              'id4',
+              'id5',
+              'id6',
+              'id7',
+              'id8',
+              'id9',
+              'id10',
+              'id11',
+              'id12',
+              'id13',
+              'id14',
+              'id15',
+              'id16',
+            ]}
+            currentClassName={'filterActive2'}
             offset={-100}
             onUpdate={scrolly}
           >
