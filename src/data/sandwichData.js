@@ -64,7 +64,7 @@ export const data = {
     },
     {
       tag: 'Burger',
-      name: `The "Sassinator`,
+      name: `The "Sassinator"`,
       price: 13.95,
       image: Sassinator,
       description: `Philly Steak, 100% Angus Beef Burger, Crispy Bacon, Caramelized Red
@@ -114,7 +114,7 @@ export const data = {
     },
     {
       tag: 'Specialty',
-      name: `7. Crispy Chicken Cutlet Parmigina`,
+      name: `7. Crispy Chicken Cutlet Parmigiana`,
       price: 12.95,
       image: Parm,
       description: `Crispy Chicken Cutlet, Fresh Marinara Sauce, Melted Mozzarella,
@@ -147,7 +147,7 @@ export const data = {
     {
       tag: 'Specialty',
       price: 11.95,
-      image: SmokeyMeunster,
+      image: Blank,
       name: `Smokey Muenster`,
       description: `Smoked Mesquite Turkey Breast, Muenster cheese, Arugula, Creamy
       Russian, ripe tomato, red onion`,

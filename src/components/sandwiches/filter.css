@@ -8,15 +8,49 @@
 .filter {
   position: sticky;
   width: 15%;
-  height: 40vh;
+  height: 90vh;
   top: 10vh;
   /* background-color: red; */
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+}
+
+.filter button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 7px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(0.55em + 1.3vmin);
+  color: rgb(85, 85, 85);
+
+  padding: 7px;
+  width: 100%;
+  text-align: left;
+  /* background-color: yellow; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.filter button:hover,
+.filter button:active {
+  background-color: #cded5c;
+  color: black;
+  transition: all 0.3s;
+}
+
+.filterActive {
+  background-color: #cded5c !important;
+  color: black !important;
+  transition: all 0.3s;
 }
 
 .sandwichContainerFilter {

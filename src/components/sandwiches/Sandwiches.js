@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Scrollspy from 'react-scrollspy';
 
 import './Sandwiches.css';
 import './modal.css';
@@ -10,6 +11,7 @@ import Blank from '../../images/Blank.PNG';
 import Filter from './Filter';
 
 export default function Sandwiches(props) {
+  const [scroll, setScroll] = useState(true);
   const arr = [
     { id: 1, name: 'Sandwich Combos' },
     { id: 2, name: 'Specialty Sandwiches' },
@@ -32,11 +34,24 @@ export default function Sandwiches(props) {
   const refs = useRef(null);
 
   const scrollFun = (id) => {
+    setScroll(false);
     document.querySelector(`#id${id}`)?.scrollIntoView({
       block: 'start',
-      behavior: 'smooth',
+      behavior: 'instant',
     });
+
+    setScroll(true);
   };
+
+  function scrolly() {
+    if (document.querySelector('.filterActive') != null && scroll === true) {
+      var x = document.querySelector('.filterActive').offsetTop;
+      document.querySelector('.filter').scrollTo({
+        top: x + -10,
+        behavior: 'smooth',
+      });
+    }
+  }
 
   const [open, setOpen] = useState(false);
   const [modalData, setModalData] = useState('');
@@ -58,11 +73,39 @@ export default function Sandwiches(props) {
       </section>
       <div className="filterContainer">
         <div className="filter" ref={refs}>
-          {arr.map((id) => (
-            <button key={id} onClick={() => scrollFun(id.id)}>
-              {id.name}
-            </button>
-          ))}
+          <Scrollspy
+            items={[
+              'id1',
+              'id2',
+              'id3',
+              'id4',
+              'id5',
+              'id6',
+              'id7',
+              'id8',
+              'id9',
+              'id10',
+              'id11',
+              'id12',
+              'id13',
+              'id14',
+              'id15',
+              'id16',
+            ]}
+            currentClassName={'filterActive'}
+            offset={-100}
+            onUpdate={scrolly}
+          >
+            {arr.map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollFun(id.id)}
+                id={`button${id.id}`}
+              >
+                {id.name}
+              </button>
+            ))}
+          </Scrollspy>
         </div>
         <div className="sandwichContainerFilter">
           <SandCardContainer
