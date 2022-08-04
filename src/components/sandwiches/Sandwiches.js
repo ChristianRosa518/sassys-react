@@ -55,7 +55,7 @@ export default function Sandwiches(props) {
   function scrollyLeft() {
     if (document.querySelector('.filterActive') != null && scroll === true) {
       var y = document.querySelector('.filterActive').offsetLeft;
-      document.querySelector('.filterMobile ul').scrollLeft = y - 10;
+      document.querySelector('.filterMobile ul').scrollLeft = y;
     }
   }
 
