@@ -92,10 +92,10 @@ body {
   cursor: pointer;
 
   /*  */
-  width: 49.75%;
+  width: 49.5%;
   height: 15vh;
-  margin-top: 0.25%;
-  margin-bottom: 0.25%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
 
   /*  */
   border: 1px solid rgba(0, 0, 0, 0.253);
@@ -113,10 +113,10 @@ body {
 }
 
 .itemCard:nth-child(odd) {
-  margin-right: 0.25%;
+  margin-right: 0.5%;
 }
 .itemCard:nth-child(even) {
-  margin-left: 0.25%;
+  margin-left: 0.5%;
 }
 
 .itemCardSmall {
@@ -258,6 +258,13 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .itemCard:nth-child(odd) {
+    margin-right: 0%;
+  }
+  .itemCard:nth-child(even) {
+    margin-left: 0%;
+  }
+
   .cardDes p {
     font-size: calc(0.55em + 1.5vmin);
   }

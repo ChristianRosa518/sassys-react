@@ -81,11 +81,11 @@
 
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(0.55em + 1.3vmin);
+  font-size: calc(0.35em + 1.3vmin);
   color: rgb(85, 85, 85);
 
   padding: 7px;
-  width: 100%;
+  width: 80%;
   text-align: left;
   /* background-color: yellow; */
   margin-top: 10px;
@@ -113,8 +113,22 @@
 
 .sandwichContainerFilter {
   height: auto;
-  width: 100%;
+  width: 85%;
   /* background-color: blue; */
+}
+
+@media only screen and (max-width: 1000px) {
+  .filter button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: calc(0.35em + 0.7vmin);
+    color: rgb(85, 85, 85);
+
+    padding: 7px;
+    width: 80%;
+    text-align: left;
+    /* background-color: yellow; */
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -128,6 +142,12 @@
 
   .filterContainer {
     display: block;
+  }
+
+  .sandwichContainerFilter {
+    height: auto;
+    width: 100%;
+    /* background-color: blue; */
   }
 }
 
