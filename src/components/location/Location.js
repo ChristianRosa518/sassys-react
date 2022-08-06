@@ -44,7 +44,7 @@ export default function Location(props) {
                       <p>Tuesday - Saturday</p>
                     </div>
                     <div className="time">
-                      <p>10am - 8pm</p>
+                      <p>11am - 8pm</p>
                     </div>
                   </div>
 
@@ -53,7 +53,7 @@ export default function Location(props) {
                       <p>Sunday</p>
                     </div>
                     <div className="time">
-                      <p>10am - 7pm</p>
+                      <p>11am - 7pm</p>
                     </div>
                   </div>
                 </div>
