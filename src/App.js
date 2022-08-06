@@ -83,7 +83,6 @@ function App() {
           }
         ></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/location" element={<Location />}></Route>
       </Routes>
       <Footer />
       <div className="none">

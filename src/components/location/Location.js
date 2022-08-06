@@ -12,35 +12,56 @@ const render = (status) => {
 export default function Location() {
   const mapCenter = { lat: 40.7140408311635, lng: -73.95525507045573 };
   const center = { lat: 40.71060416957451, lng: -73.95878700221677 };
-  const zoom = 14;
+  const zoom = 13;
 
   return (
     <div className="container">
-      <h1>Sassy's Specialty Sandwiches Location</h1>
-      <p>233 S 4th St Brooklyn, Ny 11211</p>
-      <p>Polygon is the Delivery Radius</p>
-      <div className="map">
-        <Wrapper
-          apiKey={'AIzaSyAyQo5E9RoTnz7324q_pqNjjxInO6liZho'}
-          render={render}
-        >
-          <div className="bigMap">
-            <Map
-              mapCenter={mapCenter}
-              center={center}
-              zoom={zoom}
-              style={{ height: '100%', width: '100%' }}
-            ></Map>
-          </div>
-          <div className="smallMap">
-            <Map
-              mapCenter={mapCenter}
-              center={center}
-              zoom={13}
-              style={{ height: '100%', width: '100%' }}
-            ></Map>
-          </div>
-        </Wrapper>
+      <div className="h">
+        <div className="locTitle">
+          <h2>Store Location</h2>
+          <p>233 S 4th St Brooklyn, Ny 11211</p>
+          <p>Polygon is the Delivery Radius</p>
+        </div>
+        <div className="map">
+          <Wrapper
+            apiKey={'AIzaSyAyQo5E9RoTnz7324q_pqNjjxInO6liZho'}
+            render={render}
+          >
+            <div className="bigMap">
+              <div className="mapInfo">
+                <h3>Hours</h3>
+                <div className="schedule">
+                  <div className="hours">
+                    <div className="day">
+                      <p>Monday</p>
+                    </div>
+                    <div className="time">
+                      <p>Closed</p>
+                    </div>
+                  </div>
+                  <div className="hours">
+                    <div className="day">
+                      <p>Tuesday - Saturday</p>
+                    </div>
+                    <div className="time">
+                      <p>10am - 8pm</p>
+                    </div>
+                  </div>
+
+                  <div className="hours">
+                    <div className="day">
+                      <p>Sunday</p>
+                    </div>
+                    <div className="time">
+                      <p>10am - 7pm</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <Map mapCenter={mapCenter} center={center} zoom={zoom}></Map>
+            </div>
+          </Wrapper>
+        </div>
       </div>
     </div>
   );

@@ -47,7 +47,7 @@ export default function Map({
 
   return (
     <>
-      <div ref={ref} id="map" className="mappy" />;
+      <div ref={ref} id="map" className="mappy" />
     </>
   );
 }

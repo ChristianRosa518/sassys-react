@@ -1,44 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
-body {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(251, 251, 253);
-}
 .container {
-  height: 100%;
-  margin-top: 1.5%;
+  background-color: rgb(245, 245, 245);
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  padding-top: 1.5%;
   text-align: center;
+  padding-bottom: 3vh;
+}
+.h {
+  margin: 0 auto;
+  height: 100%;
+  width: 70%;
 }
 
-.container h1 {
-  font-family: 'Shadows Into Light Two', cursive;
+.locTitle {
+  height: 20%;
+  width: 100%;
+}
+
+.locTitle > h2 {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  font-size: calc(0.75em + 6vmin);
+  color: #000000;
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+}
+.locTitle > p {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 2vw;
-  letter-spacing: 3px;
+  font-size: calc(0.75em + 1vmin);
+  color: rgb(85, 85, 85);
+  font-style: italic;
 }
 
 .map {
-  padding-top: 3vh;
   width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+  height: 80%;
 }
-
-.mapContainer {
-  box-shadow: 2px 2px 8px 0px rgb(78, 78, 78);
-}
-
-.mappy {
-  height: 80vh;
-  width: 80%;
-}
-
-.none {
-  display: none;
-}
-
 .smallMap {
   display: none;
   height: 100%;
@@ -49,15 +53,98 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 
-@media only screen and (max-width: 800px) {
-  .smallMap {
+.mapContainer {
+  box-shadow: 2px 2px 8px 0px rgb(78, 78, 78);
+}
+.mapInfo {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.mapInfo h3 {
+  height: auto;
+  width: 100%;
+  font-size: calc(0.75em + 2.3vmin);
+  padding-top: 10px;
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
+  transition: 0.3s;
+}
+
+.mapInfo p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(0.75em + 1vmin);
+  color: rgb(85, 85, 85);
+  margin-bottom: 4px;
+}
+.schedule {
+  padding-top: 8px;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hours {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.day {
+  text-align: center;
+  height: 100%;
+  width: 50%;
+}
+.time {
+  height: 100%;
+  width: 50%;
+}
+
+.mappy {
+  height: 100%;
+  width: 100%;
+}
+
+.none {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 120vh;
+  }
+  .h {
+    width: 85%;
+  }
+
+  .mapInfo {
+    width: 100%;
+  }
+
+  .mappy {
+    width: 100%;
+  }
+  .locTitle > h2 {
+    font-size: calc(0.75em + 4vmin);
+  }
+  .locTitle {
     display: flex;
     justify-content: center;
-  }
-  .bigMap {
-    display: none;
+    align-items: center;
+    flex-direction: column;
   }
 }

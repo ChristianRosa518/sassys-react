@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Grid from './Grid';
 import Sandwiches from '../sandwiches/Sandwiches';
+import Location from '../location/Location';
 
 import './css/container.css';
 
@@ -104,6 +105,7 @@ export default function Home(props) {
         SetPrice={props.SetPrice}
         SetShowCart={props.SetShowCart}
       />
+      <Location />
     </div>
   );
 }
