@@ -59,6 +59,9 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.22);
+  margin: 6px;
+  transition: all 0.3s;
 }
 
 .small {
@@ -69,10 +72,21 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25), 0 6px 8px rgba(0, 0, 0, 0.22);
+  margin: 6px;
 }
 
 .small:hover {
   transition: all 0.3s;
+}
+
+.large:hover {
+  transition: all 0.3s;
+  transform: rotate(4deg);
+}
+.large:nth-child(odd):hover {
+  transition: all 0.3s;
+  transform: rotate(-4deg);
 }
 
 .imageContainer {

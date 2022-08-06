@@ -524,8 +524,8 @@ class SandCardContainer extends React.Component {
   }
 
   ShowSandwiches() {
-    const current = this.state.active;
-    this.setState({ active: !current });
+    // const current = this.state.active;
+    // this.setState({ active: !current });
   }
 
   render() {
