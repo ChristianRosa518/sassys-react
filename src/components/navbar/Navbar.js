@@ -25,7 +25,7 @@ export default function Navbar(props) {
 
   function changeOpen(e) {
     e.stopPropagation();
-    const body = document.querySelector('body');
+    const body = document.querySelector('#root');
     if (body.style.overflow === 'hidden') {
       body.style.overflow = 'auto';
     } else {
@@ -40,7 +40,7 @@ export default function Navbar(props) {
   }
 
   function doScrollMobile(e) {
-    const body = document.querySelector('body');
+    const body = document.querySelector('#root');
     e.current?.scrollIntoView({ behavior: 'instant' });
     const current = open;
     setOpen(!current);
