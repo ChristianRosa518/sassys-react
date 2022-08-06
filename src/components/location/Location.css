@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
 .container {
+  scroll-margin: 10vh;
   background-color: rgb(245, 245, 245);
   margin: 0 auto;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   padding-top: 1.5%;
   text-align: center;

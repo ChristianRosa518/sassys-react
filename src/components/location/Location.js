@@ -9,13 +9,13 @@ const render = (status) => {
   return null;
 };
 
-export default function Location() {
+export default function Location(props) {
   const mapCenter = { lat: 40.7140408311635, lng: -73.95525507045573 };
   const center = { lat: 40.71060416957451, lng: -73.95878700221677 };
   const zoom = 13;
 
   return (
-    <div className="container">
+    <div className="container" ref={props.locationScroll} id={'location'}>
       <div className="h">
         <div className="locTitle">
           <h2>Store Location</h2>

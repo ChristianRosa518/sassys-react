@@ -14,7 +14,7 @@ export default function Home(props) {
 
   return (
     <div>
-      <div className="homeContainer">
+      <div className="homeContainer" ref={props.homeScroll} id={'home'}>
         <div className="img_container" id="container_1">
           <img
             src={process.env.PUBLIC_URL + 'images/Home1.jpg'}
@@ -104,8 +104,9 @@ export default function Home(props) {
         SetProduct={props.SetProduct}
         SetPrice={props.SetPrice}
         SetShowCart={props.SetShowCart}
+        sandwichesScroll={props.sandwichesScroll}
       />
-      <Location />
+      <Location locationScroll={props.locationScroll} />
     </div>
   );
 }

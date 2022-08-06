@@ -58,7 +58,11 @@ header {
   font-size: 16px;
 
   display: inline-block;
-  padding: 0px 2vw;
+  margin: 0px 2vw;
+  padding-bottom: 3px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
 .cartDesktop {
@@ -70,11 +74,7 @@ header {
   margin: 0;
 }
 
-.navlinks li a {
-  transition: all 0.3s ease 0s;
-  color: white;
-}
-.navlinks li a:hover {
+.navActive {
   border-bottom: 1px solid white;
 }
 
@@ -128,17 +128,24 @@ header {
   background-color: #4f535c;
 
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   color: white;
   list-style: none;
 }
 .listItem {
-  font-family: 'Shadows Into Light Two';
-  font-weight: bold;
+  height: 20%;
+  width: 100%;
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
   font-size: calc(0.75em + 9vmin);
   color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 800px) {

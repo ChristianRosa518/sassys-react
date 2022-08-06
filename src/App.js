@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { loadStripe } from '@stripe/stripe-js';
@@ -22,6 +22,11 @@ function App() {
   const [product, SetProduct] = useState([]);
   const [price, SetPrice] = useState('$0.00');
   const [location, SetLocation] = useState('');
+
+  const homeScroll = useRef(null);
+  const sandwichesScroll = useRef(null);
+  const locationScroll = useRef(null);
+  const contactScroll = useRef(null);
 
   function appHeight() {
     const doc = document.documentElement;
@@ -53,7 +58,14 @@ function App() {
 
   return (
     <Router basename="/">
-      <Navbar showCart={showCart} SetShowCart={SetShowCart} />
+      <Navbar
+        showCart={showCart}
+        SetShowCart={SetShowCart}
+        homeScroll={homeScroll}
+        sandwichesScroll={sandwichesScroll}
+        locationScroll={locationScroll}
+        contactScroll={contactScroll}
+      />
       <Elements options={stripeOptions} stripe={stripePromise}>
         <Cart
           SetLocation={SetLocation}
@@ -79,6 +91,10 @@ function App() {
               SetProduct={SetProduct}
               SetPrice={SetPrice}
               SetShowCart={SetShowCart}
+              homeScroll={homeScroll}
+              sandwichesScroll={sandwichesScroll}
+              locationScroll={locationScroll}
+              contactScroll={contactScroll}
             />
           }
         ></Route>

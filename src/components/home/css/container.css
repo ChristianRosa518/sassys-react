@@ -1,4 +1,5 @@
 .homeContainer {
+  scroll-margin: 10vh;
   height: 85vh;
   width: 100%;
   background: rgb(43, 38, 36);

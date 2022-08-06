@@ -72,7 +72,11 @@ export default function Sandwiches(props) {
   const [wingModalData, setWingModalData] = useState('');
 
   return (
-    <div className="sandContainer">
+    <div
+      className="sandContainer"
+      ref={props.sandwichesScroll}
+      id={'sandwiches'}
+    >
       <section className="signature_sandwiches">
         <h2>Sassy's Sandwiches</h2>
         <p className="center">Click on Items to view</p>
