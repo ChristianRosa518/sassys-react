@@ -1,8 +1,4 @@
 # sassys-react
 
 E-commerce website for sassysbk.com.
-This website has gone through alot and I don't regret a single thing about it, I feel this website looks well, functions well and is almost complete. Couple more things I need to do are:
-
-- Responsive Images, (SRCSET)
-- Add Contact section
-  if these are added but I didn't update the readme, well, that's on me.
+my first project integrating stripe, and working on a semi fullstack website. I didn't do much in terms of server but if this store ever comes back then I plan on making a database and cms for the site.
